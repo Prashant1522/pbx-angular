@@ -1,12 +1,5 @@
-import {
-  Component, OnInit, AfterContentInit,
-  Directive,
-  Renderer2,
-  SecurityContext,
-  ViewChild
-} from '@angular/core';
+import {Component, OnInit, AfterContentInit, Directive, Renderer2, SecurityContext,ViewChild} from '@angular/core';
 import { FeatherIconsPipe } from '../../feather-pipe';
-
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { inject, TestBed } from '@angular/core/testing';
 import { MatPaginator,MatTableDataSource } from '@angular/material';
@@ -54,6 +47,9 @@ export class DashboardComponent implements OnInit {
   Dataarray8 = new MatTableDataSource<PeriodicElement8>(OVERDUE_DATA);
   displayedColumns10: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource10 = new MatTableDataSource(ELEMENTSS_DATA);
+  Dataarrays1= new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumnss1: string[] = ['position', 'name', 'weight', 'symbol'];
+
   applyFilter(filterValue: string) {
     this.dataSource10.filter = filterValue.trim().toLowerCase();
   }
@@ -630,7 +626,10 @@ export interface  PeriodicElement6 {
     {taskname: 'new task (pbx)', clientLead:'Test',matvalue:100, expirydate:'18-01-2017',creditcard: 'Internet Service Agreement',overdue:true},
     {taskname: 'EST0039' , clientLead:'Test',matvalue:100, expirydate:'18-01-2017', creditcard: 'Internet Service Agreement',overdue:true} , 
     {taskname: 'new task (pbx)', clientLead:'Test',matvalue:100,expirydate:'18-01-2017',creditcard: 'Internet Service Agreement',overdue:true},
-    {taskname: 'EST0039' ,  clientLead:'Test',matvalue:100,expirydate:'18-01-2017', creditcard: 'Internet Service Agreement',overdue:true}  
+    {taskname: 'EST0039' ,  clientLead:'Test',matvalue:100,expirydate:'18-01-2017', creditcard: 'Internet Service Agreement',overdue:true},
+    {taskname: 'EST0039' , clientLead:'Test',matvalue:100, expirydate:'18-01-2017', creditcard: 'Internet Service Agreement',overdue:true} , 
+    {taskname: 'new task (pbx)', clientLead:'Test',matvalue:100,expirydate:'18-01-2017',creditcard: 'Internet Service Agreement',overdue:true},
+    {taskname: 'EST0039' ,  clientLead:'Test',matvalue:100,expirydate:'18-01-2017', creditcard: 'Internet Service Agreement',overdue:true}    
   ];
   export interface PeriodicElement10 {
     name: string;
