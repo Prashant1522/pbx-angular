@@ -88,6 +88,11 @@ mat-toolbar{
     color:black !important;
     height:30px;
     border-radius: 15px !important;
+    vertical-align: middle !important;
+    display:inline-flex !important;
+    .mat-button-wrapper{
+        margin-top:-3px;
+    }
 }
 /*******************
  Topbar
