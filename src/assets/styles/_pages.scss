@@ -13,24 +13,8 @@ File: scss
 /*******************
  Main container
 *******************/
-$desktop : 1100px;
-$mobile : 767px;
 
-@mixin mobile{
-    @media(max-width:#{$mobile}){
-        @content;
-    }
-}
-@mixin desktop{
-    @media(min-width:#{$desktop}){
-        @content;
-    }
-}
-@mixin belowDesktop{
-    @media(max-width:#{$desktop}){
-        @content;
-    }
-}
+
 $searchHeight:36px;
 .main-container {
   display: flex;

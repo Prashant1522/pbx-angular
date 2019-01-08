@@ -1,36 +1,6 @@
 
- <div fxLayout="row" fxLayoutAlign="start center" fxShow="false" fxShow.gt-xs class="search-bar">
-    <form method="get">
-        <!-- <ng-select class="custom" [items]="cities3"
-        bindLabel="name"
-        bindValue="name"
-        placeholder="Select city"
-        [(ngModel)]="selectedCityName"></ng-select> -->
-        <mat-form-field class="customSelect">
-            <mat-select [(ngModel)]="selectedValue" name="food" disableOptionCentering panelClass="myPanelClass">
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-            <!-- <select name="location">
-                    <option value="accounts">accounts</option>
-                    
-                    <option value="contacts">contacts</option>
-                    <option value="dashboard">dashboard</option>
-                    <option value="events">events</option>
-                  </select> -->
-        <input type="text" placeholder="Search" class="mat-elevation-z3"  [class.show]="toggleSearchBar">
-        <button mat-icon-button (click)="toggleSearchBar = !toggleSearchBar" type="button">
-            <mat-icon>search</mat-icon>
-        </button> 
-    </form>
-</div>
- <button mat-icon-button>
-        <mat-icon>add_box</mat-icon>  
-</button>  
-<button mat-button class="m-r-10 p-l-0">
-<span> Create New</span>
+<button mat-button class="m-r-10 p-l-0 gotoapp">
+<span> Go To App</span>
 </button>
 <button mat-icon-button class="m-r-10">
 <mat-icon matBadge="15" matBadgeColor="warn" class="m-r-20" >notifications_none</mat-icon>

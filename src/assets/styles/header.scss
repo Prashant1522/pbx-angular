@@ -2,7 +2,7 @@
 
 File: scss
 */
-@import './pages';
+@import './variable';
 
 /*******************
  Topbar
@@ -82,6 +82,12 @@ mat-toolbar{
         height: 40px;
         border-radius: 100%;
     }
+}
+.gotoapp{
+    background-color: white !important;
+    color:black !important;
+    height:30px;
+    border-radius: 15px !important;
 }
 /*******************
  Topbar
