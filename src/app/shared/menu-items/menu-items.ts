@@ -8,23 +8,17 @@ export interface Menu {
 }
 // subs: string = "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>";
 const MENUITEMS = [
-  { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'home', sub: "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>" },
-  { state: 'calendar', name: 'Calender', type: 'link', icon: 'calendar' },
-  { state: 'discussion', name: 'Discussion', type: 'link', icon: 'message-circle' },
-  { state: 'mailbox', name: 'Mailbox', type: 'link', icon: 'mail' },
-  { state: 'client', name: 'Client', type: 'link', icon: 'users' },
-  { state: 'vendor', name: 'Vendor', type: 'link', icon: 'user' },
-  { state: 'tasks', name: 'Tasks', type: 'link', icon: 'check-circle' },
-  { state: 'sales', name: 'Sales', type: 'link', icon: 'shopping-cart' },
-  { state: 'support', name: 'Support', type: 'link', icon: 'headphones' },
-  { state: 'accounting', name: 'Accounting', type: 'link', icon: 'at-sign' },
-  { state: 'hr', name: 'HR', type: 'link', icon: 'life-buoy' },
-  { state: 'reports', name: 'Reports', type: 'link', icon: 'bar-chart-2' },
-  { state: 'utilities', name: 'Utilities', type: 'link', icon: 'settings' },
-  { state: 'survey', name: 'Survey', type: 'link', icon: 'clipboard' },
+  { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'monitor', sub: "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>" },
+  { state: 'clients', name: 'Clients', type: 'link', icon: 'user' },
+  { state: 'connectivity', name: 'Connectivity', type: 'link', icon: 'link' },
+ 
+  { state: 'mailbox', name: 'Provisioner', type: 'link', icon: 'users' },
+  { state: 'client', name: 'Billing', type: 'link', icon:'dollar-sign' },
+  { state: 'vendor', name: 'Reports', type: 'link', icon: 'trending-up' },
+ 
 ];
 
-const sales = [
+const connectivity = [
   { state: 'awesome', name: 'Leads', type: 'link', icon: 'home', sub: "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>",
  },
  { state: 'awesome', name: 'Estimates', type: 'link', icon: 'home', sub: "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>",
@@ -137,7 +131,7 @@ const survey = [
 { state: 'awesome', name: 'Coupon verification', type: 'link', icon: 'home', sub: "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>",
 }
 ];
-const foo:any[] = [sales,support,accounting,hr,reports,utilities,survey];
+const foo:any[] = [connectivity,support,accounting,hr,reports,utilities,survey];
 @Injectable()
 export class MenuItems {
   getMenuitem(): Menu[] {
@@ -145,8 +139,8 @@ export class MenuItems {
   }
   getSubMenuitem(subMenu): Menu[] {
 
-    // console.log("log"+subMenu);
-    if(subMenu=='sales'){
+     console.log("log "+subMenu);
+    if(subMenu=='connectivity'){
       return foo[0];
     }
     else if(subMenu == 'support'){

@@ -51,10 +51,10 @@ isMatMenu2Open = false;
   mobileQuery: MediaQueryList;
   logoDisplay: string = 'none';
   private _mobileQueryListener: () => void;NgZone
-  state : string = 'sales';
-  prevState : string = 'sales';
+  state : string = 'connectivity';
+  prevState : string = 'connectivity';
   prevButtonTrigger;
-  menuStates = ['sales','support','accounting','hr','reports','utilities','survey'];
+  menuStates = ['connectivity','support','accounting','hr','reports','utilities','survey'];
   isSubMenuOpen = false;
   fIcon =  'chevron-right'
   stateChange(newState) {
@@ -337,7 +337,7 @@ isMatMenu2Open = false;
     [].forEach.call(elements, function (el) {
       /* console.log("hello");
       console.log(el.dataset.state); */
-      // var menuStates = ['sales','support','accounting','hr','reports','utilities','survey'];
+      // var menuStates = ['connectivity','support','accounting','hr','reports','utilities','survey'];
       // console.log(this);
       if(thiss.state == el.dataset.state){
         (el.querySelector("svg")).style.transform = rotate;
@@ -357,7 +357,7 @@ isMatMenu2Open = false;
     [].forEach.call(elements, function (el) {
       // console.log("hello");
       // console.log(el.dataset.state);
-      var menuStates = ['sales','support','accounting','hr','reports','utilities','survey'];
+      var menuStates = ['connectivity','support','accounting','hr','reports','utilities','survey'];
       if(menuStates.indexOf(el.dataset.state) == -1){
         el.style.display ="none";
       }
