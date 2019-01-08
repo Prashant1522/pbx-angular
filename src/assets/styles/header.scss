@@ -2,7 +2,7 @@
 
 File: scss
 */
-@import './pages';
+@import './variable';
 
 /*******************
  Topbar
@@ -78,9 +78,20 @@ mat-toolbar{
         }
     }
     .profile-pic{
-        width: 40px;
-        height: 40px;
+        width: 25px;
+        height: 28px;
         border-radius: 100%;
+    }
+}
+.gotoapp{
+    background-color: white !important;
+    color:black !important;
+    height:30px;
+    border-radius: 15px !important;
+    vertical-align: middle !important;
+    display:inline-flex !important;
+    .mat-button-wrapper{
+        margin-top:-3px;
     }
 }
 /*******************

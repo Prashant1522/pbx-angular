@@ -83,7 +83,7 @@ isMatMenu2Open = false;
       el.style.fontSize = "36px";
       el.style.height = "36px";
     });
-    document.getElementById("utiliko").style.font = "600 20px/24px 'Open Sans', sans-serif";
+    document.getElementById("utiliko").style.font = "200 20px/24px 'RepublicaMinor2', sans-serif";
     var elements = document.getElementsByClassName("nav");
     [].forEach.call(elements, function (el) {
       el.style.padding = "0";
@@ -124,7 +124,7 @@ isMatMenu2Open = false;
       el.style.height = "30px";
     });
 
-    document.getElementById("utiliko").style.font = "600 30px/24px 'Open Sans', sans-serif";
+    document.getElementById("utiliko").style.font = "200 30px/24px 'RepublicaMinor2', sans-serif";
     var elements = document.getElementsByClassName("nav");
     [].forEach.call(elements, function (el) {
       el.style.padding = "0";

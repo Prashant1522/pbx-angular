@@ -1,8 +1,8 @@
 /*
 File: scss
 */
-@import './pages.scss';
-
+// @import './pages.scss';
+@import './variable';
 /*******************
 Main sidebar
 ******************/
@@ -46,9 +46,9 @@ Main sidebar
             display: flex;
             line-height: 18px;
             align-items: center;
-            color: #5b4fa7;
+            color: white;
             margin: auto;
-            font : 600 30px/24px 'Open Sans', sans-serif;
+            font : 200 30px/24px 'RepublicaMinor2', sans-serif;
             .dark-logo {
                 display: none;
                 
