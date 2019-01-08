@@ -1,0 +1,55 @@
+<div class="navbar-header">
+    <a class="navbar-brand" id="utiliko" href="index.html">
+        Utiliko
+    </a>
+    
+</div>
+<mat-nav-list appAccordion>
+    <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems.getMenuitem()" routerLinkActive="selected" group="{{menuitem.state}}">
+        <a class="nav" [routerLink]="['/', menuitem.state]" *ngIf="menuitem.type === 'link'" (click)="stateChange(menuitem.state); showSubMenu(menuitem.state)">
+            <!-- <div class="iconTestContainer"> -->
+                
+                   
+                <span class="sidebarIcon toHide" [innerHTML]= "[menuitem.icon] | feather"></span>
+
+                <span class="toHide">{{ menuitem.name }}</span> 
+                <span class="btnwrap2 toHide" [attr.data-state]="menuitem.state">
+                    <button #button class="mat-small" mat-button [innerHTML]="[fIcon] | feather"
+                   
+                    ></button></span>
+                    
+                    <span class="btnwrap hide">
+                        <button #button class="mat-small" [innerHTML]= "[menuitem.icon] | feather" mat-button id="menuBtn" (click)="stateChange(menuitem.state)" [matMenuTriggerFor]="menu" #levelOneTrigger="matMenuTrigger" (mouseenter)="buttonEnter(levelOneTrigger,button,menuitem.state)" 
+                        (mouseleave)="buttonLeave(levelOneTrigger,button)" 
+                        ></button></span>
+                
+                
+                <!-- <span fxFlex class="sub-menu">abc</span>  -->
+                <!-- <span class="label label-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>  -->
+            <!-- </div> -->
+        </a>
+        
+
+        <span class="sub-menu {{ menuitem.state }}" [@subMenuAnimation]="menuitem.state == state? (isSubMenuOpen ? 'open' : 'closed'): 'closed'">
+            <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([menuitem.state])" routerLinkActive="selected"> 
+                <span class="changeMe">
+                <button mat-menu-item >{{ submenuitem.name }}</button>
+                  </span>
+          </ng-container>
+          </span>
+        
+    </mat-list-item>
+    
+</mat-nav-list>
+
+<mat-menu #menu="matMenu" xPosition="after" yPosition="above">
+        <span (mouseenter)="menuenter()" >
+            <span class="head">{{ state }}</span> <hr>
+  <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([state])" routerLinkActive="selected"> 
+      <span class="changeMe">
+      <button mat-menu-item >{{ submenuitem.name }}</button>
+        </span>
+</ng-container>
+</span>
+ </mat-menu>
+<!-- <child-component #x="menuInOtherComponent"></child-component> -->

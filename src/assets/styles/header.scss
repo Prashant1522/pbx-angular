@@ -1,0 +1,191 @@
+/*
+
+File: scss
+*/
+@import './pages';
+
+/*******************
+ Topbar
+*******************/
+mat-toolbar{
+    box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5);
+    // display:block !important;
+    // justify-content: flex-end;
+    &.topbar{
+        padding: 0px 15px;
+    }
+    button{
+        @include mobile{
+            float:right;
+        }
+    }
+    /* .navbar-header {
+        
+        text-align: center;
+        .navbar-brand {
+            display: flex;
+            line-height: 18px;
+            
+            align-items: center;
+            .dark-logo {
+                display: none;
+                
+            }
+            b {
+               margin-right: 5px;
+            }
+            img{
+                
+            }
+        }
+    } */
+    .search-bar{
+        
+        float: left;
+        width: 18vw;
+    }
+    
+    .search-bar input{
+        border-top-right-radius:15px;
+        border-bottom-right-radius:15px;
+        padding: 6px;
+        border:none;
+        width:12vw;
+        height:27px;
+    }
+    .search-bar button{
+        margin-left:-39px;
+        color:black;
+    }
+    .app-search{
+        display: none;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        position: absolute;
+        .form-control{
+            line-height: 42px;
+            
+        }
+        .cl-srh-btn{
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            font-size: 15px;
+            color:$bodytext;
+            cursor: pointer
+        }
+    }
+    .profile-pic{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+}
+/*******************
+ Topbar
+*******************/
+.topbar {
+  position: sticky;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 3;
+  top:0;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+/* mat-toolbar .navbar-header .navbar-brand {
+
+    display: block;
+    line-height: 18px;
+    align-items: center;
+    color: #5b4fa7;
+    
+
+}
+mat-toolbar .navbar-header{
+    background-color:#E5E8ED;
+} */
+
+.hideOnMobile{
+    @include belowDesktop{
+        display:none;
+    }
+}
+app-header{
+    float:right;
+    margin-left:auto;
+    @include mobile{
+        display: none;
+    }
+    
+}
+
+.ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+    
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 15px 0 0 15px !important;
+    
+        padding: 5px;
+        color:#7d7d7d;
+       
+        float:left;
+        height:27px;
+        margin:7px 0;
+        width:6vw;
+}
+
+.ng-select .ng-arrow-wrapper{
+    // padding-top:5px;
+    top:30%;
+    right:-15%;
+    position: relative;
+}
+.ng-dropdown-panel.ng-select-bottom{
+    top:40px;
+    // display:none;
+}
+.customSelect{
+    
+    background-color: white;
+    
+    min-height: 0px;
+    border-radius: 15px 0 0 15px !important;
+    
+        padding: 5px 0 5px 5px;
+        color:#7d7d7d;
+       
+        float:left;
+        height:27px;
+        margin:7px 0;
+        width:6vw;
+        font-size:14px !important;
+        border-width: 0 1px 0 0;
+        border-style: solid;
+}
+.mat-form-field-underline{
+    display: none;
+}
+.mat-form-field-infix{
+    border:0 !important;
+    padding:0 !important;
+}
+.myPanelClass{
+    margin-top:23px;
+    margin-left:-64px;
+}
