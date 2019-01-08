@@ -34,7 +34,7 @@ Main sidebar
     .navbar-header {
         display:flex;
         text-align: center;
-        background-color:#E5E8ED;
+        background-color:#3a3f51;
         height: 3.5vw;
         width: 100%;
         min-height: 45px;
@@ -71,6 +71,13 @@ mat-sidenav {
   visibility: visible !important;
 }
 #snav{
+    background-color: #3a3f51;
+    .mat-nav-list {
+        background-color: #3a3f51;
+       
+    }
+    
+    
     .sub-menu{
         // display:none;
         .changeMe,button{
@@ -89,11 +96,12 @@ mat-sidenav {
         
         .mat-list-item-content{
             display: block;
-            padding: 0px 15px;
+            padding: 0px 0px;
             &:hover{
                 background: none;
                 > a{
                   color:none;
+                 
                 }
             }
             @include belowDesktop{
@@ -107,9 +115,10 @@ mat-sidenav {
             margin-bottom: 10px;
             align-items: center;
             display: flex;
-            font-size: 14px;
+            font-size: 16px;
             white-space: nowrap;
             color:$sidebar-text;
+            border-left:10px solid #3a3f51;
             mat-icon:not(.dd-icon){
                 margin-right: 8px;
             }
@@ -129,7 +138,7 @@ mat-sidenav {
             }
         }
         &.selected > .mat-list-item-content > a{
-            background: $themecolor-alt;
+           
             border-radius: $radius;
             color:$white;
             
@@ -340,17 +349,13 @@ use profile section
         }
 }
 #snav .mat-list-item.selected > .mat-list-item-content > a {
-
-    background:$sidebar-selected-item;
-    border-radius: 4px;
-    color: #ffffff;
-
+border-left:10px solid $purple;
+border-radius:0px;
+color: $purple;
 }
 
 #snav .mat-list-item:hover > .mat-list-item-content > a {
-
-    background:$sidebar-selected-item;
-    border-radius: 4px;
-    color: #ffffff;
-
+border-left:10px solid $purple;
+border-radius:0px;
+color: $purple;
 }
