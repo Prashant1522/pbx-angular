@@ -143,11 +143,14 @@ html .page-wrapper{
 }
 
 .cdk-overlay-container{
-    left:$sidebar-width-collapsed;
+    left:$sidebar-width-collapsed !important;
 }
 .cdk-overlay-connected-position-bounding-box{
     left:0 !important;
     top:45px;
+    .cdk-overlay-pane{
+        left:0 !important;
+    }
 }
 
 .head{
