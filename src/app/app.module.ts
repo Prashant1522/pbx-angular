@@ -20,9 +20,8 @@ import { SpinnerComponent } from './shared/spinner.component';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
 
-import { FeatherIconsPipe } from './feather-pipe';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { PagesModule } from './pages/pages.module';
+
 import { NgCircleProgressModule } from 'ng-circle-progress';
 // import { Cards3Component } from './src/app/pages/dashboard/dashboardComps/cards3/cards3.component';
 
@@ -36,20 +35,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     AppHeaderComponent,
     SpinnerComponent,
     AppSidebarComponent,
-    // Cards3Component,
-  
-    // FeatherIconsPipe
-    /* ClientComponent,
-    VendorComponent,
-    TasksComponent,
-    SalesComponent,
-    SupportComponent, */
     
-    /* HrComponent,
-    ReportsComponent,
-    UtilitiesComponent,
-    SurveyComponent */
-    // PagesComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +57,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
      
-    })
+    }),
+    
   ],
   
   providers: [
