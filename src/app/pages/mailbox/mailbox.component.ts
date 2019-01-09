@@ -6,24 +6,24 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
   styleUrls: ['./mailbox.component.css']
 })
 export class MailboxComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumns15: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource15 = new MatTableDataSource<PeriodicElement15>(ELEMENT_DATA15);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor() { }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    this.dataSource15.paginator = this.paginator;
   }
 
 }
-export interface PeriodicElement {
+export interface PeriodicElement15 {
   name: string;
   position: number;
   weight: number;
   symbol: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA15: PeriodicElement15[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
