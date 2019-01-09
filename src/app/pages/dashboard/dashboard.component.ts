@@ -1,10 +1,9 @@
 import {Component, OnInit, ViewChild ,AfterContentInit, Directive, Renderer2, SecurityContext} from '@angular/core';
 import { FeatherIconsPipe } from '../../feather-pipe';
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
-import { inject, TestBed } from '@angular/core/testing';
+import {  DomSanitizer } from '@angular/platform-browser';
+
 import { MatPaginator,MatTableDataSource } from '@angular/material';
-import { Cards3Component } from './dashboardComps/cards3/cards3.component'
-import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
+
 
 export interface Food {
   value: string;
@@ -637,6 +636,7 @@ export interface  PeriodicElement6 {
     startofextension: number;
     createdon: string;
     time: string;
+    noofextension: number;
   }
   
   const ELEMENT_DATA15: PeriodicElement15[] = [
