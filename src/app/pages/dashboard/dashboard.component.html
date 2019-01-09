@@ -1,13 +1,59 @@
 
 <div class="pading_textdata">
-    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
-        <div fxFlex.gt-sm="50%" class="fiveHundred">
-            <app-cards3 [titleicon]="'dollar-sign'" [title]="'Deposit'" [colorClass]="'primary-color'" [icon1]="'plus-circle'" [icon2]="'minus-circle'" [icon3]="'plus-circle'" [icon4]="'minus-circle'" [amount1]="'$ 0.00'" [amount2]="'$ 0.00'" [amount3]="'$ 28,506'" [amount4]="'$ 6169.77'" [subs1]="'Income Today'" [subs2]="'Expense Today'" [subs3]="'Total Income'" [subs4]="'Total Expense'"></app-cards3>
-        </div>
-        <div fxFlex.gt-sm="50%" class="fiveHundred">
-            <app-cards3 [titleicon]="'file-text'" [title]="'Invoice'" [colorClass]="'custom-green'" [icon1]="'file-text'" [icon2]="'credit-card'" [icon3]="'dollar-sign'" [icon4]="'dollar-sign'" [amount1]="'$ 0.00'" [amount2]="'$ 0.00'" [amount3]="'$ 28,506'" [amount4]="'$ 6169.77'" [subs1]="'Invoice Today'" [subs2]="'Payment Today'" [subs3]="'Paid Amount'" [subs4]="'Due Amount'"></app-cards3>
-            
-        </div>
+<div fxLayout="row" fxLayoutWrap="wrap"  fxLayout.xs="column" fxLayout.sm="column">
+<!-- Card column -->
+<div fxFlex.gt-sm="50%" fxFlex="50%">
+       
+<mat-card class="fixFH">
+         <div id="active_title" class="white">
+                <div id="title-inner" class="center">
+                  <span class="value_adjust user_element"><span id="icon_style" [innerHTML]="'bar-chart-2' | feather"></span>
+                    <span id="header_text">System Status</span></span>
+                </div>
+            </div>
+   <table class="display_prop" mat-table [dataSource]="dataelement2" class="client-table ">
+<!--item Column -->
+<ng-container matColumnDef="item">
+<th mat-header-cell *matHeaderCellDef>ITEM</th>
+<td mat-cell *matCellDef="let element"> 
+<span class="title_element"> {{element.item}}</span>
+</td>
+</ng-container>
+<!-- value Column -->
+   <ng-container matColumnDef="value">
+           <th mat-header-cell *matHeaderCellDef class="table_right_adjust">VALUE</th>
+            <td mat-cell *matCellDef="let element" class="table_right_adjust"> 
+               <span class="bolding_element">{{element.value}} </span>
+                </td>
+                </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="Columns2"></tr>
+                     <tr mat-row *matRowDef="let element; columns: Columns2;"></tr>
+                      </table>
+                          </mat-card>
+                </div>
+                <div fxFlex.gt-sm="50%" fxFlex="50%">
+                        <mat-card class="fixFH">
+                               
+                        <table class="display_prop" mat-table [dataSource]="dataelement3" class="client-table ">
+                        <!--item Column -->
+                        <ng-container matColumnDef="item">
+                        <th mat-header-cell *matHeaderCellDef>ITEM</th>
+                        <td mat-cell *matCellDef="let element"> 
+                        <span class="title_element"> {{element.item}}</span>
+                        </td>
+                        </ng-container>
+                        <!-- value Column -->
+                           <ng-container matColumnDef="total">
+                                   <th mat-header-cell *matHeaderCellDef class="table_right_adjust">TOTAL</th>
+                                    <td mat-cell *matCellDef="let element" class="table_right_adjust"> 
+                                       <span class="bolding_element">{{element.total}} </span>
+                                        </td>
+                                        </ng-container>
+                                                           <tr mat-header-row *matHeaderRowDef="Columns3"></tr>
+                                                           <tr mat-row *matRowDef="let element; columns: Columns3;"></tr>
+                                                             </table>
+                                                  </mat-card>
+                                        </div>
       
 
     </div>
@@ -103,48 +149,10 @@
                       </mat-expansion-panel-header>
 
                         <mat-tab-group id="overdue">
-                           
+                               
                             <mat-tab label="Opportunities">
-                          <table class="display_prop" mat-table [dataSource]="Dataarray8">
-                         <ng-container matColumnDef="taskname">
-                           <th mat-header-cell *matHeaderCellDef>Task Name </th>
-                             <td mat-cell *matCellDef="let Overdue"> 
-                             <span class=" width_element padding_element left_value">
-                               <span class="pro_name title_element">{{Overdue.taskname}} </span>
-                                <span class="state colr_pink font-mobile" *ngIf="Overdue.overdue; else elseBlock">Overdue</span>
-                                 <mat-progress-bar mode="determinate" value="{{ Overdue.matvalue }}"></mat-progress-bar>
-                                 <span class="title_element font-mobile"> End date: </span><span class="date_element">{{ Overdue.expirydate }}</span></span>
-                                  </td>
-                                   </ng-container>
-                                     <ng-container matColumnDef="clientLead">
-                                        <th mat-header-cell *matHeaderCellDef> Client/Lead </th>
-                                       <td mat-cell *matCellDef="let Overdue"> {{Overdue.clientLead}} 
-                                                    </td>
-                                                  </ng-container>
-                                            <ng-container matColumnDef="relatedto">
-                                                <th mat-header-cell *matHeaderCellDef>Related to</th>
-                                                <td mat-cell *matCellDef="let Overdue"> 
-                                                        
-                                                </td>
-                                              </ng-container>
-                                              <ng-container matColumnDef="Participants">
-                                                    <th mat-header-cell *matHeaderCellDef>Participants </th>
-                                                    <td mat-cell *matCellDef="let Overdue"> 
-                                                            {{Overdue.Participants}} 
-                                                    </td>
-                                                  </ng-container>
-                                                  <ng-container matColumnDef="pinning">
-                                                        <th mat-header-cell *matHeaderCellDef> </th>
-                                                        <td mat-cell *matCellDef="let pin"> 
-                                                            <svg class="twenty-seven pins"
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                            <path d="M11 12h6v-1l-3-1V2l3-1V0H3v1l3 1v8l-3 1v1h6v7l1 1 1-1v-7z" /></svg>
-                                                        </td>
-                                                      </ng-container>
-                                          <tr mat-header-row *matHeaderRowDef="discolumns8"></tr>
-                                            <tr mat-row *matRowDef="let pin; columns: discolumns8;"></tr>
-                                          </table>
-                                          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                                    <mat-card-content>
+                                    </mat-card-content>   
                             </mat-tab>
                             <mat-tab label="Calls">
                                 <mat-card-content>Content 2</mat-card-content>
@@ -981,33 +989,58 @@
         <!-- Card column -->
         <div fxFlex.gt-sm="100%" fxFlex="100">
             <mat-card>
-                <mat-accordion>
-                    <mat-expansion-panel expanded="true" class="custom-header" hideToggle="true" #example>
-                        <mat-expansion-panel-header class="dashboard-title" [expandedHeight]="'44px'">
-                            <mat-panel-title>
-                                Goal Reports
-
-                            </mat-panel-title>
-                            <span><svg class="xPanelIndicator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm5-11H5v2h10V9z" /></svg></span>
-                            <!-- <img height="32" width="32" src="@icon/zondicons/icons/adjust.svg" /> -->
-                            <!-- <img height="18" width="18" src="https://unpkg.com/@icon/zondicons/icons/minus-solid.svg" /> -->
-                            <!-- <span *ngIf="!example.expanded" [innerHTML]="'minus-circle' | feather"></span> -->
-                            <!-- <span *ngIf="example.expanded" [innerHTML]="'minus' | feather"></span> -->
-                        </mat-expansion-panel-header>
-                        <div class="goalsBox"><span class="left_value">Select Month</span>
-                            <span class="right_value">
-                                <mat-form-field>
-                                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                    <mat-datepicker touchUi #picker></mat-datepicker>
-                                    <input matInput [matDatepicker]="picker" placeholder="2018-10">
-                                   
-                                </mat-form-field><span class="box goal" [innerHTML]="'search' | feather"></span>
-                            </span>
+                    <div id="active_title" class="white">
+                            <div id="title-inner" class="center">
+                              <span class="value_adjust user_element"><span id="icon_style" [innerHTML]="'users' | feather"></span>
+                                <span id="header_text">Client</span></span>
+                                <span class="value_adjust searching">
+                                        <input class ="search" matInput (keyup)="applyFilter($event.target.value)" placeholder="search">
+                                        <span class="search_svg" [innerHTML]="'search' | feather"></span>
+                                       </span> 
+                                       <span class="width_Value right_value "><span class=" value_adjust  state colr_darkpurple font-mobile"> <span class="search_svg"  [innerHTML]="'plus' | feather"></span> <span>Add a Client</span></span></span>
+                            </div>
                         </div>
-                    </mat-expansion-panel>
-
-                </mat-accordion>
+            <div class="mat-elevation-z8">
+                   
+                   
+                    <table mat-table [dataSource]="dataelement1" class="client-table">
+                  
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
+                        <td mat-cell *matCellDef="let element" ><span class="font-mobile pro_name"> {{element.name}} </span> </td>
+                      </ng-container>
+                  
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="noofextension">
+                        <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
+                        <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.noofextension}}</span> </td>
+                      </ng-container>
+                      <ng-container matColumnDef="startofextension">
+                            <th mat-header-cell *matHeaderCellDef>START OF EXTENSION </th>
+                            <td mat-cell *matCellDef="let element"> {{element.startofextension}} </td>
+                          </ng-container>
+                      <!-- Weight Column -->
+                      <ng-container matColumnDef="createdon">
+                        <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
+                        <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}} </td>
+                      </ng-container>
+                  <!-- Symbol Column -->
+                     <ng-container matColumnDef="pinning">
+                            <th mat-header-cell *matHeaderCellDef>  </th>
+                            <td mat-cell *matCellDef="let element"> 
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'eye' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'users' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'help-circle' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'share-2' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'x' | feather"></span>
+                          </ng-container>
+                      <tr mat-header-row *matHeaderRowDef="Columns1"></tr>
+                      <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
+                    </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                  </div>
             </mat-card>
         </div>
     </div>
@@ -1565,36 +1598,25 @@
         <!-- Card column -->
         <div fxFlex.gt-sm="50%" fxFlex="50%">
             <mat-card class="fixFH">
-                    <mat-card-title class="flex below">
-                            <span class="">Credit Cards Expiring Soon</span></mat-card-title>
-                   
-                        <div class="noPadding element_high">
-                        <table class="display_prop" mat-table [dataSource]="Dataarray7">
-                         <!--Task Name Column -->
-                        <ng-container matColumnDef="clientname">
-                        <th mat-header-cell *matHeaderCellDef>Client Name</th>
-                        <td mat-cell *matCellDef="let Credit"> 
-                        {{Credit.clientname}}
-                         </td>
-                        </ng-container>
-                        <!-- client Column -->
-                        <ng-container matColumnDef="creditcard">
-                        <th mat-header-cell *matHeaderCellDef>Credit Card</th>
-                        <td mat-cell *matCellDef="let Credit">{{Credit.creditcard}}
+              <table class="display_prop" mat-table [dataSource]="dataelement2" class="client-table ">
+                 <!--item Column -->
+                  <ng-container matColumnDef="item">
+                  <th mat-header-cell *matHeaderCellDef>ITEM</th>
+                   <td mat-cell *matCellDef="let element"> 
+                   <span class="title_element"> {{element.item}}</span>
+                      </td>
+                     </ng-container>
+                       <!-- value Column -->
+                       <ng-container matColumnDef="value">
+                         <th mat-header-cell *matHeaderCellDef class="table_right_adjust">VALUE</th>
+                        <td mat-cell *matCellDef="let element" class="table_right_adjust"> 
+                         <span class="bolding_element">{{element.value}} </span>
                          </td>
                           </ng-container>
-                              <ng-container matColumnDef="expirydate">
-                                  <th mat-header-cell *matHeaderCellDef>Expiry Date</th>
-                                    <td mat-cell *matCellDef="let Credit"> 
-                                        {{Credit.expirydate}}
-                                       </td>
-                                      </ng-container>
-                              <tr mat-header-row *matHeaderRowDef="discolumns7"></tr>
-                                <tr mat-row *matRowDef="let Credit; columns: discolumns7;"></tr>
-                              </table>
-                            </div>
-                        
-            </mat-card>
+                           <tr mat-header-row *matHeaderRowDef="Columns2"></tr>
+                           <tr mat-row *matRowDef="let element; columns: Columns2;"></tr>
+                             </table>
+                  </mat-card>
         </div>
 
         <!-- Card column -->
@@ -1795,39 +1817,57 @@
                 </div>
             </mat-card>
         </div>
-
+       
     </div>
-<<<<<<< HEAD
-    <div>
-     <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="Dataarrays1">
-     <ng-container matColumnDef="position">
-       <th mat-header-cell *matHeaderCellDef> No. </th>
-       <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-         </ng-container>
-         <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    
+        <div color="" id="active_title" class="white">
+                    <div id="title-inner" class="center">
+                      <span id="icon_style" [innerHTML]="'users' | feather"></span>
+                        <span id="header_text">Client</span> 
+                        <span class="searching">
+                                <input class ="search" matInput (keyup)="applyFilter($event.target.value)" placeholder="search">
+                           
+                       </span> 
+                    </div>
+                </div>
+    <div class="mat-elevation-z8">
+           
+           
+            <table mat-table [dataSource]="dataelement1" class="client-table">
+          
+              <!-- Position Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
+                <td mat-cell *matCellDef="let element" ><span class="font-mobile pro_name"> {{element.name}} </span> </td>
               </ng-container>
-              <ng-container matColumnDef="weight">
-                    <th mat-header-cell *matHeaderCellDef> Weight </th>
-                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          
+              <!-- Name Column -->
+              <ng-container matColumnDef="noofextension">
+                <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
+                <td mat-cell *matCellDef="let element"> {{element.noofextension}} </td>
+              </ng-container>
+              <ng-container matColumnDef="startofextension">
+                    <th mat-header-cell *matHeaderCellDef>START OF EXTENSION </th>
+                    <td mat-cell *matCellDef="let element"> {{element.startofextension}} </td>
                   </ng-container>
-                                       
-                  <ng-container matColumnDef="symbol">
-                        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-                      </ng-container>
-                  
-                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                      <tr mat-row *matRowDef="let row; columns: displayedColumnss1;"></tr>
-                    </table>
-                  
-                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-                  </div></div>
-
-=======
->>>>>>> 8db2771916060b5689aed94617fe6eaddbf3599e
+              <!-- Weight Column -->
+              <ng-container matColumnDef="createdon">
+                <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
+                <td mat-cell *matCellDef="let element"> {{element.createdon}} </td>
+              </ng-container>
+          <!-- Symbol Column -->
+             <ng-container matColumnDef="pinning">
+                    <th mat-header-cell *matHeaderCellDef>  </th>
+                    <td mat-cell *matCellDef="let element"> {{element.createdon}} </td>
+                  </ng-container>
+              <tr mat-header-row *matHeaderRowDef="Columns1"></tr>
+              <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
+            </table>
+          
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </div>
+         
+   
     <hr>
     &copy; <span class="primary-color">Vivant Corporation.</span><span> All rights reserved.</span>
 </div>

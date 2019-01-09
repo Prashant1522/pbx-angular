@@ -1,4 +1,4 @@
-import {Component, OnInit, AfterContentInit, Directive, Renderer2, SecurityContext,ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild ,AfterContentInit, Directive, Renderer2, SecurityContext} from '@angular/core';
 import { FeatherIconsPipe } from '../../feather-pipe';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { inject, TestBed } from '@angular/core/testing';
@@ -17,6 +17,13 @@ export interface Food {
 })
 
 export class DashboardComponent implements OnInit {
+  Columns1: string[] = ['name', 'noofextension', 'startofextension', 'createdon','pinning'];
+  dataelement1 = new MatTableDataSource<PeriodicElement15>(ELEMENT_DATA15);
+  Columns2:string[] = ['item', 'value'];
+  dataelement2 =  new MatTableDataSource<Prelement>(ELEMENT_DATA16);
+  Columns3:string[] = ['item', 'total'];
+  dataelement3 =  new MatTableDataSource<requiredelements3>(ELEMENT_DATA17);
+
   typesOfsources: string[] = ['Opportunity Sources', 'Internet', 'Website', 'Cold Call'];
   typesOfsource: string[] = ['Lead Source', 'Internet', 'Website', 'Cold Call'];
   myDataArray =  new MatTableDataSource<PerElement>(MYPROJECTS_DATA);
@@ -25,8 +32,7 @@ export class DashboardComponent implements OnInit {
   displayedcolumnss:string[] = ['projectname', 'client','pinning'];
   DataArray =  new MatTableDataSource<PrElement>(MYTASKS_DATA);
   displaycolumns:string[] = ['taskname', 'client'];
-  Dataarray =  new MatTableDataSource<Prelement>(ACCOUNT_DATA);
-  discolumns:string[] = ['accountname', 'balance'];
+  
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   displayedColumns: string[] = ['name', 'weight', 'symbol','position'];
   Dataarray1 = new MatTableDataSource<PeriodicElement1>(AGREEMENTS_DATA);
@@ -47,11 +53,14 @@ export class DashboardComponent implements OnInit {
   Dataarray8 = new MatTableDataSource<PeriodicElement8>(OVERDUE_DATA);
   displayedColumns10: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource10 = new MatTableDataSource(ELEMENTSS_DATA);
-  Dataarrays1= new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  displayedColumnss1: string[] = ['position', 'name', 'weight', 'symbol'];
-
+ 
+  ngOnInit() {
+    this.dataelement1.paginator = this.paginator;
+  }
+ 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   applyFilter(filterValue: string) {
-    this.dataSource10.filter = filterValue.trim().toLowerCase();
+    this.dataelement1.filter = filterValue.trim().toLowerCase();
   }
   applyFilter2(filterValue: string) {
     this.Dataarray8.filter = filterValue.trim().toLowerCase();
@@ -60,27 +69,7 @@ htmlToAdd;
 constructor(
 private _renderer2: Renderer2,
 private sanitizer: DomSanitizer) { }
-ngOnInit() {
-  this.Dataarray8.paginator = this.paginator;
- } 
- @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(Cards3Component) child;
-  foods: Food[] = [
-    { value: 'steak-0', viewValue: 'Select Pipeline' },
-    { value: 'pizza-1', viewValue: 'Accounts' },
-    { value: 'tacos-2', viewValue: 'Contacts' },
-    { value: 'tacos-3', viewValue: 'Dashboard' }
-  ];
-  selectedValue: string = this.foods[0].value;
-  foods2: Food[] = [
-    { value: 'steak-0', viewValue: 'Select Pipeline' },
-    { value: 'pizza-1', viewValue: 'Accounts' },
-    { value: 'tacos-2', viewValue: 'Contacts' },
-    { value: 'tacos-3', viewValue: 'Dashboard' }
-  ];
-  selectedValue2: string = this.foods2[0].value;
-  
-  ngAfterViewInit() {
+ngAfterViewInit() {
     let pipe;
     const div = this._renderer2.createElement('div');
     const span = this._renderer2.createElement('span');
@@ -353,7 +342,7 @@ const MYPROJECTS_DATA: PerElement[] = [
   { projectname: 'test oppo', matvalue: 100, projectdate: '18-01-2017', client: 'Gaurav', overdue: false },
 ];
 export interface PrElement {
-  taskname: string;
+  
   client: string;
   matvalues: number;
   projectdate: string;
@@ -361,53 +350,46 @@ export interface PrElement {
 }
 
 const MYTASKS_DATA: PrElement[] = [
-  { taskname: 'Atach Create kela me', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'new task (pbx)', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: false },
-  { taskname: 'PBX Test 2', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'test 54th', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav ', overdues: true },
-  { taskname: 'Atach Create kela me', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'Test mail', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'task issue', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'task2 mileston 2', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'new task (pbx)', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: false },
-  { taskname: 'PBX Test 2', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'test 54th', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav ', overdues: true },
-  { taskname: 'Atach Create kela me', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'Test mail', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'task issue', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'task2 mileston 2', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-  { taskname: 'new task (pbx)', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: false },
-  { taskname: 'PBX Test 2', matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
-
-];
+  { matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
+  {  matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: false },
+  {  matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
+  {  matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav ', overdues: true },
+  {  matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
+  { matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
+  { matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
+  { matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: true },
+  {  matvalues: 100, projectdate: '18-01-2017', client: 'Gaurav', overdues: false },
+  ];
 export interface Prelement {
-  accountname: string;
-  balance: string;
-  accounts: string;
+  item: string;
+  value: string;
+ }
 
-}
+const ELEMENT_DATA16: Prelement[] = [
+  {item: 'Fusion PBX', value: '4.4.3'},
+  {item: 'Switch', value: '1.8.3(64bit)'},
+  {item: 'Switch Uptime', value: '3h : 4m : 5s'},
+  {item: 'OS Uptime ', value: '3h : 4m : 16s'},
+  {item: 'Disk Usage',value: '32%'},
+  {item: 'CPU Usage', value: '1.5%'},
+  {item: 'DB Connections',value: '6'},
+  {item: 'Channels',value: '0'},
+  {item: 'Registrations', value: '2'}
+];
+export interface requiredelements3 {
+  item: string;
+  total: number;
+ }
 
-const ACCOUNT_DATA: Prelement[] = [
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
-  { accountname: 'Bank Account', accounts: 'Bank Account', balance: '$19660.38' },
+const ELEMENT_DATA17: requiredelements3[] = [
+  {item: 'Domains', total: 3},
+  {item: 'Extensions', total: 9},
+  {item: 'Gateways', total:0 },
+  {item: 'Users', total:2},
+  {item: 'Destinations',total:1},
+  { item: 'IVR Menus', total:1},
+  {item: 'Ring Groups',total: 1},
+  {item: 'Voicemail', total: 9}
 ];
 export interface PeriodicElement1 {
   clientname: string;
@@ -649,4 +631,33 @@ export interface  PeriodicElement6 {
     {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
     {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
     {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  ];
+  export interface PeriodicElement15 {
+    name: string;
+    startofextension: number;
+    createdon: string;
+    time: string;
+  }
+  
+  const ELEMENT_DATA15: PeriodicElement15[] = [
+    {name: 'Zanne Holmes Design', startofextension: 2010, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1400, createdon: '2018-03-02',time:'16:38:25',noofextension: 2},
+    {name: 'Abbey Eatery & Ales', startofextension: 1200, createdon: '2018-10-31',time:'16:38:25',noofextension: 4},
+    { name: 'Ability Connections', startofextension: 2200, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1500, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 2005, createdon: '2018-10-09',time:'16:38:25',noofextension: 2},
+    {name: 'Ability Connections', startofextension: 1995, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1993, createdon: '2018-10-31',time:'16:38:25',noofextension: 9},
+    {name: 'Abbey Eatery & Ales', startofextension: 2000, createdon: '2018-10-18',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1900, createdon: '2018-10-08',time:'16:38:25',noofextension: 2},
+  {name: 'Zanne Holmes Design', startofextension: 2010, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1400, createdon: '2018-03-02',time:'16:38:25',noofextension: 2},
+    {name: 'Abbey Eatery & Ales', startofextension: 1200, createdon: '2018-10-31',time:'16:38:25',noofextension: 4},
+    { name: 'Ability Connections', startofextension: 2200, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1500, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 2005, createdon: '2018-10-09',time:'16:38:25',noofextension: 2},
+    {name: 'Ability Connections', startofextension: 1995, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1993, createdon: '2018-10-31',time:'16:38:25',noofextension: 9},
+    {name: 'Abbey Eatery & Ales', startofextension: 2000, createdon: '2018-10-18',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1900, createdon: '2018-10-08',time:'16:38:25',noofextension: 2},
   ];

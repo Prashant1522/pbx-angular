@@ -67,12 +67,20 @@ html .page-wrapper{
     border-style:solid;
     // border-width: 1px;
     border-color:$border-tiles;
-    span{
-        align-self:flex-start;
-        font-size:0.8em;
-        padding-top:3px;
+span{
+align-self:flex-start;
+font-size:0.8em;
+padding-top:3px;
+}    
+}
+.client-table{
+    th{
+        font-size:14px;
+        color:$gray;
     }
-    
+    td{
+        font-size:16px;
+    }
 }
 .mat-grid-tile.one{
     
@@ -256,11 +264,11 @@ html .page-wrapper{
 .small_value{
     font-size: 10px;
 }
+
 .right_value
 {
     float:right !important;
     width:70%;
-    display:flex;
     justify-content: flex-end;
     .mat-form-field{
         width: 80%;
@@ -332,7 +340,7 @@ html .page-wrapper{
     }
 }
 .state{
-   padding:0 10px;
+   padding:4px 18px;
    border-radius:15px;
    float:right;
 }
@@ -360,11 +368,12 @@ color:#9a0033 !important;
     height:100vh !important;
 }
 .font-mobile{
-    font-size: 12px !important;
+    font-size: 16px !important;
     @include mobile(){
         font-size:3vw !important;
     }
 }
+
 .heightTFF {
 margin: 30px 15px;
 }
@@ -380,21 +389,26 @@ table , .full_width {
 font-size:10px !important;
 }
 .title_element{
-  font-weight: 500;
+  font-weight: 300;
 }
 .padding_element{
-    padding: 4px 0px;
+padding: 4px 0px;
 }
-
 .width_value {
-    width: 33.33%;
+ width: 33.33%;
 }
-
+.pinning_element {
+ margin: 0px 2px;
+padding: 5px 6px;
+}
 .bold_element{
  font-weight: 600;
 ;}
 .width_element{
 width: 90%;
+}
+.table_right_adjust{
+text-align: right !important;
 }
 .pro_name{
  color:#1582e8;
@@ -575,14 +589,39 @@ width: 90%;
     display:flex;
     height:3.5vw;
     background-color:$sidebar;
-    color:$sidebar-selected-item;
-    min-height:45px;
+     min-height:45px;
 }
-
+.user_element{
+    width:40%;
+    }
+ .width_Value {
+     width:40%;
+ }
+ .colr_darkpurple{
+    color:#fff;
+    background-color:#6356ae;
+ }
+.value_adjust{
+display:inline-flex;
+.search{
+    width:100%;
+    height: 100%;
+}
+.search_svg {
+svg{
+height: 90%;}
+}
+}
+.searching{
+width:20%;
+border:1px solid $gray;
+padding:0px 10px;
+}
 #title-inner{
+    width:100%;
     display:flex;
     align-self:center;
-    padding-left:33px;
+    padding: 0px 25px;
    
     #icon_style
     {
@@ -596,6 +635,7 @@ width: 90%;
     }
     #header_text {
         font-weight: 500;
+        font-size:16px;
     }
     
 }
@@ -674,7 +714,7 @@ padding: 10px 15px;
     }
 }
 .fixFH{
-    height: 500px;
+    height: 650px;
 }
 .fixH235{
     height:191px;
