@@ -5,7 +5,7 @@
 <div fxFlex.gt-sm="50%" fxFlex="50%">
        
 <mat-card class="fixFH">
-         <div id="active_title" class="white">
+         <div id="active_title" class="white title_Adjust">
                 <div id="title-inner" class="center">
                   <span class="value_adjust user_element"><span id="icon_style" [innerHTML]="'bar-chart-2' | feather"></span>
                     <span id="header_text">System Status</span></span>
@@ -32,8 +32,13 @@
                           </mat-card>
                 </div>
                 <div fxFlex.gt-sm="50%" fxFlex="50%">
-                        <mat-card class="fixFH">
-                               
+                   <mat-card class="fixFH">
+                      <div id="active_title" class="white title_Adjust">
+                         <div id="title-inner" class="center">
+                          <span class="value_adjust user_element"><span class="search_svg" id="icon_style" [innerHTML]="'clock'| feather"></span>
+                            <span id="header_text">System Counts</span></span>
+                              </div>
+                           </div>       
                         <table class="display_prop" mat-table [dataSource]="dataelement3" class="client-table ">
                         <!--item Column -->
                         <ng-container matColumnDef="item">
