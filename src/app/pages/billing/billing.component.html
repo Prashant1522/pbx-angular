@@ -52,7 +52,8 @@
           <!-- Card column -->
           <div fxFlex.gt-sm="100%" fxFlex="100">
               <mat-card>
-                     
+                  <mat-tab-group class="billing_tabs"> 
+                      <mat-tab label="Invoices">      
               <table mat-table [dataSource]="dataSource" class=" billing_table">
 
                       <!--- Note that these columns can be defined in any order.
@@ -85,12 +86,18 @@
                       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
-                    
-                    
+                  </mat-tab> 
+                  <mat-tab label="Two">
+                      <h1>Some more tab content</h1>
+                      <p>...</p>
+                    </mat-tab>
+                  </mat-tab-group>
               </mat-card>
           </div>
       </div>
-  
+  <div>
+      
+  </div>
      
   </div>
   
