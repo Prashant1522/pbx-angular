@@ -64,7 +64,7 @@ isMatMenu2Open = false;
   console.log(newState);*/
     if(this.menuStates.indexOf(this.state) == -1){
       var element = document.getElementsByClassName("cdk-overlay-container")[0];
-      console.log(element);
+      // console.log(element);
       if(element != undefined)
       element.innerHTML = "";
     } 

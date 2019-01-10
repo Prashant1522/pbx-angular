@@ -6,5 +6,16 @@ import { Component, AfterViewInit } from '@angular/core';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements AfterViewInit {
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    
+  }
+  ngAfterContentInit(){
+    var elements = document.getElementsByClassName("nav");
+    console.log("pages cdk found");
+    console.log(elements);
+    [].forEach.call(elements, function (el) {
+      el.style.padding = "0";
+      el.classList.add('nav-small');
+    });
+  }
 }

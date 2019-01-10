@@ -76,10 +76,11 @@ constructor(
 private _renderer2: Renderer2,
 private sanitizer: DomSanitizer) { }
 ngAfterViewInit() {}
-  ngAfterContentInit() {
-    
-   }
   
+    ngAfterContentInit(){
+      
+   
+    }
    
   
 

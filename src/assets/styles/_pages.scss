@@ -186,14 +186,19 @@ svg{
 }
 
 .cdk-overlay-container{
-    left:$sidebar-width-collapsed !important;
+    // left:$sidebar-width-collapsed !important;
 }
 .cdk-overlay-connected-position-bounding-box{
-    left:0 !important;
+    // left:10px !important;
     top:45px;
     .cdk-overlay-pane{
-        left:0 !important;
+        // left:0 !important;
+        margin-left:-10px !important;
     }
+}
+.sub-menu{
+    left:$sidebar-width-collapsed !important;
+    position:relative;
 }
 
 .head{

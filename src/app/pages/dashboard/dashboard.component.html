@@ -11,18 +11,18 @@
                     </div>
                 </div>
                 <div id="active_title" class="white data_adjust">
-                        <div id="title-inner" class="center paddingdata">
-                          <span class="textdata-align width_value">
-                           <span class="title_Font">{{ diskusage1 }}</span><br>
-                           <span id="header_text">Disk Usage (%)</span> </span>
-                           <span class="textdata-align width_value">
-                                 <span class="title_Font">{{ cpuusage }}</span><br>
-                                 <span id="header_text">CPU Usage</span> </span>
-                                 <span class="textdata-align width_value">
-                                         <span class="title_Font">{{ diskusage2 }}</span><br>
-                                         <span id="header_text">Disk Usage (%)</span> </span>
-                             </div>
-                         </div>
+                    <div id="title-inner" class="center paddingdata">
+                        <span class="textdata-align width_value">
+                            <span class="title_Font">{{ diskusage1 }}</span><br>
+                            <span id="header_text">Disk Usage (%)</span> </span>
+                        <span class="textdata-align width_value">
+                            <span class="title_Font">{{ cpuusage }}</span><br>
+                            <span id="header_text">CPU Usage</span> </span>
+                        <span class="textdata-align width_value">
+                            <span class="title_Font">{{ diskusage2 }}</span><br>
+                            <span id="header_text">Disk Usage (%)</span> </span>
+                    </div>
+                </div>
                 <table class="display_prop" mat-table [dataSource]="dataelement2" class="client-table ">
                     <!--item Column -->
                     <ng-container matColumnDef="item">
@@ -52,22 +52,22 @@
                     </div>
                 </div>
                 <div id="active_title" class="white data_adjust">
-                        <div id="title-inner" class="center paddingdata">
-                          <span class="textdata-align width_value1">
-                           <span class="title_Font">{{ clients}}</span><br>
-                           <span id="header_text">Clients</span> </span>
-                           <span class="textdata-align width_value1">
-                                 <span class="title_Font">{{ extensions }}</span><br>
-                                 <span id="header_text">Extensions</span> </span>
-                                 <span class="textdata-align width_value1">
-                                  <span class="title_Font">{{ DIDs }}</span><br>
-                                  <span id="header_text">DIDs</span> </span>
-                                   <span class="textdata-align width_value1">
-                                                 <span class="title_Font">{{ activecalls }}</span><br>
-                                                 <span id="header_text">Active Calls</span> </span>
-                             </div>
-                         </div>
-                <table class="display_prop client-table" mat-table [dataSource]="dataelement3" >
+                    <div id="title-inner" class="center paddingdata">
+                        <span class="textdata-align width_value1">
+                            <span class="title_Font">{{ clients}}</span><br>
+                            <span id="header_text">Clients</span> </span>
+                        <span class="textdata-align width_value1">
+                            <span class="title_Font">{{ extensions }}</span><br>
+                            <span id="header_text">Extensions</span> </span>
+                        <span class="textdata-align width_value1">
+                            <span class="title_Font">{{ DIDs }}</span><br>
+                            <span id="header_text">DIDs</span> </span>
+                        <span class="textdata-align width_value1">
+                            <span class="title_Font">{{ activecalls }}</span><br>
+                            <span id="header_text">Active Calls</span> </span>
+                    </div>
+                </div>
+                <table class="display_prop client-table" mat-table [dataSource]="dataelement3">
                     <!--item Column -->
                     <ng-container matColumnDef="item">
                         <th mat-header-cell *matHeaderCellDef>ITEM</th>
@@ -95,61 +95,65 @@
         <!-- Card column -->
         <div fxFlex.gt-sm="100%" fxFlex="100">
             <mat-card>
-                    <div id="active_title" class="white">
-                            <div id="title-inner" class="center">
-                              <span class="value_adjust user_element"><span id="icon_style" [innerHTML]="'users' | feather"></span>
-                                <span id="header_text">Client</span></span>
-                                <span class="value_adjust searching">
-                                        <input class ="search" matInput (keyup)="applyFilter($event.target.value)" placeholder="search">
-                                        <span class="search_svg" [innerHTML]="'search' | feather"></span>
-                                       </span> 
-                                       <span class="width_Value right_value "><span class=" value_adjust  state colr_darkpurple font-mobile"> <span class="search_svg"  [innerHTML]="'plus' | feather"></span> <span>Add a Client</span></span></span>
-                            </div>
-                        </div>
-            <div class="mat-elevation-z8">
-                   
-                   
+                <div id="active_title" class="white">
+                    <div id="title-inner" class="center">
+                        <span class="value_adjust user_element"><span id="icon_style" [innerHTML]="'users' | feather"></span>
+                            <span id="header_text">Client</span></span>
+                        <span class="value_adjust searching">
+                            <input class="search" matInput (keyup)="applyFilter($event.target.value)" placeholder="search">
+                            <span class="search_svg" [innerHTML]="'search' | feather"></span>
+                        </span>
+                        <span class="width_Value right_value "><span class=" value_adjust  state colr_darkpurple font-mobile">
+                                <span class="search_svg" [innerHTML]="'plus' | feather"></span> <span>Add a Client</span></span></span>
+                    </div>
+                </div>
+                <div class="mat-elevation-z8">
+
+
                     <table mat-table [dataSource]="dataelement1" class="client-table">
-                  
-                      <!-- Position Column -->
-                      <ng-container matColumnDef="name">
-                        <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
-                        <td mat-cell *matCellDef="let element" ><span class="font-mobile pro_name"> {{element.name}} </span> </td>
-                      </ng-container>
-                  
-                      <!-- Name Column -->
-                      <ng-container matColumnDef="noofextension">
-                        <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
-                        <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.noofextension}}</span> </td>
-                      </ng-container>
-                      <ng-container matColumnDef="startofextension">
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
+                            <td mat-cell *matCellDef="let element"><span class="font-mobile pro_name"> {{element.name}}
+                                </span> </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="noofextension">
+                            <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
+                            <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.noofextension}}</span>
+                            </td>
+                        </ng-container>
+                        <ng-container matColumnDef="startofextension">
                             <th mat-header-cell *matHeaderCellDef>START OF EXTENSION </th>
                             <td mat-cell *matCellDef="let element"> {{element.startofextension}} </td>
-                          </ng-container>
-                      <!-- Weight Column -->
-                      <ng-container matColumnDef="createdon">
-                        <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
-                        <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}} </td>
-                      </ng-container>
-                  <!-- Symbol Column -->
-                     <ng-container matColumnDef="pinning">
-                            <th mat-header-cell *matHeaderCellDef>  </th>
-                            <td mat-cell *matCellDef="let element"> 
-                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'eye' | feather"></span>
-                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'users' | feather"></span>
-                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'help-circle' | feather"></span>
-                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'share-2' | feather"></span>
-                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'x' | feather"></span>
-                          </ng-container>
-                      <tr mat-header-row *matHeaderRowDef="Columns1"></tr>
-                      <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
+                        </ng-container>
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="createdon">
+                            <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
+                            <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}}
+                            </td>
+                        </ng-container>
+                        <!-- Symbol Column -->
+                        <ng-container matColumnDef="pinning">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element">
+                                <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'eye' | feather"></span>
+                                <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'users' | feather"></span>
+                                <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'help-circle' | feather"></span>
+                                <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'share-2' | feather"></span>
+                                <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'x' | feather"></span>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="Columns1"></tr>
+                        <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
                     </table>
-                  
+
                     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-                  </div>
+                </div>
             </mat-card>
         </div>
     </div>
 
-   
+
 </div>
