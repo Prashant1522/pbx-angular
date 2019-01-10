@@ -16,6 +16,9 @@ Main sidebar
     
     .btnwrap{
         width:100%;
+        button{
+            z-index: 1050 !important;
+        }
     }
     .btnwrap2{
         float:right;

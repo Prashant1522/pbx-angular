@@ -161,7 +161,7 @@ padding-top:3px;
 }
 
 .cdk-overlay-container{
-    left:$sidebar-width-collapsed !important;
+    // left:$sidebar-width-collapsed !important;
 }
 .cdk-overlay-connected-position-bounding-box{
     // left:10px !important;
@@ -170,6 +170,10 @@ padding-top:3px;
         // left:0 !important;
         margin-left:-10px !important;
     }
+}
+.sub-menu{
+    left:$sidebar-width-collapsed !important;
+    position:relative;
 }
 
 .head{
