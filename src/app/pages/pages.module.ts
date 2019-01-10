@@ -6,14 +6,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PagesComponent } from './pages.component';
 import { PagesRoutes } from './pages.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CalendarComponent } from './calendar/calendar.component';
-import { MailboxComponent } from './mailbox/mailbox.component';
-import { DiscussionComponent } from './discussion/discussion.component';
+import { ConnectivityComponent } from './connectivity/connectivity.component';
+import { BillingComponent } from './billing/billing.component';
+import { ProvisionerComponent } from './provisioner/provisioner.component';
 
 
 import { ReportsComponent } from './reports/reports.component';
 
-import { ClientComponent } from './client/client.component';
+import { ClientsComponent } from './clients/clients.component';
 
 
 import { SharedModule } from '../shared/shared.module';
@@ -61,14 +61,14 @@ import { Cards3Component } from './dashboard/dashboardComps/cards3/cards3.compon
   ], 
   declarations: [PagesComponent,
      DashboardComponent,
-      CalendarComponent,
-       MailboxComponent,
-        DiscussionComponent,
+      ConnectivityComponent,
+       BillingComponent,
+        ProvisionerComponent,
         
         ReportsComponent,
        
          
-         ClientComponent ,
+         ClientsComponent ,
       
          Cards3Component, 
         

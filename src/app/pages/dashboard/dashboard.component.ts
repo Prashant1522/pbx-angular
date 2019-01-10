@@ -75,55 +75,7 @@ htmlToAdd;
 constructor(
 private _renderer2: Renderer2,
 private sanitizer: DomSanitizer) { }
-ngAfterViewInit() {
-    let pipe;
-    const div = this._renderer2.createElement('div');
-    const span = this._renderer2.createElement('span');
-    
-    // console.log(this.sanitizer);
-    pipe = new FeatherIconsPipe(this.sanitizer);
-    let name = this.sanitizer.sanitize(SecurityContext.HTML, pipe.transform('printer'));
-    let fileMinus = this.sanitizer.sanitize(SecurityContext.HTML, pipe.transform('file-minus'));
-    let pdf = this.sanitizer.sanitize(SecurityContext.HTML, pipe.transform('file-minus'));
-    // let input="<div class=\"mat-form-field-infix\"><input _ngcontent-c14=\"\" class=\"mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored\" matinput=\"\" placeholder=\"Filter\" ng-reflect-placeholder=\"Filter\" id=\"mat-input-1\" aria-invalid=\"false\" aria-required=\"false\"><span class=\"mat-form-field-label-wrapper\"><!--bindings={  \"ng-reflect-ng-if\": \"true\"}--><label class=\"mat-form-field-label ng-tns-c11-12 mat-empty mat-form-field-empty ng-star-inserted\" ng-reflect-ng-switch=\"false\" ng-reflect-disabled=\"true\" id=\"mat-form-field-label-5\" for=\"mat-input-1\" aria-owns=\"mat-input-1\"><!--bindings={\"ng-reflect-ng-switch-case\": \"false\"}--><!---->Filter<!--bindings={\"ng-reflect-ng-switch-case\": \"true\"}--><!--bindings={\"ng-reflect-ng-if\": \"false\"}--></label></span></div>";
-  //  let input =  "<mat-form-field> <input matInput (keyup)=\"applyFilter2($event.target.value)\" placeholder=\"Filter\"> </mat-form-field>";
-  // const matFormField = this._renderer2.createElement('mat-form-field');
-   const input = this._renderer2.createElement('input');
-  this._renderer2.setAttribute(input,"placeholder","Search All Columns");
-  let simple = this._renderer2.listen(input, 'keyup', (evt) => {
-    console.log('Clicking the button', evt);
-    this.applyFilter2(evt.target.value)
-  });
-  // this._renderer2.appendChild(matFormField,input);
-    // console.log(name);
-    let final ="<button>"+name + "</button> | <button>" + name + "</button> Selected &nbsp;&nbsp; | <button>" + fileMinus + "</button> | <button>" + fileMinus + "</button> |  &nbsp;&nbsp; <button>Visibility</button>";
-    this._renderer2.setProperty(span, 'innerHTML', final);
-
-    const searchSpan=this._renderer2.createElement('span');
-    this._renderer2.appendChild(searchSpan,input);
-    const btn=this._renderer2.createElement('button');
-    this._renderer2.addClass(searchSpan, 'overdueSearchSpan');
-    this._renderer2.addClass(input, 'overdueSearchInput');
-    this._renderer2.addClass(btn, 'overdueSearchBtn');
-    let search = this.sanitizer.sanitize(SecurityContext.HTML, pipe.transform('search'));
-    this._renderer2.setProperty(btn, 'innerHTML', search);
-    this._renderer2.appendChild(searchSpan,btn );
-    this._renderer2.appendChild(span,searchSpan );
-    // const matTabBodyWrapper = this._el.nativeElement.parentNode.querySelector('.mat-tab-body-wrapper');
-    const matTabBodyWrapper = (document.getElementById('overdue')).getElementsByClassName('mat-tab-body-wrapper')[0];
-    const mat = (document.getElementById('overdue')).getElementsByClassName('mat-tab-header')[0];
-    this._renderer2.setStyle(mat, 'border', 'none');
-    const paramText = this._renderer2.createText("");
-
-    this._renderer2.appendChild(div, span);
-    
-    this._renderer2.addClass(div, 'overdueMeetingsInsert');
-    this._renderer2.addClass(span, 'overdueMeetingsInsertSpan');
-    
-    this._renderer2.insertBefore(matTabBodyWrapper.parentNode, div, matTabBodyWrapper);
-    //  console.log(matTabBodyWrapper);
-     this._renderer2.setStyle(matTabBodyWrapper,'border','1px solid rgba(0, 0, 0, 0.12)');
-  }
+ngAfterViewInit() {}
   ngAfterContentInit() {
     
    }

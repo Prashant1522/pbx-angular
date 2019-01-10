@@ -1,0 +1,109 @@
+<div color="" id="active_title" class="white">
+        <div id="title-inner" class="center">
+          <span id="icon_style" [innerHTML]="'users' | feather"></span>
+            <span id="header_text">Client</span>  
+        </div>
+                      
+      </div>
+      <div class="pading_textdata">
+          <div fxLayout="row" fxLayoutWrap="wrap" fxLayout.xs="column" fxLayout.sm="column">
+              <!-- Card column -->
+              <div fxFlex.gt-sm="50%" fxFlex="50%">
+      
+                  <mat-card class="fixFH border_Data">
+                      <div id="active_title" class="title_format">
+                          <div id="title-inner" class="center">
+                              <span class="value_adjust user_element">
+                              <span id="header_text" class="bolding_element">Current Payment Due</span></span>
+                          </div>
+                      </div>
+                      <div class="billing_information">
+                      <div class="full_width textdata-align title_Font2 color_purple bold_element">$0.00</div>
+                    <div class="full_width textdata-align">Clicking the ‘Pay Now’ button will charge your credit card on file for the full amount of the Current Payment Due.</div></div>
+                    <div class="full_width textdata-align "><span class=" value_adjust  states colr_darkpurple font-mobile">Play Now</span></div>    
+                  </mat-card>
+                      
+              </div>
+              <div fxFlex.gt-sm="50%" fxFlex="50%">
+                  <mat-card class="fixFH border_Data">
+                      <div id="active_title" class="title_format">
+                          <div id="title-inner" class="center">
+                              <span class="value_adjust user_element">
+                                  <span id="header_text" class="bolding_element">Billing Information</span></span>
+                          </div>
+                      </div>
+                      <mat-list role="list" class="billing_information">
+                          <mat-list-item role="listitem"><span class="equal_width">Billing Day</span><span class="equal_width">28th of every month </span></mat-list-item>
+                          <mat-list-item role="listitem"><span class="equal_width">Payment Method</span><span class="equal_width">Credit card <span [innerHTML]="'edit' | feather"></span></span></mat-list-item>
+                          <mat-list-item role="listitem"><span class="equal_width">Current Account Balance</span><span class="equal_width">$0.00</span></mat-list-item>
+                        </mat-list> 
+                        
+                  </mat-card>
+              </div>
+      
+      
+          </div>
+      
+          <div fxLayout="row" fxLayoutWrap="wrap">
+              <!-- Card column -->
+              <div fxFlex.gt-sm="100%" fxFlex="100">
+                  <mat-card>
+                          <div id="active_title" class="white">
+                                  <div id="title-inner" class="center">
+                                    <span class="value_adjust user_element"><span id="icon_style" [innerHTML]="'users' | feather"></span>
+                                      <span id="header_text">Client</span></span>
+                                      <span class="value_adjust searching">
+                                              <input class ="search" matInput (keyup)="applyFilter($event.target.value)" placeholder="search">
+                                              <span class="search_svg" [innerHTML]="'search' | feather"></span>
+                                             </span> 
+                                             <span class="width_Value right_value "><span class="states colr_lightpurple font-mobile"> <span class="search_svg"  [innerHTML]="'plus' | feather"></span> <span>Add a Client</span></span></span>
+                                  </div>
+                              </div>
+                  <div class="mat-elevation-z8">
+                         
+                         
+                          <table mat-table [dataSource]="dataelement1" class="client-table">
+                        
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="name">
+                              <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
+                              <td mat-cell *matCellDef="let element" ><span class="font-mobile pro_name"> {{element.name}} </span> </td>
+                            </ng-container>
+                        
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="noofextension">
+                              <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
+                              <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.noofextension}}</span> </td>
+                            </ng-container>
+                            <ng-container matColumnDef="startofextension">
+                                  <th mat-header-cell *matHeaderCellDef>START OF EXTENSION </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.startofextension}} </td>
+                                </ng-container>
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="createdon">
+                              <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
+                              <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}} </td>
+                            </ng-container>
+                        <!-- Symbol Column -->
+                           <ng-container matColumnDef="pinning">
+                                  <th mat-header-cell *matHeaderCellDef>  </th>
+                                  <td mat-cell *matCellDef="let element"> 
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'eye' | feather"></span>
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'users' | feather"></span>
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'help-circle' | feather"></span>
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'share-2' | feather"></span>
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'x' | feather"></span>
+                                </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="Columns1"></tr>
+                            <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
+                          </table>
+                        
+                          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                        </div>
+                  </mat-card>
+              </div>
+          </div>
+      
+         
+      </div>
+      
