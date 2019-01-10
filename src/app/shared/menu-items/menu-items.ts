@@ -8,13 +8,13 @@ export interface Menu {
 }
 // subs: string = "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>";
 const MENUITEMS = [
-  { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'monitor', sub: "<mat-menu #dashboard="+"matMenu"+"> <button mat-menu-item [matMenuTriggerFor]="+"vertebrates"+">Vertebrates</button><button mat-menu-item [matMenuTriggerFor]="+"invertebrates"+">Invertebrates</button></mat-menu>" },
+  { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'monitor'},
   { state: 'clients', name: 'Clients', type: 'link', icon: 'user' },
   { state: 'connectivity', name: 'Connectivity', type: 'link', icon: 'link' },
  
-  { state: 'mailbox', name: 'Provisioner', type: 'link', icon: 'users' },
-  { state: 'client', name: 'Billing', type: 'link', icon:'dollar-sign' },
-  { state: 'vendor', name: 'Reports', type: 'link', icon: 'trending-up' },
+  { state: 'provisioner', name: 'Provisioner', type: 'link', icon: 'users' },
+  { state: 'billing', name: 'Billing', type: 'link', icon:'users' },
+  { state: 'reports', name: 'Reports', type: 'link', icon: 'trending-up' },
  
 ];
 
