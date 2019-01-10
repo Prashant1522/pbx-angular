@@ -1,10 +1,9 @@
 import {Component, OnInit, ViewChild ,AfterContentInit, Directive, Renderer2, SecurityContext} from '@angular/core';
 import { FeatherIconsPipe } from '../../feather-pipe';
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
-import { inject, TestBed } from '@angular/core/testing';
+import {  DomSanitizer } from '@angular/platform-browser';
+
 import { MatPaginator,MatTableDataSource } from '@angular/material';
-import { Cards3Component } from './dashboardComps/cards3/cards3.component'
-import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
+
 
 export interface Food {
   value: string;
@@ -17,6 +16,13 @@ export interface Food {
 })
 
 export class DashboardComponent implements OnInit {
+  diskusage1 = 32;
+  cpuusage= 22;
+  diskusage2 = 3;
+  clients=23;
+  extensions=32;
+  DIDs=22;
+  activecalls=2;
   Columns1: string[] = ['name', 'noofextension', 'startofextension', 'createdon','pinning'];
   dataelement1 = new MatTableDataSource<PeriodicElement15>(ELEMENT_DATA15);
   Columns2:string[] = ['item', 'value'];
@@ -637,6 +643,7 @@ export interface  PeriodicElement6 {
     startofextension: number;
     createdon: string;
     time: string;
+    noofextension: number;
   }
   
   const ELEMENT_DATA15: PeriodicElement15[] = [

@@ -10,38 +10,26 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 export class ClientComponent implements OnInit {
   matvalue = 0;
   
-  displayedColumns: string[] = ['name', 'weight', 'symbol','position', 'email'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumns: string[] = ['billing', 'information'];
+  client_Columns1 = new MatTableDataSource<client_PeriodicElement1>(CLIENT_ELEMENT_DATA1);
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  
   constructor() { }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+   
   }
 
 }
 
-export interface PeriodicElement {
-  name: string ;
-  position: string;
-  weight: string;
-  symbol: string;
-  email : string;
-  matvalue: number;
+export interface client_PeriodicElement1 {
+  billing: string ;
+  information: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {name: '54th Street - New Braunfels' ,  matvalue: 0 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels', matvalue: 100 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels' ,  matvalue: 0 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels', matvalue: 100 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels' ,  matvalue: 0 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels', matvalue: 100 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels' ,  matvalue: 0 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels', matvalue: 100 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels' ,  matvalue: 0 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-  {name: '54th Street - New Braunfels', matvalue: 100 , weight: 'kasdasd', symbol: 'www.website.com',position : '(180) 123-4567', email : 'kartik@techspawn.com'},
-
+const CLIENT_ELEMENT_DATA1: client_PeriodicElement1[] = [
+  {billing: 'Billing Day', information: '0'},
+  {billing: 'Payment Method', information: '100'},
+  {billing: 'Current Account Balance' ,  information: '0'}
+  
 ];

@@ -6,150 +6,141 @@
                 
 </div>
 <div class="pading_textdata">
-  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
-      
+    <div fxLayout="row" fxLayoutWrap="wrap" fxLayout.xs="column" fxLayout.sm="column">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="50%" fxFlex="50%">
 
-    <div fxFlex.gt-sm="16.66%" class="fiveHundred">
-        <mat-card >
-            <mat-card-content>
-              <span id="icons_style" [innerHTML]="'x-square' | feather"></span>
-            <div id="data_it"> <span id="data_elem">Without Conveted</span>
-              <p id="bottom_elem">0</p></div>
-            </mat-card-content>
+            <mat-card class="fixFH border_Data">
+                <div id="active_title" class="title_format">
+                    <div id="title-inner" class="center">
+                        <span class="value_adjust user_element">
+                        <span id="header_text" class="bolding_element">Current Payment Due</span></span>
+                    </div>
+                </div>
+                <div id="active_title" class="white data_adjust">
+                        <div id="title-inner" class="center paddingdata">
+                          <span class="textdata-align width_value">
+                           <span class="title_Font">{{ diskusage1 }}</span><br>
+                           <span id="header_text">Disk Usage (%)</span> </span>
+                           <span class="textdata-align width_value">
+                                 <span class="title_Font">{{ cpuusage }}</span><br>
+                                 <span id="header_text">CPU Usage</span> </span>
+                                 <span class="textdata-align width_value">
+                                         <span class="title_Font">{{ diskusage2 }}</span><br>
+                                         <span id="header_text">Disk Usage (%)</span> </span>
+                             </div>
+                         </div>
+                <table class="display_prop" mat-table [dataSource]="dataelement2" class="client-table ">
+                    <!--item Column -->
+                    <ng-container matColumnDef="item">
+                        <th mat-header-cell *matHeaderCellDef>ITEM</th>
+                        <td mat-cell *matCellDef="let element">
+                            <span class="title_element"> {{element.item}}</span>
+                        </td>
+                    </ng-container>
+                    <!-- value Column -->
+                    <ng-container matColumnDef="value">
+                        <th mat-header-cell *matHeaderCellDef class="table_right_adjust">VALUE</th>
+                        <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                            <span class="bolding_element">{{element.value}} </span>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="Columns2"></tr>
+                    <tr mat-row *matRowDef="let element; columns: Columns2;"></tr>
+                </table>
             </mat-card>
-    </div>
-      <div fxFlex.gt-sm="16.66%" class="fiveHundred">
-          <mat-card >
-              <mat-card-content>
-                <span id="icons_style" [innerHTML]="'check-circle' | feather"></span>
-              <div id="data_it"> <span id="data_elem">Completed Achievement</span>
-                <p id="bottom_elem">0</p></div>
-              </mat-card-content>
-                  </mat-card>
-      </div>
-     
-      <div fxFlex.gt-sm="16.66%" class="fiveHundred">
-        <mat-card >
-            <mat-card-content>
-              <span id="icons_style" [innerHTML]="'user' | feather"></span>
-            <div id="data_it"> <span id="data_elem">Converted Client</span>
-              <p id="bottom_elem">20</p></div>
-            </mat-card-content>
-                </mat-card>
-    </div>
-    <div fxFlex.gt-sm="16.66%" class="fiveHundred">
-      <mat-card >
-          <mat-card-content>
-            <span id="icons_style" [innerHTML]="'target' | feather"></span>
-          <div id="data_it"> <span id="data_elem">Converted Achievement</span>
-            <p id="bottom_elem">1</p></div>
-          </mat-card-content>
-              </mat-card>
-  </div>
-  <div fxFlex.gt-sm="16.66%" class="fiveHundred">
-    <mat-card >
-        <mat-card-content>
-         <div id="numbr_data">hello welcome all</div>
-        </mat-card-content>
+        </div>
+        <div fxFlex.gt-sm="50%" fxFlex="50%">
+            <mat-card class="fixFH border_Data">
+                <div id="active_title" class="title_format">
+                    <div id="title-inner" class="center">
+                        <span class="value_adjust user_element">
+                            <span id="header_text" class="bolding_element">Billing Information</span></span>
+                    </div>
+                </div>
+                <table class="display_prop client-table" mat-table [dataSource]="client_dataelement1" >
+                    <!--Main Column -->
+                    <ng-container matColumnDef="billing">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef="let element">
+                            <span class="title_element"> {{element.billing}}</span>
+                        </td>
+                    </ng-container>
+                    <!-- value Column -->
+                    <ng-container matColumnDef="information">
+                        <th mat-header-cell *matHeaderCellDef class="table_right_adjust"></th>
+                        <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                            <span class="bolding_element">{{element.information}} </span>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="client_Columns1"></tr>
+                    <tr mat-row *matRowDef="let element; columns: client_Columns1;"></tr>
+                </table>
             </mat-card>
-</div>
-<div fxFlex.gt-sm="16.66%" class="fiveHundred">
-    <mat-card >
-      <mat-card-content>
-    <circle-progress
-    [percent]="5"
-    [radius]="25"
-    [toFixed]="0"
-    [showTitle]="true"
-    [titleFontSize]="10"
-    [showUnits]="false"
-    [showImage]="false"
-    [showBackground]="false"
-    [showInnerStroke]="true"
-    [clockwise]="false"
-    [responsive]="false"
-    [startFromZero]="false"
-    [animation]="true"
-  [animationDuration]="300"
-    [subtitleFontSize]="0"
-  ></circle-progress>
-   <span id="data_elemen">Done</span>
+        </div>
+
+
+    </div>
+
+    <div fxLayout="row" fxLayoutWrap="wrap">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+            <mat-card>
+                    <div id="active_title" class="white">
+                            <div id="title-inner" class="center">
+                              <span class="value_adjust user_element"><span id="icon_style" [innerHTML]="'users' | feather"></span>
+                                <span id="header_text">Client</span></span>
+                                <span class="value_adjust searching">
+                                        <input class ="search" matInput (keyup)="applyFilter($event.target.value)" placeholder="search">
+                                        <span class="search_svg" [innerHTML]="'search' | feather"></span>
+                                       </span> 
+                                       <span class="width_Value right_value "><span class=" value_adjust  state colr_darkpurple font-mobile"> <span class="search_svg"  [innerHTML]="'plus' | feather"></span> <span>Add a Client</span></span></span>
+                            </div>
+                        </div>
+            <div class="mat-elevation-z8">
+                   
+                   
+                    <table mat-table [dataSource]="dataelement1" class="client-table">
+                  
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
+                        <td mat-cell *matCellDef="let element" ><span class="font-mobile pro_name"> {{element.name}} </span> </td>
+                      </ng-container>
+                  
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="noofextension">
+                        <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
+                        <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.noofextension}}</span> </td>
+                      </ng-container>
+                      <ng-container matColumnDef="startofextension">
+                            <th mat-header-cell *matHeaderCellDef>START OF EXTENSION </th>
+                            <td mat-cell *matCellDef="let element"> {{element.startofextension}} </td>
+                          </ng-container>
+                      <!-- Weight Column -->
+                      <ng-container matColumnDef="createdon">
+                        <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
+                        <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}} </td>
+                      </ng-container>
+                  <!-- Symbol Column -->
+                     <ng-container matColumnDef="pinning">
+                            <th mat-header-cell *matHeaderCellDef>  </th>
+                            <td mat-cell *matCellDef="let element"> 
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'eye' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'users' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'help-circle' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'share-2' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'x' | feather"></span>
+                          </ng-container>
+                      <tr mat-header-row *matHeaderRowDef="Columns1"></tr>
+                      <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
+                    </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                  </div>
+            </mat-card>
+        </div>
+    </div>
+
    
-</mat-card-content>
-</mat-card>
-
-  </div>
-
 </div>
-<div fxLayout="row" fxLayoutWrap="wrap">
-  <!-- Card column -->
-  <div fxFlex.gt-sm="100%" fxFlex="100">
-      <mat-card>
-          <mat-accordion>
-            <mat-tab-group>
-                      <mat-tab label="Client List">
-                          <mat-card-content>
-                           
-                          </mat-card-content>
-                      </mat-tab>
-                      <mat-tab label="New Client">
-                          <mat-card-content>Content 2</mat-card-content>
-                      </mat-tab>
-                      <mat-tab label="Import Client">
-                          <mat-card-content>Content 2</mat-card-content>
-                      </mat-tab>
-                      <mat-tab label="Client on Map">
-                          <mat-card-content>Content 2</mat-card-content>
-                      </mat-tab>
-                    
-                     </mat-tab-group>
-                    
-              </mat-accordion>
-      </mat-card>
-  </div>
-</div>
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
-
-    
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} 
-        <mat-progress-bar mode="determinate" value="{{ element.matvalue }}"></mat-progress-bar>
-      </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Primary Contact </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Website </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} 
-        
-      </td>
-    </ng-container>
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> Phone </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-    <!-- Position Column -->
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-</div>
-
