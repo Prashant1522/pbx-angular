@@ -1,33 +1,91 @@
-<div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource15">
+
+
+  <div class="pading_textdata"><span class="value_adjust billing_state state">
+      <span class="search_svg " [innerHTML]="'search' | feather"></span>
+      <input class ="search billing_Search" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+      </span> </div>
+  <div class="pading_textdata">
+      <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row" fxLayout.xs="column" fxLayout.sm="column">
+          <!-- Card column -->
+          <div fxFlex.gt-sm="50%" fxFlex="50%">
   
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
+              <mat-card class="fixFH2 border_Data">
+                  <div id="active_title" class="title_format">
+                      <div id="title-inner" class="center">
+                          <span class="value_adjust user_element">
+                          <span id="header_text" class="bolding_element">Current Payment Due</span></span>
+                      </div>
+                  </div>
+                  <div class="billing_information">
+                  <div class="full_width textdata-align title_Font2 color_purple bold_element">$0.00</div>
+                <div class="full_width textdata-align">Clicking the ‘Pay Now’ button will charge your credit card on file for the full amount of the Current Payment Due.</div></div>
+                <div class="full_width textdata-align "><span class=" states colr_lightpurple font-mobile">Play Now</span></div>    
+              </mat-card>
+                  
+          </div>
+          <div fxFlex.gt-sm="50%" fxFlex="50%">
+              <mat-card class="fixFH2 border_Data">
+                  <div id="active_title" class="title_format">
+                      <div id="title-inner" class="center">
+                          <span class="value_adjust user_element">
+                              <span id="header_text" class="bolding_element">Billing Information</span></span>
+                      </div>
+                  </div>
+                  <mat-list role="list" class="billing_information">
+                      <mat-list-item role="listitem"><span class="equal_width">Billing Day</span><span class="equal_width">{{ billingday }} </span></mat-list-item>
+                      <mat-list-item role="listitem"><span class="equal_width">Payment Method</span><span class="equal_width">{{ paymentmethod}} <span [innerHTML]="'edit' | feather"></span></span></mat-list-item>
+                      <mat-list-item role="listitem"><span class="equal_width">Current Account Balance</span><span class="equal_width">{{ accountbalance}}</span></mat-list-item>
+                    </mat-list> 
+                    
+              </mat-card>
+          </div>
+ 
+         
+      </div>
+      
+      <div fxLayout="row"  class="billing_row" fxLayoutWrap="wrap">
+          <!-- Card column -->
+          <div fxFlex.gt-sm="100%" fxFlex="100">
+              <mat-card>
+                     
+              <table mat-table [dataSource]="dataSource" class=" billing_table">
+
+                      <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
+                    
+                      <!--Photo Column -->
+                      <ng-container matColumnDef="photo">
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element"> Photo </th>
+                        <td mat-cell *matCellDef="let element"> <span class="count value_adjust client_color pinning_element lunch" [innerHTML]="'user' | feather"></span>  </td>
+                      </ng-container>
+                    
+                      <!--billdate Column -->
+                      <ng-container matColumnDef="billdate">
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1">Bill Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.billdate}} </td>
+                      </ng-container>
+                    
+                      <!--amount Column -->
+                      <ng-container matColumnDef="amount">
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1"> Amount </th>
+                        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+                      </ng-container>
+                    
+                      <!--Payment Column -->
+                      <ng-container matColumnDef="payment">
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1"> Payment </th>
+                        <td mat-cell *matCellDef="let element"> {{element.payment}} </td>
+                      </ng-container>
+                    
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns width_value1"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    
+                    
+              </mat-card>
+          </div>
+      </div>
   
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-  
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-  
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns15"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns15;"></tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+     
   </div>
+  

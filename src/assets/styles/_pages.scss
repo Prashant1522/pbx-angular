@@ -73,9 +73,15 @@ font-size:0.8em;
 padding-top:3px;
 }    
 }
+.fixFH2{
+ height: 370px;
+}
+.billing_row {
+ background: #fff;
+}
 .border_Data{
     border: 1px solid #e1e1e1;
-    border-radius: 0px;
+    border-radius: 0px !important;
 }
 .client-table{
     .mat-header-row {
@@ -149,13 +155,34 @@ padding-top:3px;
         height:37px;
     }
 }
+
 .project_name_list.mat-list-item, .project_name_list .mat-list-item{
     // padding:23px 10px 0 10px !important;
     
         height:fit-content !important;
-   
-    
 }
+.billing_Search{
+    width: 12%;
+    background: #e7e7e7;
+    margin-top: 2px !important;
+     border: none
+    }
+.billing_state{
+    width: 12%;
+    padding: 0px 8px !important; 
+    border: 1px solid #acacac;
+svg{
+    color: #8f8f8f;
+}
+}
+.billing_table{
+    .mat-header-row {
+       
+        height: 3.5vw !important;
+      
+        background-color: #e7e7e7 !important;
+       
+    }}
 .project_name_list .one{
     padding:0 30px 0 0 !important;
 }
@@ -433,9 +460,14 @@ text-align: right !important;
 .pro_name{
  color:#1582e8;
 }
-.bolding_element{
-    font-weight: bold !important;
-}
+.bolding_element{ font-size: 16px !important;
+    color: black !important;
+font-weight: bold !important;}
+.client_color{
+    background-color: #a2a2a2;
+    border-radius: 50%;
+    svg{fill: #fff;
+        color: #fff;}}
 .xPanelIndicator{
     height:18px;
     width:18px;
@@ -814,6 +846,7 @@ padding-bottom: 12px;
 padding:30px 30px !important;
 font-weight: 400;
 svg {
+
     top:0px;
     margin-left:8px;
 }
