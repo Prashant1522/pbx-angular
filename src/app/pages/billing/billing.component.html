@@ -1,10 +1,15 @@
-
-
-  <div class="pading_textdata"><span class="value_adjust billing_state state">
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayout.xs="column" fxLayout.sm="column">
+    <div class="billing_pading_textdata1 full_width">
+<span class="value_adjust billing_state state">
       <span class="search_svg " [innerHTML]="'search' | feather"></span>
       <input class ="search billing_Search" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-      </span> </div>
-  <div class="pading_textdata">
+      </span> </div></div>
+  <div class="billing_pading_textdata2">
+      <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row" fxLayout.xs="column" fxLayout.sm="column">
+          <div class="pading_textdata full_width"> 
+          <div class="full_width table_right_adjust"><span class=" states2 white_Text green_color_background font-mobile">Bulk edit</span></div>  
+         </div>
+      </div>
       <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row" fxLayout.xs="column" fxLayout.sm="column">
           <!-- Card column -->
           <div fxFlex.gt-sm="50%" fxFlex="50%">
@@ -55,29 +60,29 @@
                     
                       <!--Photo Column -->
                       <ng-container matColumnDef="photo">
-                        <th mat-header-cell *matHeaderCellDef class="bolding_element"> Photo </th>
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element  width_value1 black_border"> Photo </th>
                         <td mat-cell *matCellDef="let element"> <span class="count value_adjust client_color pinning_element lunch" [innerHTML]="'user' | feather"></span>  </td>
                       </ng-container>
                     
                       <!--billdate Column -->
                       <ng-container matColumnDef="billdate">
-                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1">Bill Date </th>
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1 black_border">Bill Date </th>
                         <td mat-cell *matCellDef="let element"> {{element.billdate}} </td>
                       </ng-container>
                     
                       <!--amount Column -->
                       <ng-container matColumnDef="amount">
-                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1"> Amount </th>
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1 black_border"> Amount </th>
                         <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
                       </ng-container>
                     
                       <!--Payment Column -->
                       <ng-container matColumnDef="payment">
-                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1"> Payment </th>
+                        <th mat-header-cell *matHeaderCellDef class="bolding_element width_value1 black_border"> Payment </th>
                         <td mat-cell *matCellDef="let element"> {{element.payment}} </td>
                       </ng-container>
                     
-                      <tr mat-header-row *matHeaderRowDef="displayedColumns width_value1"></tr>
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
                     

@@ -177,10 +177,8 @@ svg{
 }
 .billing_table{
     .mat-header-row {
-       
-        height: 3.5vw !important;
-      
-        background-color: #e7e7e7 !important;
+       height: 3.5vw !important;
+      background-color: #e7e7e7 !important;
        
     }}
 .project_name_list .one{
@@ -415,10 +413,16 @@ color:#9a0033 !important;
 margin: 30px 15px;
 }
 .hight_box.mat-list-item {
-    height: 35px !important;
-    border-top: 1px solid #eeeeee;
+  height: 35px !important;
+ border-top: 1px solid #eeeeee;
 
 }
+.billing_pading_textdata1{
+padding: 24px 19px 10px 19px;
+}
+.billing_pading_textdata2{
+padding: 0px 19px 24px 19px;
+        }
 table , .full_width {
     width: 100%;
   }
@@ -450,6 +454,9 @@ padding: 5px 6px;
 ;}
 .width_element{
 width: 90%;
+}
+.states2{
+    padding:4px 14px;
 }
 .table_right_adjust{
 text-align: right !important;
@@ -715,7 +722,12 @@ padding:0px 10px;
 .mr5{
     margin-right:5px;
 }     
-div.mat-progress-bar-primary.mat-progress-bar-fill.mat-progress-bar-element::after{
+.black_border{
+    border-bottom:1px solid black !important;}
+.white_Text{
+    color:#fff;
+}
+div.mat-progress-bar-primary.mat-progress-bar-fill.mat-progress-bar-element::after,.green_color_background{
     background-color: #27c24c;
 }
 .custom-green{
