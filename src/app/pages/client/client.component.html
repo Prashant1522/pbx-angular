@@ -17,38 +17,10 @@
                         <span id="header_text" class="bolding_element">Current Payment Due</span></span>
                     </div>
                 </div>
-                <div id="active_title" class="white data_adjust">
-                        <div id="title-inner" class="center paddingdata">
-                          <span class="textdata-align width_value">
-                           <span class="title_Font">{{ diskusage1 }}</span><br>
-                           <span id="header_text">Disk Usage (%)</span> </span>
-                           <span class="textdata-align width_value">
-                                 <span class="title_Font">{{ cpuusage }}</span><br>
-                                 <span id="header_text">CPU Usage</span> </span>
-                                 <span class="textdata-align width_value">
-                                         <span class="title_Font">{{ diskusage2 }}</span><br>
-                                         <span id="header_text">Disk Usage (%)</span> </span>
-                             </div>
-                         </div>
-                <table class="display_prop" mat-table [dataSource]="dataelement2" class="client-table ">
-                    <!--item Column -->
-                    <ng-container matColumnDef="item">
-                        <th mat-header-cell *matHeaderCellDef>ITEM</th>
-                        <td mat-cell *matCellDef="let element">
-                            <span class="title_element"> {{element.item}}</span>
-                        </td>
-                    </ng-container>
-                    <!-- value Column -->
-                    <ng-container matColumnDef="value">
-                        <th mat-header-cell *matHeaderCellDef class="table_right_adjust">VALUE</th>
-                        <td mat-cell *matCellDef="let element" class="table_right_adjust">
-                            <span class="bolding_element">{{element.value}} </span>
-                        </td>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="Columns2"></tr>
-                    <tr mat-row *matRowDef="let element; columns: Columns2;"></tr>
-                </table>
-            </mat-card>
+                <div class="billing_information">
+                <span class="full_width">Billing Day</span></div>
+                </mat-card>
+                
         </div>
         <div fxFlex.gt-sm="50%" fxFlex="50%">
             <mat-card class="fixFH border_Data">
@@ -58,24 +30,12 @@
                             <span id="header_text" class="bolding_element">Billing Information</span></span>
                     </div>
                 </div>
-                <table class="display_prop client-table" mat-table [dataSource]="client_dataelement1" >
-                    <!--Main Column -->
-                    <ng-container matColumnDef="billing">
-                        <th mat-header-cell *matHeaderCellDef></th>
-                        <td mat-cell *matCellDef="let element">
-                            <span class="title_element"> {{element.billing}}</span>
-                        </td>
-                    </ng-container>
-                    <!-- value Column -->
-                    <ng-container matColumnDef="information">
-                        <th mat-header-cell *matHeaderCellDef class="table_right_adjust"></th>
-                        <td mat-cell *matCellDef="let element" class="table_right_adjust">
-                            <span class="bolding_element">{{element.information}} </span>
-                        </td>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="client_Columns1"></tr>
-                    <tr mat-row *matRowDef="let element; columns: client_Columns1;"></tr>
-                </table>
+                <mat-list role="list" class="billing_information">
+                    <mat-list-item role="listitem"><span class="equal_width">Billing Day</span><span class="equal_width">28th of every month </span></mat-list-item>
+                    <mat-list-item role="listitem"><span class="equal_width">Payment Method</span><span class="equal_width">Credit card <span [innerHTML]="'edit' | feather"></span></span></mat-list-item>
+                    <mat-list-item role="listitem"><span class="equal_width">Current Account Balance</span><span class="equal_width">$0.00</span></mat-list-item>
+                  </mat-list> 
+                  
             </mat-card>
         </div>
 
