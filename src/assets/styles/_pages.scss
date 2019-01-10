@@ -407,6 +407,13 @@ padding: 4px 0px;
 .width_value {
  width: 33.33%;
 }
+.states{
+    padding: 12px 20px;
+}
+.colr_lightpurple{
+    color:#fff;
+    background-color: $purple;
+}
 .pinning_element {
  margin: 0px 2px;
 padding: 5px 6px;
@@ -652,8 +659,14 @@ padding:0px 10px;
     }
     
 }
+.color_purple{
+    color:$purple;
+}
 .title_Font{
     font-size:48px;
+}
+.title_Font2{
+    font-size:40px;
 }
 .page-content{
     background-color:#e7e7e7;
