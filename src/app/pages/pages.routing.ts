@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CalendarComponent } from './calendar/calendar.component';
-import { DiscussionComponent } from './discussion/discussion.component';
-import { MailboxComponent } from './mailbox/mailbox.component';
-import { ClientComponent } from './client/client.component';
+import { ConnectivityComponent } from './connectivity/connectivity.component';
+import { ProvisionerComponent } from './provisioner/provisioner.component';
+import { BillingComponent } from './billing/billing.component';
+import { ClientsComponent } from './clients/clients.component';
 
 import { ReportsComponent } from './reports/reports.component';
 
@@ -15,19 +15,19 @@ export const PagesRoutes: Routes = [{
 },
 {
   path: 'clients',
-  component : ClientComponent,
+  component : ClientsComponent,
 },
 {
   path: 'connectivity',
-  component : CalendarComponent,
+  component : ConnectivityComponent,
 },
 {
   path: 'provisioner',
-  component : DiscussionComponent,
+  component : ProvisionerComponent,
 },
 {
   path: 'billing',
-  component : MailboxComponent,
+  component : BillingComponent,
 },
 
 

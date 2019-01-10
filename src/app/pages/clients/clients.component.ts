@@ -2,12 +2,12 @@ import { Component, OnInit ,ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 
 @Component({
-  selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.css']
+  selector: 'app-clients',
+  templateUrl: './clients.component.html',
+  styleUrls: ['./clients.component.css']
 })
 
-export class ClientComponent implements OnInit {
+export class ClientsComponent implements OnInit {
   matvalue = 0;
   
   displayedColumns: string[] = ['name', 'weight', 'symbol','position', 'email'];

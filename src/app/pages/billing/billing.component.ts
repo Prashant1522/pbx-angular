@@ -1,11 +1,11 @@
 import { Component, OnInit,ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 @Component({
-  selector: 'app-mailbox',
-  templateUrl: './mailbox.component.html',
-  styleUrls: ['./mailbox.component.css']
+  selector: 'app-billing',
+  templateUrl: './billing.component.html',
+  styleUrls: ['./billing.component.css']
 })
-export class MailboxComponent implements OnInit {
+export class BillingComponent implements OnInit {
   displayedColumns15: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource15 = new MatTableDataSource<PeriodicElement15>(ELEMENT_DATA15);
   @ViewChild(MatPaginator) paginator: MatPaginator;
