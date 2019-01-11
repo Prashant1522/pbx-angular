@@ -184,12 +184,10 @@ svg{
     padding:0 30px 0 0 !important;
 }
 
-.cdk-overlay-container{
-    // left:$sidebar-width-collapsed !important;
-}
+
 .cdk-overlay-connected-position-bounding-box{
     // left:10px !important;
-    top:45px;
+    // top:45px;
     .cdk-overlay-pane{
         // left:0 !important;
         margin-left:-10px !important;
@@ -198,6 +196,7 @@ svg{
 .sub-menu{
     // left:$sidebar-width-collapsed !important;
     position:relative;
+    margin-top:-74px;
 }
 
 .head{
