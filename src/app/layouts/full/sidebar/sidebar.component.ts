@@ -180,6 +180,7 @@ export class AppSidebarComponent implements OnDestroy {
   */
 
   menuenter() {
+    console.log("menuEnter works!");
     this.isMatMenuOpen = true;
     if (this.isMatMenu2Open) {
       this.isMatMenu2Open = false;
@@ -187,7 +188,18 @@ export class AppSidebarComponent implements OnDestroy {
   }
 
   menuLeave(trigger, button) {
-    setTimeout(() => {
+    console.log("menuLeave works!");
+    trigger.closeMenu();
+        // console.log("closementu from buttonleave1");
+        this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-focused');
+        this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-mouse-focused');
+        var elements = <HTMLElement>document.getElementsByClassName("cdk-overlay-container")[0];
+        elements.style.display = 'none';
+        elements.style.marginLeft = '0';
+        setTimeout(() => {
+        elements.style.display = 'block';
+      }, 1000)
+    /* setTimeout(() => {
       if (!this.isMatMenu2Open && !this.enteredButton) {
         this.isMatMenuOpen = false;
         trigger.closeMenu();
@@ -197,7 +209,7 @@ export class AppSidebarComponent implements OnDestroy {
       } else {
         this.isMatMenuOpen = false;
       }
-    }, 80)
+    }, 80) */
   }
 
   menu2enter() {
@@ -251,6 +263,7 @@ export class AppSidebarComponent implements OnDestroy {
           this.ren.addClass(button['_elementRef'].nativeElement, 'cdk-mouse-focused');
           var elements = <HTMLElement>document.getElementsByClassName("cdk-overlay-container")[0];
           elements.style.marginLeft = '5.5vw';
+          elements.style.display = 'block';
         }
         else {
           this.enteredButton = true;
@@ -271,14 +284,22 @@ export class AppSidebarComponent implements OnDestroy {
         this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-focused');
         this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-mouse-focused');
         var elements = <HTMLElement>document.getElementsByClassName("cdk-overlay-container")[0];
+        elements.style.display = 'none';
         elements.style.marginLeft = '0';
+        setTimeout(() => {
+        elements.style.display = 'block';
+      }, 1000)
       } else if (!this.isMatMenuOpen) {
         trigger.closeMenu();
         // console.log("closementu from buttonleave2");
         this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-focused');
         this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-mouse-focused');
         var elements = <HTMLElement>document.getElementsByClassName("cdk-overlay-container")[0];
+        elements.style.display = 'none';
         elements.style.marginLeft = '0';
+        setTimeout(() => {
+        elements.style.display = 'block';
+      }, 1000)
       } else {
         this.enteredButton = false;
        

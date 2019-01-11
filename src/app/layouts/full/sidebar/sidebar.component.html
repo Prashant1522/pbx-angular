@@ -21,7 +21,18 @@
                     <span class="btnwrap hide">
                         <button #button class="mat-small" [innerHTML]= "[menuitem.icon] | feather" mat-button id="menuBtn" (click)="stateChange(menuitem.state)" [matMenuTriggerFor]="menu" #levelOneTrigger="matMenuTrigger" (mouseenter)="buttonEnter(levelOneTrigger,button,menuitem.state)" 
                         (mouseleave)="buttonLeave(levelOneTrigger,button)" 
-                        ></button></span>
+                        ></button>
+                        <mat-menu class="sub-menu" #menu="matMenu" xPosition="after" yPosition="above">
+                            <span (mouseenter)="menuenter()" (mouseleave)="menuLeave(levelOneTrigger, button)">
+                                <span class="head">{{ state }}</span> <hr>
+                      <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([state])" routerLinkActive="selected"> 
+                          <span class="changeMe">
+                          <button mat-menu-item >{{ submenuitem.name }}</button>
+                            </span>
+                    </ng-container>
+                    </span>
+                     </mat-menu>
+                    </span>
                 
                 
                 <!-- <span fxFlex class="sub-menu">abc</span>  -->
@@ -29,7 +40,7 @@
             <!-- </div> -->
         </a>
         
-
+        
         <span class="sub-menu {{ menuitem.state }}" [@subMenuAnimation]="menuitem.state == state? (isSubMenuOpen ? 'open' : 'closed'): 'closed'">
             <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([menuitem.state])" routerLinkActive="selected"> 
                 <span class="changeMe">
@@ -42,14 +53,5 @@
     
 </mat-nav-list>
 
-<mat-menu class="sub-menu" #menu="matMenu" xPosition="after" yPosition="above">
-        <span (mouseenter)="menuenter()" >
-            <span class="head">{{ state }}</span> <hr>
-  <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([state])" routerLinkActive="selected"> 
-      <span class="changeMe">
-      <button mat-menu-item >{{ submenuitem.name }}</button>
-        </span>
-</ng-container>
-</span>
- </mat-menu>
+
 <!-- <child-component #x="menuInOtherComponent"></child-component> -->
