@@ -22,7 +22,7 @@
                         <button #button class="mat-small" [innerHTML]= "[menuitem.icon] | feather" mat-button id="menuBtn" (click)="stateChange(menuitem.state)" [matMenuTriggerFor]="menu" #levelOneTrigger="matMenuTrigger" (mouseenter)="buttonEnter(levelOneTrigger,button,menuitem.state)" 
                         (mouseleave)="buttonLeave(levelOneTrigger,button)" 
                         ></button>
-                        <mat-menu class="sub-menu" #menu="matMenu" xPosition="after" yPosition="above">
+                        <mat-menu class="sub-menu" #menu="matMenu" xPosition="after" yPosition="below">
                             <span (mouseenter)="menuenter()" (mouseleave)="menuLeave(levelOneTrigger, button)">
                                 <span class="head">{{ state }}</span> <hr>
                       <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([state])" routerLinkActive="selected"> 
