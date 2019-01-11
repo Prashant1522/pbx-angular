@@ -115,18 +115,22 @@ padding-top:3px;
     border-width:1px 0 0 0;
 }
 .mat-ink-bar{
-    height:37px !important;
+    border-top: 2px solid #998fd2;
+    height: 3.5vw !important;
     // margin-bottom:13px;
     z-index: -1;
-    background-color:$custom-green;
-    border-radius:45px;
+    background-color:#edf1f2 !important; 
+    
 }
-.mat-tab-label-active .mat-tab-label-content{
-    color:white;
+ .mat-tab-label-content{
+    font-weight:bold;
+    color:#343434;
 }
+
 .mat-tab-label{
+    opacity:1 !important;
     min-width:115px !important;
-    height:37px !important;
+    height:3.5vw !important;
     // font-size: 1rem !important;
 }
 
@@ -152,25 +156,20 @@ padding-top:3px;
 .mat-tab-header{
     padding:15px 24px;
     .mat-tab-label-container{
-        height:37px;
+        height: 3.5vw !important;
     }
 }
-
+.billing_Search{
+    margin-top: 2px !important;
+      border: none;
+     }
 .project_name_list.mat-list-item, .project_name_list .mat-list-item{
     // padding:23px 10px 0 10px !important;
     
         height:fit-content !important;
 }
-.billing_Search{
-    width: 12%;
-    background: #e7e7e7;
-    margin-top: 2px !important;
-     border: none
-    }
+
 .billing_state{
-    width: 12%;
-    padding: 0px 8px !important; 
-    border: 1px solid #acacac;
 svg{
     color: #8f8f8f;
 }
@@ -467,7 +466,7 @@ width: 90%;
 text-align: right !important;
 }
 .title_format {
-    background-color: #e7e7e7 !important; 
+    background-color: #edf1f2 !important; 
 }
 .pro_name{
  color:#1582e8;
@@ -498,6 +497,8 @@ font-weight: bold !important;}
     padding:5px;
     float:right;
 }
+.client_search{
+padding:10px 10px; }
 .display_prop{
     td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{
         padding:10px 24px;
@@ -575,6 +576,7 @@ font-weight: bold !important;}
     width:fit-content;
     margin:auto;
     .mat-tab-label{
+       
         font-size:10px;
         min-width:70px !important;
     }
@@ -678,7 +680,7 @@ height: 90%;}
 }
 .searching{
 width:20%;
-border:1px solid $gray;
+border: 1px solid #d7d7d7;
 padding:0px 10px;
 }
 #title-inner{
@@ -713,6 +715,7 @@ padding:0px 10px;
     font-size:40px;
 }
 .page-content{
+   
     background-color:#e7e7e7;
 }
 .primary-color{
@@ -727,8 +730,7 @@ padding:0px 10px;
 .mr5{
     margin-right:5px;
 }     
-.black_border{
-    border-bottom:1px solid black !important;}
+
 .white_Text{
     color:#fff;
 }
@@ -843,11 +845,14 @@ padding-bottom: 12px;
         }
 
 }
+.mat-tab-nav-bar, .mat-tab-header {
+    border-bottom: none !important;
+}
 .billing_tabs{
     .mat-tab-header {
-        padding: 15px 0px;
+        padding: 0px 0px;
     }
-    }
+    } 
 #icons_style
 {
     .feather
@@ -872,4 +877,7 @@ svg {
     top:0px;
     margin-left:8px;
 }
+}
+.textdata_align_left{
+    text-align:left !important;
 }

@@ -20,15 +20,15 @@ export class BillingComponent implements OnInit {
 
 }
 export interface PeriodicElement15 {
-  
   billdate: string;
   amount: string;
   payment: string;
+  tobebilled: boolean;
 }
 
 const ELEMENT_DATA15: PeriodicElement15[] = [
-  {billdate:'Current Usage',amount:'$1.05', payment: 'To be billed: 06 /30 /2018'},
-  {billdate:'June 28, 2018', amount:'$177.54', payment: '($177.54)'},
-  {billdate:'May 28, 2018', amount:'$150.99', payment: '($150.99)'},
-  {billdate:'May 01, 2018', amount:'$64.95', payment: '($64.95)'},
+  {billdate:'Current Usage',amount:'$1.05',payment: '06 /30 /2018',tobebilled:true},
+  {billdate:'June 28, 2018', amount:'$177.54', payment: '($177.54)',tobebilled:false},
+  {billdate:'May 28, 2018', amount:'$150.99', payment: '($150.99)',tobebilled:false},
+  {billdate:'May 01, 2018', amount:'$64.95', payment: '($64.95)',tobebilled:false},
 ];

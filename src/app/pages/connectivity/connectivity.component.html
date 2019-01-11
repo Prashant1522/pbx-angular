@@ -1,3 +1,58 @@
-<p>
-  connectivity works! hllo welcome 
-</p>
+<div class="pading_textdata">
+    <div fxLayout="row" fxLayoutWrap="wrap">
+       <!-- Card column -->
+       <div fxFlex.gt-sm="100%" fxFlex="100">
+          <mat-card>
+             <mat-tab-group class="billing_tabs"> 
+                <mat-tab label="All Clients">    
+                    <div class="client_search full_width"> 
+                        <div class="full_width table_right_adjust"><span class="value_adjust  billing_state searching">
+                        <input class ="search billing_Search textdata_align_left " matInput (keyup)="applyFilter($event.target.value)" placeholder="Search"> 
+                     <span class="search_svg " [innerHTML]="'search' | feather"></span>
+                       </span></div></div>
+                       <table mat-table [dataSource]="outbound_dataelement1" class="client-table">
+          
+                          <!-- DID Column -->
+                          <ng-container matColumnDef="did">
+                              <th mat-header-cell *matHeaderCellDef> DID </th>
+                              <td mat-cell *matCellDef="let element"><span class="font-mobile pro_name"> {{element.did}}
+                                  </span> </td>
+                          </ng-container>
+  
+                          <!-- Name Column -->
+                          <ng-container matColumnDef="cid">
+                              <th mat-header-cell *matHeaderCellDef>CID </th>
+                              <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.cid}}</span>
+                              </td>
+                          </ng-container>
+                          <ng-container matColumnDef="description">
+                              <th mat-header-cell *matHeaderCellDef>DESCRIPTION</th>
+                              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                          </ng-container>
+                          <!-- Weight Column -->
+                          <ng-container matColumnDef="destination">
+                              <th mat-header-cell *matHeaderCellDef>DESTINATION</th>
+                              <td mat-cell *matCellDef="let element"> {{element.destination}} 
+                              </td>
+                          </ng-container>
+                          <!-- Symbol Column -->
+                          <ng-container matColumnDef="pinning">
+                              <th mat-header-cell *matHeaderCellDef class="table_right_adjust"> </th>
+                              <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'edit' | feather"></span>
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
+                          </ng-container>
+                          <tr mat-header-row *matHeaderRowDef="outboundColumns1"></tr>
+                          <tr mat-row *matRowDef="let row; columns: outboundColumns1;"></tr>
+                      </table>
+                      </mat-tab> 
+                       <mat-tab label="New Client">
+                          <h1>Some more tab content</h1>
+                          <p>...</p>
+                        </mat-tab>
+                      </mat-tab-group>
+              </mat-card>
+      </div>
+    
+  </div>
+  </div>
