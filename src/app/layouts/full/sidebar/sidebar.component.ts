@@ -278,18 +278,7 @@ export class AppSidebarComponent implements OnDestroy {
 
     setTimeout(() => {
 
-      if (this.enteredButton && !this.isMatMenuOpen) {
-        trigger.closeMenu();
-        // console.log("closementu from buttonleave1");
-        this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-focused');
-        this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-mouse-focused');
-        var elements = <HTMLElement>document.getElementsByClassName("cdk-overlay-container")[0];
-        elements.style.display = 'none';
-        elements.style.marginLeft = '0';
-        setTimeout(() => {
-        elements.style.display = 'block';
-      }, 1000)
-      } else if (!this.isMatMenuOpen) {
+      if (!this.isMatMenuOpen) {
         trigger.closeMenu();
         // console.log("closementu from buttonleave2");
         this.ren.removeClass(button['_elementRef'].nativeElement, 'cdk-focused');
@@ -299,7 +288,7 @@ export class AppSidebarComponent implements OnDestroy {
         elements.style.marginLeft = '0';
         setTimeout(() => {
         elements.style.display = 'block';
-      }, 1000)
+      }, 150)
       } else {
         this.enteredButton = false;
        
