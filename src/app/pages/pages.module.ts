@@ -23,6 +23,8 @@ import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { Cards3Component } from './dashboard/dashboardComps/cards3/cards3.component';
+import { OutboundComponent } from './connectivity/outbound/outbound.component';
+import { TrunkComponent } from './connectivity/trunk/trunk.component';
 // import { DashboardDirective } from './dashboard.directive';
 // import { HighlightDirective } from './dashboard/highlight.directive';
 
@@ -70,7 +72,11 @@ import { Cards3Component } from './dashboard/dashboardComps/cards3/cards3.compon
          
          ClientsComponent ,
       
-         Cards3Component, 
+         Cards3Component,
+      
+         OutboundComponent,
+      
+         TrunkComponent, 
         
     ],
     providers: [],
