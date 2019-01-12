@@ -1,54 +1,54 @@
 <div class="pading_textdata">
 
-  <div fxLayout="row" fxLayoutWrap="wrap">
-    <!-- Card column -->
-    <div fxFlex.gt-sm="100%" fxFlex="100">
-
-      <mat-tab-group class="billing_tabs" animationDuration="0ms">
-        <mat-tab label="Company Summary">
-          <div class="company_summary_head full_width">
-            <div class="full_width company_summary_content">
-              <span class="value_adjust billing_state searching">
-                <input class="search billing_Search textdata_align_left " matInput (keyup)="applyFilter($event.target.value)"
-                  placeholder="Search">
-                <span class="search_svg " [innerHTML]="'search' | feather"></span>
-              </span></div>
-          </div>
-          <div class="mat-elevation-z8">
-
-
-            <table mat-table [dataSource]="provisioner_dataelement1" class="client-table">
-
-              <!--SETTINGS NAME Column -->
-              <ng-container matColumnDef="settingsname">
-                <th mat-header-cell *matHeaderCellDef> SETTINGS NAME </th>
-                <td mat-cell *matCellDef="let element"><span class="font-mobile pro_name"> {{element.settingsname}}
-                  </span> </td>
-              </ng-container>
-
-              <!--DEVICE MODEL Column -->
-              <ng-container matColumnDef="devicemodel">
-                <th mat-header-cell *matHeaderCellDef> DEVICE MODEL </th>
-                <td mat-cell *matCellDef="let element">{{element.devicemodel}}
-                </td>
-              </ng-container>
-
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="pinning">
-                <th mat-header-cell *matHeaderCellDef class="table_right_adjust"> </th>
-                <td mat-cell *matCellDef="let element" class="table_right_adjust">
-                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'edit' | feather"></span>
-                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
-              </ng-container>
-              <tr mat-header-row *matHeaderRowDef="provisionerColumns1"></tr>
-              <tr mat-row *matRowDef="let row; columns: provisionerColumns1;"></tr>
-            </table>
-            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-          </div>
-        </mat-tab>
-      </mat-tab-group>
-
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+  
+        <mat-tab-group class="billing_tabs" animationDuration="0ms">
+          <mat-tab label="Company Summary">
+            <div class="company_summary_head full_width">
+              <div class="full_width company_summary_content">
+                <span class="value_adjust billing_state searching">
+                  <input class="search billing_Search textdata_align_left " matInput (keyup)="applyFilter($event.target.value)"
+                    placeholder="Search">
+                  <span class="search_svg " [innerHTML]="'search' | feather"></span>
+                </span></div>
+            </div>
+            <div class="mat-elevation-z8">
+  
+  
+              <table mat-table [dataSource]="provisioner_dataelement1" class="client-table">
+  
+                <!--SETTINGS NAME Column -->
+                <ng-container matColumnDef="settingsname">
+                  <th mat-header-cell *matHeaderCellDef> SETTINGS NAME </th>
+                  <td mat-cell *matCellDef="let element"><span class="font-mobile pro_name"> {{element.settingsname}}
+                    </span> </td>
+                </ng-container>
+  
+                <!--DEVICE MODEL Column -->
+                <ng-container matColumnDef="devicemodel">
+                  <th mat-header-cell *matHeaderCellDef> DEVICE MODEL </th>
+                  <td mat-cell *matCellDef="let element">{{element.devicemodel}}
+                  </td>
+                </ng-container>
+  
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="pinning">
+                  <th mat-header-cell *matHeaderCellDef class="table_right_adjust"> </th>
+                  <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                    <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'edit' | feather"></span>
+                    <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="provisionerColumns1"></tr>
+                <tr mat-row *matRowDef="let row; columns: provisionerColumns1;"></tr>
+              </table>
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+  
+      </div>
     </div>
+  
   </div>
-
-</div>

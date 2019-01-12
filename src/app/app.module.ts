@@ -23,7 +23,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { OutboundComponent } from './app/pages/connectivity/outbound/outbound.component';
+// import { OutboundComponent } from './app/pages/connectivity/outbound/outbound.component';
 // import { Cards3Component } from './src/app/pages/dashboard/dashboardComps/cards3/cards3.component';
 
 // import { HighlightDirective } from './highlight.directive';
@@ -36,7 +36,7 @@ import { OutboundComponent } from './app/pages/connectivity/outbound/outbound.co
     AppHeaderComponent,
     SpinnerComponent,
     AppSidebarComponent,
-    OutboundComponent,
+    // OutboundComponent,
     
   ],
   imports: [
