@@ -153,12 +153,19 @@ padding-top:3px;
 .mat-card-content{
     padding:12px !important;
 }
-.mat-tab-header{
+.mat-tab-group{
     background-color:#e7e7e7;
+}
+.mat-tab-header{
+    background-color:#edf1f2;
     padding:15px 24px;
+    width:fit-content;
     .mat-tab-label-container{
         height: 3.5vw !important;
     }
+}
+.mat-tab-body-wrapper{
+    background-color:#ffffff;
 }
 .billing_Search{
     margin-top: 2px !important;
