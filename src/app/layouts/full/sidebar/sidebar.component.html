@@ -41,13 +41,15 @@
         </a>
         
         
-        <span class="sub-menu {{ menuitem.state }}" [@subMenuAnimation]="menuitem.state == state? (isSubMenuOpen ? 'open' : 'closed'): 'closed'">
+        <mat-nav-list class="sub-menu {{ menuitem.state }}" [@subMenuAnimation]="menuitem.state == state? (isSubMenuOpen ? 'open' : 'closed'): 'closed'">
             <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([menuitem.state])" routerLinkActive="selected"> 
-                <span class="changeMe">
-                <button mat-menu-item >{{ submenuitem.name }}</button>
-                  </span>
+                <mat-list-item class="changeMe">
+                    <a>
+                    <span mat-menu-item >{{ submenuitem.name }}</span>
+                </a>
+                </mat-list-item>
           </ng-container>
-          </span>
+          </mat-nav-list>
         
     </mat-list-item>
     

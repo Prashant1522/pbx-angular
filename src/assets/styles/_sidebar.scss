@@ -83,8 +83,9 @@ mat-sidenav {
     
     .sub-menu{
         // display:none;
-        .changeMe,button{
-            height:inherit;
+        .changeMe,a,span{
+            height:inherit !important;
+            margin-bottom:0 !important;
         }
     }
     .nav-small:hover .sub-menu,.nav-small:visited .sub-menu{
