@@ -3,8 +3,8 @@
        <!-- Card column -->
        <div fxFlex.gt-sm="100%" fxFlex="100">
           <mat-card>
-             <mat-tab-group class="billing_tabs"> 
-                <mat-tab label="All Clients">    
+             <mat-tab-group animationDuration="10ms" class="billing_tabs"> 
+                <mat-tab label="Outbound Routes">    
                     <div class="client_search full_width"> 
                         <div class="full_width table_right_adjust"><span class="value_adjust  billing_state searching">
                         <input class ="search billing_Search textdata_align_left " matInput (keyup)="applyFilter($event.target.value)" placeholder="Search"> 
@@ -27,12 +27,12 @@
                           </ng-container>
                           <ng-container matColumnDef="description">
                               <th mat-header-cell *matHeaderCellDef>DESCRIPTION</th>
-                              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                              <td mat-cell *matCellDef="let element"> {{element.description}}</td>
                           </ng-container>
                           <!-- Weight Column -->
                           <ng-container matColumnDef="destination">
                               <th mat-header-cell *matHeaderCellDef>DESTINATION</th>
-                              <td mat-cell *matCellDef="let element"> {{element.destination}} 
+                              <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.destination}} </span><span>{{element.content}}</span>
                               </td>
                           </ng-container>
                           <!-- Symbol Column -->
@@ -46,7 +46,7 @@
                           <tr mat-row *matRowDef="let row; columns: outboundColumns1;"></tr>
                       </table>
                       </mat-tab> 
-                       <mat-tab label="New Client">
+                       <mat-tab label="Add Outbound Route">
                           <h1>Some more tab content</h1>
                           <p>...</p>
                         </mat-tab>
