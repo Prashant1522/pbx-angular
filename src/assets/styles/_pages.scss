@@ -97,6 +97,9 @@ padding-top:3px;
     td{
         font-size:16px;
     }
+    svg{
+        width:15px;
+    }
 }
 .mat-grid-tile.one{
     
@@ -160,10 +163,34 @@ padding-top:3px;
         height: 3.5vw !important;
     }
 }
+.outbound_route{
+.labeldetail{
+    display:flex;}
+.form_input{
+    width:85%;
+}}
+.form_svg{
+ height: fit-content;
+ margin: auto 45px auto 14px;
+display: flex;
+svg{
+    fill: #bbbbbb;
+    color: white;
+}
+}
+.width_element12{
+    width:12%;
+}
+.width_element52{
+    width:52%;
+}
 .billing_Search{
     margin-top: 2px !important;
       border: none;
      }
+.billing_Search2{
+border: none;
+}
 .project_name_list.mat-list-item, .project_name_list .mat-list-item{
     // padding:23px 10px 0 10px !important;
     
@@ -675,7 +702,8 @@ display:inline-flex;
 }
 .search_svg {
 svg{
-height: 90%;}
+height: 100% !important;
+}
 }
 }
 .searching{
