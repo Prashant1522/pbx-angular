@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ConnectivityComponent } from './connectivity/connectivity.component';
+// import { ConnectivityComponent } from './connectivity/connectivity.component';
 import { ProvisionerComponent } from './provisioner/provisioner.component';
 import { BillingComponent } from './billing/billing.component';
 import { ClientsComponent } from './clients/clients.component';
 
 import { ReportsComponent } from './reports/reports.component';
+import { OutboundComponent } from './connectivity/outbound/outbound.component';
 
 
 export const PagesRoutes: Routes = [{
@@ -19,7 +20,7 @@ export const PagesRoutes: Routes = [{
 },
 {
   path: 'connectivity',
-  component : ConnectivityComponent,
+  component : OutboundComponent,
 },
 {
   path: 'provisioner',

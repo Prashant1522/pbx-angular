@@ -156,13 +156,18 @@ padding-top:3px;
 .mat-card-content{
     padding:12px !important;
 }
-.mat-tab-header{
+.mat-tab-group{
     background-color:#e7e7e7;
+}
+.mat-tab-header{
+    background-color:#edf1f2;
     padding:15px 24px;
+    width:fit-content;
     .mat-tab-label-container{
         height: 3.5vw !important;
     }
 }
+<<<<<<< HEAD
 .outbound_route{
 .labeldetail{
     display:flex;}
@@ -183,6 +188,10 @@ svg{
 }
 .width_element52{
     width:52%;
+=======
+.mat-tab-body-wrapper{
+    background-color:#ffffff;
+>>>>>>> 565fc82c3d11a7f79c726e62a788b2ae9cc96a99
 }
 .billing_Search{
     margin-top: 2px !important;
@@ -908,4 +917,13 @@ svg {
 }
 .textdata_align_left{
     text-align:left !important;
+}
+.company_summary_head{
+    height:105px;
+    display: flex;
+    // padding:10px 10px;
+}
+.company_summary_content{
+    height:45px;
+    margin:auto;
 }
