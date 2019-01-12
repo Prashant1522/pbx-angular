@@ -888,3 +888,12 @@ svg {
 .textdata_align_left{
     text-align:left !important;
 }
+.company_summary_head{
+    height:105px;
+    display: flex;
+    // padding:10px 10px;
+}
+.company_summary_content{
+    height:45px;
+    margin:auto;
+}
