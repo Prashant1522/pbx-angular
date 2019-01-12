@@ -19,8 +19,8 @@ const MENUITEMS = [
 ];
 
 const connectivity = [
-  { state: 'oRoute', name: 'Outbound Route', type: 'link', icon: 'home'},
- { state: 'tSettings', name: 'Trunk Settings', type: 'link', icon: 'home'}
+  { state: 'connectivity-r', name: 'Outbound Route', type: 'link', icon: 'home'},
+ { state: 'connectivity-trunk', name: 'Trunk Settings', type: 'link', icon: 'home'}
 ];
 const foo:any[] = [connectivity];
 @Injectable()

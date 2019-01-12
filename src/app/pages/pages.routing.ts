@@ -8,6 +8,7 @@ import { ClientsComponent } from './clients/clients.component';
 
 import { ReportsComponent } from './reports/reports.component';
 import { OutboundComponent } from './connectivity/outbound/outbound.component';
+import { TrunkComponent } from './connectivity/trunk/trunk.component';
 
 
 export const PagesRoutes: Routes = [{
@@ -21,6 +22,10 @@ export const PagesRoutes: Routes = [{
 {
   path: 'connectivity',
   component : OutboundComponent,
+},
+{
+  path: 'connectivity-trunk',
+  component : TrunkComponent,
 },
 {
   path: 'provisioner',
