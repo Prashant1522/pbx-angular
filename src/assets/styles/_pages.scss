@@ -171,12 +171,10 @@ padding-top:3px;
     background-color:#ffffff;
 }
 .billing_Search{
-    margin-top: 2px !important;
+   align-self: center;
       border: none;
      }
-.billing_Search2{
-border: none;
-}
+
 .project_name_list.mat-list-item, .project_name_list .mat-list-item{
     // padding:23px 10px 0 10px !important;
     
@@ -239,6 +237,12 @@ svg{
     }
 }
 
+}
+.width_element12{
+    width:12%;
+}
+.width_element52{
+    width:52%;
 }
 .chartDiv{
     display: block;
@@ -904,3 +908,87 @@ svg {
     height:45px;
     margin:auto;
 }
+.input_text, textarea {
+    width: 100%;
+    background: #f5f9ff;
+    padding: 12px;
+    border: 1px solid #e1e1e1;
+    font-size:14px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+  
+  
+  .label {
+    display: flex;
+    color:black;
+    font-size: 16px;
+    padding: 12px 12px 12px 0;
+    
+  }
+  
+  .input_submit {
+    background-color: #27c24c;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  .form_svg{
+    margin: auto 6px;
+      svg{
+          color:#ffffff;
+          fill: #bbbbbb;
+      }
+  }
+  .form_Data{
+      margin:auto 0px;
+      align-self:center;
+  }
+  .input_submit:hover {
+    background-color: #26aa46;
+    transition: .4s;
+  }
+  .spacing_element{
+    margin: auto 8px;}
+  .container {
+    border: 1px solid #d7d7d7;
+   padding: 20px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    
+  }
+  
+  .form_row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .form_row{
+    padding: 8px 0px;
+    display: flex;
+    align-self: center;
+    margin: auto 0px;
+
+  }
+  .last_Value{
+display:block !important;
+.last_Data_value{
+    float:right !important;
+}}
+.submit_row{
+    padding:14px 0px !important;
+    float: right;
+}
+  
