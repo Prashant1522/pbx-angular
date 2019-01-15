@@ -305,19 +305,19 @@ export class AppSidebarComponent implements OnDestroy {
     // console.log(this);
     if (this.prevState != state) {
       this.isSubMenuOpen = false;
-      console.log(this.isSubMenuOpen);
+      // console.log(this.isSubMenuOpen);
     }
     if (this.isSubMenuOpen == false && this.menuStates.indexOf(state) != -1 && this.isOpen == true) {
       this.isSubMenuOpen = true;
       this.changeArrowIcon(this, "rotate(90deg)");
       this.prevState = state;
-      console.log(this.isSubMenuOpen);
+      // console.log(this.isSubMenuOpen);
     }
 
     else {
       this.isSubMenuOpen = false;
       this.changeArrowIcon(this, "rotate(0deg)");
-      console.log(this.isSubMenuOpen);
+      // console.log(this.isSubMenuOpen);
 
     }
 

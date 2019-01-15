@@ -27,7 +27,10 @@
                                 <span class="head">{{ state }}</span> <hr>
                       <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([state])" routerLinkActive="selected"> 
                           <span class="changeMe">
+                                <a class="" [routerLink]="['/', submenuitem.state]" *ngIf="submenuitem.type === 'link'" (click)="stateChange(menuitem.state); showSubMenu(menuitem.state)">
+
                           <button mat-menu-item >{{ submenuitem.name }}</button>
+                          </a>
                             </span>
                     </ng-container>
                     </span>
