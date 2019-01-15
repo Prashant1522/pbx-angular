@@ -21,6 +21,12 @@ export const PagesRoutes: Routes = [{
 },
 {
   path: 'connectivity',
+  redirectTo:'/connectivity-outbound',
+    pathMatch:'full',
+},
+{
+  path: 'connectivity-outbound',
+  
   component : OutboundComponent,
 },
 {
