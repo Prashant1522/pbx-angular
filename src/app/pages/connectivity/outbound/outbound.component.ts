@@ -15,7 +15,9 @@ export class OutboundComponent implements OnInit {
   musics=['value0', 'value1','value2', 'value3'];
   alerts=['value0', 'value1','value2', 'value3'];
   
-
+  applyFilter(filterValue: string) {
+    //this.dataelement1.filter = filterValue.trim().toLowerCase();
+  }
  
   constructor() { }
 

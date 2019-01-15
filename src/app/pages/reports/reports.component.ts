@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
-
+  applyFilter(filterValue: string) {
+    //this.dataelement1.filter = filterValue.trim().toLowerCase();
+  }
   constructor() { }
 
   ngOnInit() {

@@ -12,6 +12,9 @@ export class BillingComponent implements OnInit {
   displayedColumns: string[] = ['photo', 'billdate', 'amount', 'payment']
   dataSource  = new MatTableDataSource<PeriodicElement15>(ELEMENT_DATA15);
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  applyFilter(filterValue: string) {
+    //this.dataelement1.filter = filterValue.trim().toLowerCase();
+  }
   constructor() { }
 
   ngOnInit() {
