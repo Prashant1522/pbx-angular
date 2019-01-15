@@ -3,7 +3,7 @@
      <!-- Card column -->
      <div fxFlex.gt-sm="100%" fxFlex="100">
         
-           <mat-tab-group animationDuration="10ms" class="billing_tabs"> 
+           <mat-tab-group animationDuration="10ms" class="billing_tabs space_element"> 
               <mat-tab label="Outbound Routes">    
                   <div class="client_search full_width"> 
                       <div class="full_width table_right_adjust"><span class="value_adjust  searching">
@@ -72,11 +72,10 @@
             <label class="label" for="Alert info"><span class="form_Data">Alert info</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
           </div>
           <div class="col-75">
-            <select id="Alert info" class="input_text" name="Alert info">
-              <option value="australia">value0</option>
-              <option value="canada">value1</option>
-              <option value="usa">value2</option>
-            </select>
+              <select class="input_text" id="alert_info" required>
+                  <option label="--alert info--"></option>
+                  <option *ngFor="let alert_info of alerts" [value]="alert_info">{{alert_info}}</option>
+                </select>
           </div>
         </div>
         <div class="form_row">
@@ -92,42 +91,41 @@
                 <label class="label" for="Alert info"><span class="form_Data">Music On Hold</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
               </div>
               <div class="col-75">
-                <select id="Alert info" class="input_text" name="Alert info">
-                  <option value="australia">value0</option>
-                  <option value="canada">value1</option>
-                  <option value="usa">value2</option>
-                </select>
+                  <select class="input_text" id="music" required>
+                      <option label="--music--"></option>
+                      <option *ngFor="let music of musics" [value]="music">{{music}}</option>
+                    </select>
               </div>
             </div>
             <div class="form_row">
                 <div class="col-25">
-                  <label class="label" for="Alert info"><span class="form_Data">Music On Hold</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                  <label class="label" for="Alert info"><span class="form_Data">Set Destination</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
                 </div>
                 <div class="col-75">
-                  <select id="Alert info" class="input_text" name="Alert info">
-                    <option value="australia">value0</option>
-                    <option value="canada">value1</option>
-                    <option value="usa">value2</option>
-                  </select>
-                </div>
+                    <select class="input_text" id="fromdestination" required>
+                        <option label="--From--"></option>
+                        <option *ngFor="let fromdestination of from_destination" [value]="fromdestination">{{fromdestination}}</option>
+                      </select>
+              </div>
               </div>
               <div class="form_row last_Value">
                  
                   <div class="col-75 last_Data_value">
-                    <select id="Alert info" class="input_text" name="Alert info">
-                      <option value="australia">value0</option>
-                      <option value="canada">value1</option>
-                      <option value="usa">value2</option>
-                    </select>
+                      
+                      <select class="input_text" id="Todestination" required>
+                          <option label="--To --"></option>
+                          <option *ngFor="let Todestination of to_destination" [value]="Todestination">{{Todestination}}</option>
+                        </select>
+                       
                   </div>
                 </div>
        
         
       </div>
       <div class="form_row submit_row">
-          <span class="spacing_element" ><input class="input_submit" type="submit" value="Delete"></span>
-          <span class="spacing_element" ><input class="input_submit" type="submit" value="Reset"></span>
-          <span class="spacing_element" ><input class="input_submit" type="submit" value="Submit"></span>
+          <span class="spacing_element" ><input class="bold_element rest_Value" type="submit" value="Delete"></span>
+          <span class="spacing_element" ><input class="bold_element rest_Value" type="reset" value="Reset"></span>
+          <span class="spacing_element" ><input class="bold_element input_submit" type="submit" value="Submit"></span>
         </div>
     </form>
 </div>
@@ -136,5 +134,117 @@
             
     </div>
   
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" class="billing_row">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+       
+          <mat-tab-group animationDuration="10ms" class="billing_tabs space_element"> 
+             <mat-tab label="All Trunks">    
+                 welcome
+                   </mat-tab> 
+<mat-tab label="New Trunk">
+<div class="pading_textdata">
+   <form>
+   <div class="container">
+       
+       <div class="form_row">
+         <div class="col-25">
+           <label class="label" for="fname"><span class="form_Data">Trunk Name</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+         </div>
+         <div class="col-75">
+           <input type="text" class="input_text" id="fname" name="firstname" >
+         </div>
+       </div>
+       <div class="form_row">
+          <div class="col-25">
+            <label for="lname" class="label"><span class="form_Data">Hide CallerID</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+          </div>
+          <div class="col-75">
+              <mat-slide-toggle ngDefaultControl
+     [(ngModel)]="device" name="hello"></mat-slide-toggle>
+              
+           
+          </div>
+        </div>
+       <div class="form_row">
+         <div class="col-25">
+           <label for="lname" class="label"><span class="form_Data">Outbound CallerID</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+         </div>
+         <div class="col-75">
+           <input type="text" class="input_text" id="lname" name="lastname" >
+         </div>
+       </div>
+       
+       
+       <div class="form_row">
+          <div class="col-25">
+            <label for="lname" class="label"><span class="form_Data">Maximum Channels</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="input_text" id="lname" name="lastname" >
+          </div>
+        </div>
+        <div class="form_row">
+            <div class="col-25">
+              <label for="lname" class="label"><span class="form_Data">Asterisk Trunk Dial Options</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="input_text" id="lname" name="lastname" >
+            </div>
+          </div>
+          <div class="form_row">
+              <div class="col-25">
+                <label for="lname" class="label"><span class="form_Data">Continue if Busy</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                  <mat-slide-toggle ngDefaultControl
+         [(ngModel)]="device" name="hello"></mat-slide-toggle>
+              </div>
+            </div>
+            <div class="form_row">
+                <div class="col-25">
+                  <label for="lname" class="label"><span class="form_Data">Disable Trunk</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                </div>
+                <div class="col-75">
+                    <mat-slide-toggle ngDefaultControl
+           ></mat-slide-toggle>
+                </div>
+              </div>
+       </div>
+      
+     
+   </form>
+</div>
+<div class="pading_textdata">
+    <form>
+    <div class="container">
+        
+        <div class="form_row">
+          <div class="col-25">
+            <label class="label" for="fname"><span class="form_Data">Trunk Name</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="input_text" id="fname" name="firstname" >
+          </div>
+        </div>
+        
+       
+        
+        
+       
+         
+          
+             
+        </div>
+       
+      
+    </form>
+ </div>
+                     </mat-tab>
+                   </mat-tab-group>
+           
+   </div>
+ 
 </div>
 </div>

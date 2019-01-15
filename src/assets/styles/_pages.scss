@@ -476,6 +476,9 @@ padding: 5px 6px;
 .width_element{
 width: 90%;
 }
+.space_element{
+    padding:15px;
+}
 .states2{
     padding:4px 14px;
 }
@@ -871,6 +874,29 @@ padding-bottom: 12px;
         padding: 0px 0px;
     }
     } 
+.rest_Value{  
+background: #e1e5eb;
+color: black;
+padding: 10px 24px;
+ border: none;
+border-radius: 4px;
+cursor: pointer; }
+.billing_pading_Data{
+    padding:24px 0px;
+}
+.rest_Value:hover {
+    background-color: #6458ae;
+    transition: .4s;
+    color:#ffffff;
+  }
+.billing_Tabs_format{
+background: #ffffff; 
+.mat-ink-bar{
+    background:#edf1f2 !important;
+}
+.mat-tab-header{
+    background: #ffffff;   
+}}
 #icons_style
 {
     .feather
@@ -929,12 +955,12 @@ svg {
   
   .input_submit {
     background-color: #27c24c;
-    color: white;
+    color: #ffffff;
     padding: 10px 24px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
+    
   }
   .form_svg{
     margin: auto 6px;
@@ -948,7 +974,7 @@ svg {
       align-self:center;
   }
   .input_submit:hover {
-    background-color: #26aa46;
+    background-color: #6458ae;
     transition: .4s;
   }
   .spacing_element{
