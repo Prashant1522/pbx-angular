@@ -1,3 +1,105 @@
-<p>
-  trunk works!
-</p>
+<div class="pading_textdata">
+    <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+           
+              <mat-tab-group animationDuration="10ms" class="billing_tabs space_element"> 
+                 <mat-tab label="All Trunks">    
+                     welcome
+                       </mat-tab> 
+    <mat-tab label="New Trunk">
+    <div class="pading_textdata">
+       <form>
+       <div class="container">
+           
+           <div class="form_row">
+             <div class="col-25">
+               <label class="label" for="fname"><span class="form_Data">Trunk Name</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+             </div>
+             <div class="col-75">
+               <input type="text" class="input_text" id="fname" name="firstname" >
+             </div>
+           </div>
+           <div class="form_row">
+              <div class="col-25">
+                <label for="lname" class="label"><span class="form_Data">Hide CallerID</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                  <mat-slide-toggle ngDefaultControl
+          name="hello"></mat-slide-toggle>
+                  
+               
+              </div>
+            </div>
+           <div class="form_row">
+             <div class="col-25">
+               <label for="lname" class="label"><span class="form_Data">Outbound CallerID</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+             </div>
+             <div class="col-75">
+               <input type="text" class="input_text" id="lname" name="lastname" >
+             </div>
+           </div>
+           
+           
+           <div class="form_row">
+              <div class="col-25">
+                <label for="lname" class="label"><span class="form_Data">Maximum Channels</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                <input type="text" class="input_text" id="lname" name="lastname" >
+              </div>
+            </div>
+            <div class="form_row">
+                <div class="col-25">
+                  <label for="lname" class="label"><span class="form_Data">Asterisk Trunk Dial Options</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                </div>
+                <div class="col-75">
+                  <input type="text" class="input_text" id="lname" name="lastname" >
+                </div>
+              </div>
+              <div class="form_row">
+                  <div class="col-25">
+                    <label for="lname" class="label"><span class="form_Data">Continue if Busy</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                  </div>
+                  <div class="col-75">
+                      <mat-slide-toggle ngDefaultControl
+              name="hello"></mat-slide-toggle>
+                  </div>
+                </div>
+                <div class="form_row">
+                    <div class="col-25">
+                      <label for="lname" class="label"><span class="form_Data">Disable Trunk</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                    </div>
+                    <div class="col-75">
+                        <mat-slide-toggle ngDefaultControl
+               ></mat-slide-toggle>
+                    </div>
+                  </div>
+           </div>
+          
+         
+       </form>
+    </div>
+    <div class="pading_textdata">
+        <form>
+        <div class="container">
+            
+            <div class="form_row">
+              <div class="col-25">
+                <label class="label" for="fname"><span class="form_Data">Trunk Name</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                <input type="text" class="input_text" id="fname" name="firstname" >
+              </div>
+            </div>
+             </div>
+        </form>
+     </div>
+  </mat-tab>
+ </mat-tab-group>
+               
+       </div>
+     
+    </div>
+    
+  </div>

@@ -20,5 +20,53 @@
   
       </div>
     </div>
-  
+    <div fxLayout="row" fxLayoutWrap="wrap">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+            <mat-card>
+                <div id="active_title" class="white">
+                    <div id="title-inner" class="center">
+                        <span class="value_adjust user_element"><span id="icon_style" class="aign_center" [innerHTML]="'phone' | feather"></span>
+                            <span id="header_text">All Calls</span></span>
+                     </div>
+                </div>
+                <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+                    <mat-grid-tile> 
+                      <div class="textdata-align">
+                        <span class="report_text">Total Calls</span><br>
+                      <span class="title_Font2 color_purple report_middle_element">{{ totalcalls }}</span><br>
+                      <span class="report_text2">100% of total calls</span></div></mat-grid-tile>
+                    <mat-grid-tile><div class="textdata-align">
+                        <span class="report_text">Average Talk Time</span><br>
+                      <span class="title_Font2 color_purple ">{{ totalcalls }}</span><br>
+                      <span class="report_text2">Total 00.00.00</span></div></mat-grid-tile>
+                    <mat-grid-tile><div class="textdata-align">
+                        <span class="report_text">Missed Calls</span><br>
+                      <span class="title_Font2 color_purple ">{{ totalcalls }}</span><br>
+                      <span class="report_text2">Percentage  0%</span></div></mat-grid-tile>
+                    <mat-grid-tile><div class="textdata-align">
+                        <span class="report_text">Most Active</span><br>
+                      <span class="title_Font2 color_purple ">{{ totalcalls }}</span><br>
+                      <span class="report_text2">N/A</span></div></mat-grid-tile>
+                  </mat-grid-list>
+            </mat-card>
+    </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+          <div style="display: block;">
+          <canvas baseChart #myChart width="400" height="400"
+                      [datasets]="lineChartData1"
+                      [labels]="lineChartLabels"
+                      [options]="lineChartOptions"
+                      [colors]="lineChartColors"
+                      [legend]="lineChartLegend"
+                      [chartType]="lineChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+       
+      </div>
   </div>
