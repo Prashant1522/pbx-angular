@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
 import { BaseChartDirective } from 'ng2-charts';
 @Component({
@@ -6,19 +6,31 @@ import { BaseChartDirective } from 'ng2-charts';
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.css']
 })
+
 export class ReportsComponent implements OnInit {
+  @ViewChild(BaseChartDirective) chartComponent: BaseChartDirective;
+legendData: any;
   totalcalls = 179;
   public lineChartData1:Array<any> = [
     {data: [0, 50, 68, 35, 22, 0], label: 'Series A',lineTension: 0,borderWidth:1,pointBorderWidth:6,pointRadius:10,pointStyle:'rect'},
     {data: [0,28, 48, 40, 19, 86, 27, 90], label: 'Series B',lineTension: 0},
     {data: [0,18, 48, 77, 9, 100, 27, 40], label: 'Series C',lineTension: 0}
   ];
+  private getLegendCallback = (function(self) {
+    function handle(chart) {
+   
+    return chart.legend.legendItems;
+    }
+    return function(chart) {
+    return handle(chart);
+    }
+    })(this);
   public lineChartLabels:Array<any> = ['6/24', '6/25', '6/26', '6/27', '6/28', '6/29', '6/30'];
  
   public lineChartOptions:any = {
     
     responsive: true,
-   
+    legendCallback: this.getLegendCallback,
     title: {
       display: true,
       text: 'Chart.js - Gridline Background',
@@ -88,6 +100,17 @@ export class ReportsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var myvar = setInterval(() => {
+      
+      this.legendData = this.chartComponent.chart.generateLegend();
+
+      // console.log("still running");
+      if(this.legendData){console.log(this.legendData());
+      clearInterval(myvar);
+      }
+    }, 0);
+    
+
   }
 
 }

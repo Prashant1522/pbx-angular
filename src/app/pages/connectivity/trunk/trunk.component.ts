@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './trunk.component.html',
   styleUrls: ['./trunk.component.css']
 })
+
+
 export class TrunkComponent implements OnInit {
 
   constructor() { }
