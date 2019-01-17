@@ -143,8 +143,9 @@ mat-sidenav {
         }
         &.selected > .mat-list-item-content > a{
            
-            border-radius: $radius;
-            color:$white;
+            border-left:10px solid $purple;
+            border-radius:0px;
+            color: $purple;
             
             mat-icon{
                 color:$white;
@@ -352,11 +353,7 @@ use profile section
           margin-left: 0px!important;
         }
 }
-#snav .mat-list-item.selected > .mat-list-item-content > a {
-    border-left:10px solid $purple;
-    border-radius:0px;
-    color: $purple;
-}
+
 
 #snav .mat-list-item:hover > .mat-list-item-content > a {
     border-left:10px solid $purple;
