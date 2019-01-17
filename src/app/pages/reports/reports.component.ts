@@ -1,5 +1,4 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { ChartsModule } from 'ng2-charts';
 import { BaseChartDirective } from 'ng2-charts';
 @Component({
   selector: 'app-reports',
