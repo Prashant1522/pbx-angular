@@ -56,16 +56,22 @@
     <div class="row">
         <div class="col-md-6">
           <div style="display: block;">
-          <canvas baseChart #myChart width="400" height="400"
+          <canvas baseChart width="400" height="300"
                       [datasets]="lineChartData1"
                       [labels]="lineChartLabels"
                       [options]="lineChartOptions"
                       [colors]="lineChartColors"
-                      [legend]="lineChartLegend"
+                      [legend]="false"
                       [chartType]="lineChartType"
                       (chartHover)="chartHovered($event)"
                       (chartClick)="chartClicked($event)"></canvas>
+                      
           </div>
+          <div *ngIf="legendData">
+<ul class="my-legend">
+<li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
+</ul>
+</div>
         </div>
        
       </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit ,ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
+import { MatPaginatorIntl } from '@angular/material';
 
 @Component({
   selector: 'app-clients',
@@ -12,7 +13,7 @@ export class ClientsComponent implements OnInit {
   dataelement1 = new MatTableDataSource<client_PeriodicElement1>(CLIENT_ELEMENT_DATA1);
   applyFilter(filterValue: string) {
     this.dataelement1.filter = filterValue.trim().toLowerCase();
-  }
+ }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
