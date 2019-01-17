@@ -118,7 +118,7 @@ export class ReportsComponent implements OnInit {
       const myLegend = document.getElementById('overdue');
       // console.log(myLegend);
       if (myLegend) {
-        // console.log(this.legendData);
+        console.log(this.legendData);
         var legendItems = myLegend.getElementsByTagName('li');
     console.log(legendItems);
     for (var i = 0; i < legendItems.length; i += 1) {
@@ -130,6 +130,7 @@ export class ReportsComponent implements OnInit {
     
   }
   legendClickCallback(event) {
+    console.log(event);
     event = event || window.event;
 
     var target = event.target || event.srcElement;
