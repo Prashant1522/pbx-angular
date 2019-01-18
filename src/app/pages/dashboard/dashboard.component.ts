@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild ,AfterContentInit, Directive, Renderer2, SecurityContext} from '@angular/core';
 import { FeatherIconsPipe } from '../../feather-pipe';
 import {  DomSanitizer } from '@angular/platform-browser';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatPaginator,MatTableDataSource } from '@angular/material';
 
 

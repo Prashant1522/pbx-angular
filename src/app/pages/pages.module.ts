@@ -27,7 +27,8 @@ import { OutboundComponent } from './connectivity/outbound/outbound.component';
 import { TrunkComponent } from './connectivity/trunk/trunk.component';
 // import { DashboardDirective } from './dashboard.directive';
 // import { HighlightDirective } from './dashboard/highlight.directive';
-
+import { MatPaginatorIntl } from '@angular/material';
+import { MatPaginatorIntlCro } from './../customClass';
 @NgModule({
   imports: [
     CommonModule,
@@ -79,7 +80,7 @@ import { TrunkComponent } from './connectivity/trunk/trunk.component';
          TrunkComponent, 
         
     ],
-    providers: [],
+    providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro}],
  
 })
 export class PagesModule {}

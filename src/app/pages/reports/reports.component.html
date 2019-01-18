@@ -62,18 +62,27 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <div style="display: block;">
-        <canvas baseChart width="400" height="300" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions"
-          [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
-
-      </div>
-      <div id ="overdue" *ngIf="legendData">
-        <ul class="my-legend">
-          <li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
-        </ul>
-      </div>
+      
     </div>
 
   </div>
+  <div fxLayout="row" fxLayoutWrap="wrap" fxLayout.xs="column" fxLayout.sm="column">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="50%" fxFlex="50%">
+
+        <mat-card class="fixFH">
+          <div style="display: block;">
+            <canvas baseChart #myChart width="400" height="300" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions"
+              [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    
+          </div>
+          <div id ="overdue" *ngIf="legendData">
+            <ul class="my-legend">
+              <li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
+            </ul>
+          </div> 
+        </mat-card>
+    </div>
+    </div>
 </div>

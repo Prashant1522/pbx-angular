@@ -13,15 +13,15 @@ export class ReportsComponent implements OnInit {
   legendData: any;
   totalcalls = 179;
   public lineChartData1: Array<any> = [
-    { data: [0, 50, 68, 35, 22, 0], label: 'Series A', lineTension: 0, borderWidth: 1, pointBorderWidth: 6, pointRadius: 10, pointStyle: 'rect' },
-    { data: [0, 28, 48, 40, 19, 86, 27, 90], label: 'Series B', lineTension: 0 },
+    { data: [0, 50, 68, 35, 22, 0,36,52], label: 'Series A', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 3},
+    { data: [0, 28, 48, 40, 19, 86, 0, 90], label: 'Series B', lineTension: 0 },
     { data: [0, 18, 48, 77, 9, 100, 27, 40], label: 'Series C', lineTension: 0 }
   ];
   private getLegendCallback = (function (self) {
-    function handle(chart) {
-
-      return chart.legend.legendItems;
-    }
+    
+  function handle(chart) {
+     return chart.legend.legendItems;
+   }
     return function (chart) {
       return handle(chart);
     }
@@ -61,11 +61,13 @@ export class ReportsComponent implements OnInit {
       }
     }
   };
+  
+    
   public lineChartColors: Array<any> = [
     { // grey
       backgroundColor: 'transparent',
       borderColor: '#998fd2',
-      pointBackgroundColor: '#ff0000',
+      pointBackgroundColor: '#ffffff',
       pointBorderColor: '#998fd2',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
@@ -117,37 +119,42 @@ export class ReportsComponent implements OnInit {
   ngAfterViewInit() {
     var myvar2 = setInterval(() => {
       const myLegend = document.getElementById('overdue');
-      // console.log(myLegend);
+      console.log(myLegend);
       if (myLegend) {
-        // console.log(this.legendData);
+       //  console.log(this.legendData);
+         var abc = document.getElementsByTagName('li');
+        // console.log(abc);
         var legendItems = myLegend.getElementsByTagName('li');
-    console.log(legendItems);
+        //console.log(myLegend);
+   // console.log(legendItems);
     for (var i = 0; i < legendItems.length; i += 1) {
-      legendItems[i].addEventListener("click", this.legendClickCallback, false);
+      legendItems[i].addEventListener("click", legendClickCallback, false);
     }
+    
         clearInterval(myvar2);
       }
     }, 1000);
     
-  }
-  legendClickCallback(event) {
+ 
+  function legendClickCallback(event) {
     event = event || window.event;
 
     var target = event.target || event.srcElement;
+    
     while (target.nodeName !== 'LI') {
-      target = target.parentElement;
+       target = target.parentElement;
+       //console.log(target);
+     
     }
     var parent = target.parentElement;
-    var chartId = parseInt(parent.classList[0].split("-")[0], 10);
-    var chart = this.chartComponent.chart.instances[chartId];
+    var chart = this.chartComponent.chart.instances[0];
     var index = Array.prototype.slice.call(parent.children).indexOf(target);
-
-    this.chartComponent.chart.legend.options.onClick.call(chart, event, chart.legend.legendItems[index]);
-    if (chart.lineChartData1(index)) {
-      target.classList.remove('hidden');
-    } else {
-      target.classList.add('hidden');
-    }
+   // console.log(chart.legend.legendItems[index]);
+  
   }
+ 
+ 
+}
 
 }
+
