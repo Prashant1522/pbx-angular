@@ -23,17 +23,28 @@
                         (mouseleave)="buttonLeave(levelOneTrigger,button)" 
                         ></button>
                         <mat-menu class="sub-menu" #menu="matMenu" xPosition="after" yPosition="below">
-                            <span (mouseenter)="menuenter()" (mouseleave)="menuLeave(levelOneTrigger, button)">
+                            <!-- <span (mouseenter)="menuenter()" (mouseleave)="menuLeave(levelOneTrigger, button)">
                                 <span class="head">{{ state }}</span> <hr>
-                      <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([state])" routerLinkActive="selected"> 
+                      <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([state])"> 
                           <span class="changeMe">
                                 <a class="" [routerLink]="['/', submenuitem.state]" *ngIf="submenuitem.type === 'link'" (click)="stateChange(menuitem.state); showSubMenu(menuitem.state)">
-
+                
                           <button mat-menu-item >{{ submenuitem.name }}</button>
                           </a>
                             </span>
                     </ng-container>
-                    </span>
+                    </span> -->
+                    <mat-nav-list (mouseenter)="menuenter()" (mouseleave)="menuLeave(levelOneTrigger, button)">
+                            <span class="head">{{ state }}</span> <hr>
+                        <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([menuitem.state])" > 
+                            <mat-list-item class="changeMe">
+                                <a class="nav" [routerLink]="['/', submenuitem.state]" *ngIf="submenuitem.type === 'link'" (click)="stateChange(menuitem.state); showSubMenu(menuitem.state)">
+                
+                                <span mat-menu-item >{{ submenuitem.name }}</span>
+                            </a>
+                            </mat-list-item>
+                      </ng-container>
+                      </mat-nav-list>
                      </mat-menu>
                     </span>
                 
@@ -43,9 +54,10 @@
             <!-- </div> -->
         </a>
         
+     
         
         <mat-nav-list class="sub-menu {{ menuitem.state }}" [@subMenuAnimation]="menuitem.state == state? (isSubMenuOpen ? 'open' : 'closed'): 'closed'">
-            <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([menuitem.state])" routerLinkActive="selected"> 
+            <ng-container *ngFor="let submenuitem of menuItems.getSubMenuitem([menuitem.state])" > 
                 <mat-list-item class="changeMe">
                     <a class="nav" [routerLink]="['/', submenuitem.state]" *ngIf="submenuitem.type === 'link'" (click)="stateChange(menuitem.state); showSubMenu(menuitem.state)">
 

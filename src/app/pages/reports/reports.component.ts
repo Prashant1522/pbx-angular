@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild,AfterContentInit } from '@angular/core';
-import { ChartsModule } from 'ng2-charts';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
@@ -17,6 +16,7 @@ export class ReportsComponent implements OnInit {
     { data: [0, 28, 48, 40, 19, 86, 0, 90], label: 'Series B', lineTension: 0 },
     { data: [0, 18, 48, 77, 9, 100, 27, 40], label: 'Series C', lineTension: 0 }
   ];
+
   private getLegendCallback = (function (self) {
     
   function handle(chart) {
@@ -117,10 +117,12 @@ export class ReportsComponent implements OnInit {
 
   }
   ngAfterViewInit() {
+
     var myvar2 = setInterval(() => {
       const myLegend = document.getElementById('overdue');
       console.log(myLegend);
       if (myLegend) {
+<<<<<<< HEAD
        //  console.log(this.legendData);
          var abc = document.getElementsByTagName('li');
         // console.log(abc);
@@ -151,6 +153,37 @@ export class ReportsComponent implements OnInit {
     var index = Array.prototype.slice.call(parent.children).indexOf(target);
    // console.log(chart.legend.legendItems[index]);
   
+=======
+        console.log(this.legendData);
+        var legendItems = myLegend.getElementsByTagName('li');
+        console.log(legendItems);
+        for (var i = 0; i < legendItems.length; i += 1) {
+          legendItems[i].addEventListener("click", (legendClickCallback) => {
+            console.log(event);
+            var index;
+            switch(event.srcElement.innerHTML){
+              case "Series A":
+                index=0;
+                break;
+              case "Series B":
+                index=1;
+                break;
+              case "Series C":
+                index=2;
+                break;
+            }
+            
+            this.chartComponent.chart.config.data.datasets[index].hidden = !this.chartComponent.chart.config.data.datasets[index].hidden;
+            this.chartComponent.chart.update();
+
+
+          });
+        }
+        clearInterval(myvar2);
+      }
+    }, 1000);
+
+>>>>>>> 6b97e40f1737b1ad020efb5d8969b4dc6e7e94fc
   }
  
  
