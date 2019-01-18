@@ -122,38 +122,6 @@ export class ReportsComponent implements OnInit {
       const myLegend = document.getElementById('overdue');
       console.log(myLegend);
       if (myLegend) {
-<<<<<<< HEAD
-       //  console.log(this.legendData);
-         var abc = document.getElementsByTagName('li');
-        // console.log(abc);
-        var legendItems = myLegend.getElementsByTagName('li');
-        //console.log(myLegend);
-   // console.log(legendItems);
-    for (var i = 0; i < legendItems.length; i += 1) {
-      legendItems[i].addEventListener("click", legendClickCallback, false);
-    }
-    
-        clearInterval(myvar2);
-      }
-    }, 1000);
-    
- 
-  function legendClickCallback(event) {
-    event = event || window.event;
-
-    var target = event.target || event.srcElement;
-    
-    while (target.nodeName !== 'LI') {
-       target = target.parentElement;
-       //console.log(target);
-     
-    }
-    var parent = target.parentElement;
-    var chart = this.chartComponent.chart.instances[0];
-    var index = Array.prototype.slice.call(parent.children).indexOf(target);
-   // console.log(chart.legend.legendItems[index]);
-  
-=======
         console.log(this.legendData);
         var legendItems = myLegend.getElementsByTagName('li');
         console.log(legendItems);
@@ -183,11 +151,10 @@ export class ReportsComponent implements OnInit {
       }
     }, 1000);
 
->>>>>>> 6b97e40f1737b1ad020efb5d8969b4dc6e7e94fc
   }
  
  
 }
 
-}
+
 
