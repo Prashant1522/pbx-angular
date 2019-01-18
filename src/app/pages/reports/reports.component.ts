@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
@@ -16,6 +16,7 @@ export class ReportsComponent implements OnInit {
     { data: [0, 28, 48, 40, 19, 86, 27, 90], label: 'Series B', lineTension: 0 },
     { data: [0, 18, 48, 77, 9, 100, 27, 40], label: 'Series C', lineTension: 0 }
   ];
+
   private getLegendCallback = (function (self) {
     function handle(chart) {
 
@@ -114,40 +115,28 @@ export class ReportsComponent implements OnInit {
 
   }
   ngAfterViewInit() {
+
     var myvar2 = setInterval(() => {
       const myLegend = document.getElementById('overdue');
       // console.log(myLegend);
       if (myLegend) {
         console.log(this.legendData);
         var legendItems = myLegend.getElementsByTagName('li');
-    console.log(legendItems);
-    for (var i = 0; i < legendItems.length; i += 1) {
-      legendItems[i].addEventListener("click", this.legendClickCallback, false);
-    }
+        console.log(legendItems);
+        for (var i = 0; i < legendItems.length; i += 1) {
+          legendItems[i].addEventListener("click", (legendClickCallback) => {
+            console.log(event);
+
+            this.chartComponent.chart.config.data.datasets[0].hidden = !this.chartComponent.chart.config.data.datasets[0].hidden;
+            this.chartComponent.chart.update();
+
+
+          });
+        }
         clearInterval(myvar2);
       }
     }, 1000);
-    
-  }
-  legendClickCallback(event) {
-    console.log(event);
-    event = event || window.event;
 
-    var target = event.target || event.srcElement;
-    while (target.nodeName !== 'LI') {
-      target = target.parentElement;
-    }
-    var parent = target.parentElement;
-    var chartId = parseInt(parent.classList[0].split("-")[0], 10);
-    var chart = this.chartComponent.chart.instances[chartId];
-    var index = Array.prototype.slice.call(parent.children).indexOf(target);
-
-    this.chartComponent.chart.legend.options.onClick.call(chart, event, chart.legend.legendItems[index]);
-    if (chart.lineChartData1(index)) {
-      target.classList.remove('hidden');
-    } else {
-      target.classList.add('hidden');
-    }
   }
 
 }
