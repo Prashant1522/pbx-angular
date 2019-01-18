@@ -126,8 +126,20 @@ export class ReportsComponent implements OnInit {
         for (var i = 0; i < legendItems.length; i += 1) {
           legendItems[i].addEventListener("click", (legendClickCallback) => {
             console.log(event);
-
-            this.chartComponent.chart.config.data.datasets[0].hidden = !this.chartComponent.chart.config.data.datasets[0].hidden;
+            var index;
+            switch(event.srcElement.innerHTML){
+              case "Series A":
+                index=0;
+                break;
+              case "Series B":
+                index=1;
+                break;
+              case "Series C":
+                index=2;
+                break;
+            }
+            
+            this.chartComponent.chart.config.data.datasets[index].hidden = !this.chartComponent.chart.config.data.datasets[index].hidden;
             this.chartComponent.chart.update();
 
 
