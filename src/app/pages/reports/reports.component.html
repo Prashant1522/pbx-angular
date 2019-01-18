@@ -73,8 +73,7 @@
         <mat-card class="fixFH">
           <div style="display: block;">
             <canvas baseChart #myChart width="400" height="300" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions"
-              [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"></canvas>
+              [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType"></canvas>
     
           </div>
           <div id ="overdue" *ngIf="legendData">
