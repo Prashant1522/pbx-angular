@@ -4,7 +4,7 @@
     <!-- Card column -->
     <div fxFlex.gt-sm="100%" fxFlex="100">
 
-      <mat-tab-group class="billing_tabs" animationDuration="0ms">
+      <mat-tab-group class="billing_tabs margin_Tab" animationDuration="0ms">
         <mat-tab label="Company Summary">
           <div class="company_summary_head full_width">
             <div class="full_width company_summary_content">
@@ -15,13 +15,19 @@
               </span></div>
              </div>
              <div id="cdggg">
+                <div id="active_title" class="white title_format">
+                    <div id="title-inner" class="center">
+                      <span id="header_text" class="equal_width align_data">Total Calls</span><span id ="overdue" class="equal_width table_right_adjust data_right" *ngIf="legendData">
+                          <ul class="my-legend data_list">
+                            <li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
+                          </ul>
+                         </span> 
+                    </div>
+                  </div>
+                  
              <canvas baseChart #myChart width="400px" height="300px" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions"
              [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType"></canvas>
-   <div id ="overdue" *ngIf="legendData">
-           <ul class="my-legend">
-             <li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
-           </ul>
-         </div> 
+   
         </div>
         </mat-tab>
       </mat-tab-group>

@@ -64,7 +64,7 @@ export class ReportsComponent implements OnInit {
         gridLines: {
           display: true,
           color: '#efefef',
-          lineWidth: 2
+          lineWidth: 1.5
         }
       }]
     },
