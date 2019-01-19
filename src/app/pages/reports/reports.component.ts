@@ -11,10 +11,28 @@ export class ReportsComponent implements OnInit {
   @ViewChild(BaseChartDirective) chartComponent: BaseChartDirective;
   legendData: any;
   totalcalls = 179;
+  missedcalls = 0;
+  mostactive = 0;
+  averagetallktime = '00.00.00';
+  totalcalls2 =129;
+  averagetallktime2= '00.01.12';
+  missedcalls2=6;
+  mostactive2=29;
+  totalcalls3=0;
+  averagetallktime3= '00.01.59';
+  mostactive3=6;
+  totalcalls4=0;
+  averagetallktime4='00.00.00';
+  missedcalls4=0;
+  mostactive4=0;
+  totalcalls5=0;
+  averagetallktime5='00.00.00';
+  missedcalls5=0;
+  mostactive5=0;
   public lineChartData1: Array<any> = [
-    { data: [0, 50, 68, 35, 22, 0,36,52], label: 'Series A', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 3},
-    { data: [0, 28, 48, 40, 19, 86, 0, 90], label: 'Series B', lineTension: 0 },
-    { data: [0, 18, 48, 77, 9, 100, 27, 40], label: 'Series C', lineTension: 0 }
+    { data: [0, 50, 68, 35, 22, 0], label: 'Series A', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 3},
+    { data: [0, 43, 50, 21, 12, 0], label: 'Series B', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 3},
+    { data: [0, 9, 18, 14, 10, 0], label: 'Series C', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 4},
   ];
 
   private getLegendCallback = (function (self) {
@@ -31,23 +49,22 @@ export class ReportsComponent implements OnInit {
   public lineChartOptions: any = {
 
     responsive: true,
+    maintainAspectRatio: false,
     legendCallback: this.getLegendCallback,
-    title: {
-      display: true,
-      text: 'Chart.js - Gridline Background',
-    },
+    
     scales: {
       xAxes: [{
         gridLines: {
           display: false,
-          lineWidth: 1
+          lineWidth: 2,
+          color :'#998fd2'
         }
       }],
       yAxes: [{
         gridLines: {
-          display: false,
-          color: 'rgba(171,171,171,1)',
-          lineWidth: 0.5
+          display: true,
+          color: '#efefef',
+          lineWidth: 2
         }
       }]
     },
@@ -67,26 +84,26 @@ export class ReportsComponent implements OnInit {
     { // grey
       backgroundColor: 'transparent',
       borderColor: '#998fd2',
-      pointBackgroundColor: '#ffffff',
+      pointBackgroundColor: '#998fd2',
       pointBorderColor: '#998fd2',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
     { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
+      backgroundColor: 'transparent',
+      borderColor: '#e69d72',
+      pointBackgroundColor: '#e69d72',
+      pointBorderColor: '#e69d72',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(77,83,96,1)'
     },
     { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+      backgroundColor: 'transparent',
+      borderColor: '#a3cb85',
+      pointBackgroundColor: '#a3cb85',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+      pointHoverBorderColor: '#a3cb85'
     }
   ];
 
