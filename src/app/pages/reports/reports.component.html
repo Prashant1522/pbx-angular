@@ -4,7 +4,7 @@
     <!-- Card column -->
     <div fxFlex.gt-sm="100%" fxFlex="100">
 
-      <mat-tab-group class="billing_tabs" animationDuration="0ms">
+      <mat-tab-group class="billing_tabs margin_Tab" animationDuration="0ms">
         <mat-tab label="Company Summary">
           <div class="company_summary_head full_width">
             <div class="full_width company_summary_content">
@@ -13,8 +13,22 @@
                   placeholder="Search">
                 <span class="search_svg " [innerHTML]="'search' | feather"></span>
               </span></div>
-          </div>
-
+             </div>
+             <div id="cdggg">
+                <div id="active_title" class="white title_format">
+                    <div id="title-inner" class="center">
+                      <span id="header_text" class="equal_width align_data">Total Calls</span><span id ="overdue" class="equal_width table_right_adjust data_right" *ngIf="legendData">
+                          <ul class="my-legend data_list">
+                            <li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
+                          </ul>
+                         </span> 
+                    </div>
+                  </div>
+                  
+             <canvas baseChart #myChart width="400px" height="300px" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions"
+             [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType"></canvas>
+   
+        </div>
         </mat-tab>
       </mat-tab-group>
 
@@ -24,10 +38,10 @@
     <!-- Card column -->
     <div fxFlex.gt-sm="100%" fxFlex="100">
       <mat-card>
-        <div id="active_title" class="white">
+        <div id="active_title" class="white title_format">
           <div id="title-inner" class="center">
-            <span class="value_adjust user_element"><span id="icon_style" class="aign_center" [innerHTML]="'phone' | feather"></span>
-              <span id="header_text">All Calls</span></span>
+            <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone' | feather"></span>
+              <span id="header_text" class="align_data value_adjust">All Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
           </div>
         </div>
         <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
@@ -40,19 +54,19 @@
           <mat-grid-tile>
             <div class="textdata-align">
               <span class="report_text">Average Talk Time</span><br>
-              <span class="title_Font2 color_purple ">{{ totalcalls }}</span><br>
+              <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime }}</span><br>
               <span class="report_text2">Total 00.00.00</span></div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div class="textdata-align">
               <span class="report_text">Missed Calls</span><br>
-              <span class="title_Font2 color_purple ">{{ totalcalls }}</span><br>
+              <span class="title_Font2 color_sky report_middle_element">{{ missedcalls}}</span><br>
               <span class="report_text2">Percentage 0%</span></div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div class="textdata-align">
               <span class="report_text">Most Active</span><br>
-              <span class="title_Font2 color_purple ">{{ totalcalls }}</span><br>
+              <span class="title_Font2 color_green report_middle_element">{{ mostactive }}</span><br>
               <span class="report_text2">N/A</span></div>
           </mat-grid-tile>
         </mat-grid-list>
@@ -66,23 +80,170 @@
     </div>
 
   </div>
-  <div fxLayout="row" fxLayoutWrap="wrap" fxLayout.xs="column" fxLayout.sm="column">
+  <div fxLayout="row" fxLayoutWrap="wrap">
     <!-- Card column -->
-    <div fxFlex.gt-sm="50%" fxFlex="50%">
-
-        <mat-card class="fixFH">
-          <div style="display: block;">
-            <canvas baseChart #myChart width="400" height="300" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions"
-              [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"></canvas>
-    
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+      <mat-card>
+        <div id="active_title" class="white title_format">
+          <div id="title-inner" class="center">
+            <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone-incoming' | feather"></span>
+              <span id="header_text" class="align_data value_adjust">Inbound Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
           </div>
-          <div id ="overdue" *ngIf="legendData">
-            <ul class="my-legend">
-              <li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
-            </ul>
-          </div> 
-        </mat-card>
+        </div>
+        <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Total Calls</span><br>
+              <span class="title_Font2 color_purple report_middle_element">{{ totalcalls2 }}</span><br>
+              <span class="report_text2">72% of total calls</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Average Talk Time</span><br>
+              <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime2 }}</span><br>
+              <span class="report_text2">Total 02.19.09</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Missed Calls</span><br>
+              <span class="title_Font2 color_sky report_middle_element">{{ missedcalls2}}</span><br>
+              <span class="report_text2">Percentage  4%</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Most Active</span><br>
+              <span class="title_Font2 color_green report_middle_element">{{ mostactive2 }}</span><br>
+              <span class="report_text2">Carissa Knezha</span></div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
     </div>
+
+  </div>
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+      <mat-card>
+        <div id="active_title" class="white title_format">
+          <div id="title-inner" class="center">
+            <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone-outgoing' | feather"></span>
+              <span id="header_text" class="align_data value_adjust">Outbound Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+          </div>
+        </div>
+        <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Total Calls</span><br>
+              <span class="title_Font2 color_purple report_middle_element">{{ totalcalls3 }}</span><br>
+              <span class="report_text2">27% of total calls</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Average Talk Time</span><br>
+              <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime3 }}</span><br>
+              <span class="report_text2">Total 00.00.00</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Most Active</span><br>
+              <span class="title_Font2 color_green report_middle_element">{{ mostactive3 }}</span><br>
+              <span class="report_text2">N/A</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
     </div>
+
+  </div>
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+      <mat-card>
+        <div id="active_title" class="white title_format">
+          <div id="title-inner" class="center">
+            <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aig_center" [innerHTML]="'globe' | feather"></span>
+              <span id="header_text" class="align_data value_adjust">International Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+          </div>
+        </div>
+        <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Total Calls</span><br>
+              <span class="title_Font2 color_purple report_middle_element">{{ totalcalls4 }}</span><br>
+              <span class="report_text2">0% of total calls</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Average Talk Time</span><br>
+              <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime4 }}</span><br>
+              <span class="report_text2">Total 00.00.00</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Missed Calls</span><br>
+              <span class="title_Font2 color_sky report_middle_element">{{ missedcalls4}}</span><br>
+              <span class="report_text2">Percentage  0%</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Most Active</span><br>
+              <span class="title_Font2 color_green report_middle_element">{{ mostactive4 }}</span><br>
+              <span class="report_text2">N/A</span></div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </div>
+
+  </div>
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+      <mat-card>
+        <div id="active_title" class="white title_format">
+          <div id="title-inner" class="center">
+            <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone-call' | feather"></span>
+            <span id="header_text" class="align_data value_adjust">Intra-PBX Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+          </div>
+        </div>
+        <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Total Calls</span><br>
+              <span class="title_Font2 color_purple report_middle_element">{{ totalcalls5 }}</span><br>
+              <span class="report_text2">0% of total calls</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Average Talk Time</span><br>
+              <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime5 }}</span><br>
+              <span class="report_text2">Total 00.00.00</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Missed Calls</span><br>
+              <span class="title_Font2 color_sky report_middle_element">{{ missedcalls5}}</span><br>
+              <span class="report_text2">Percentage  0%</span></div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="textdata-align">
+              <span class="report_text">Most Active</span><br>
+              <span class="title_Font2 color_green report_middle_element">{{ mostactive5 }}</span><br>
+              <span class="report_text2">N/A</span></div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      
+    </div>
+
+  </div>
+
+    
 </div>
