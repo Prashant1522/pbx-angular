@@ -447,6 +447,8 @@ padding: 0px 19px 24px 19px;
 table , .full_width {
     width: 100%;
   }
+  .full_report{
+    border: 1px solid #cccccc;}
 .font-mobiles{
 font-size:10px !important;
 }
@@ -754,6 +756,11 @@ font-weight: 600 !important;
 .report_middle_element{
     font-weight: 500 ;
 
+}
+.aig_center{
+    svg{
+        color: #6458ae;
+    }
 }
 .reporting
 .mat-grid-tile {
