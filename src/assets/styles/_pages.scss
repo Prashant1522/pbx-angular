@@ -39,9 +39,15 @@ $searchHeight:36px;
 html .page-wrapper{
     height:calc(100vh - 3.5vw);
 }
+.trunk_setting2 {
+    padding: 0px 19px 24px 19px;
+}
 .pading_textdata{
-    padding: 24px 19px;
+ padding: 24px 19px;
     }
+.pading_textdata1{
+ padding:24px 19px 0px 19px;
+}
 
 .mat-card-title{
     font-size:14px !important;
@@ -526,6 +532,8 @@ padding:10px 10px; }
         padding:10px 24px;
     }
 }
+.trunk_setting{
+    padding:0px 19px;}
 .overdueMeetingsInsert{
     height: 60px;
     display:flex;
@@ -1047,9 +1055,15 @@ svg {
   }
   .spacing_element{
     margin: auto 8px;}
-  .container {
+  .container1{
     border: 1px solid #d7d7d7;
    padding: 20px;
+  }
+  .container2{
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+border-bottom:1px solid #d7d7d7;
+padding: 20px;
   }
   
   .col-25 {
@@ -1113,4 +1127,7 @@ padding:4px;
   .width18{
       width:18%;
       margin-left:20px;
+  }
+  .font20{
+      font-size:20px;
   }
