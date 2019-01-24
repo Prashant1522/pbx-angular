@@ -10,8 +10,9 @@ import {FormControl} from '@angular/forms';
 
 export class ReportsComponent implements OnInit {
   public barChartOptions:any = {
- 
-    tooltips: {
+    responsive:true,
+    maintainAspectRatio: false,
+  tooltips: {
       mode: 'index',
        backgroundColor:"#ffffff",
       borderColor:"red",
@@ -23,7 +24,7 @@ export class ReportsComponent implements OnInit {
      scales: {
       xAxes: [{
         categoryPercentage:0.5,
-        barThickness:15,
+      
         barPercentage:1,
           gridLines: {
             drawBorder: false,
