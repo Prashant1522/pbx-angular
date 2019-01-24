@@ -51,7 +51,7 @@ export class ReportsComponent implements OnInit {
      }],
 },
     scaleShowVerticalLines: false,
-    responsive: true
+   
   };
   public barChartLabels:string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   public barChartType:string = 'bar';
