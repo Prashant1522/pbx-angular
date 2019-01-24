@@ -3,7 +3,7 @@ import { FeatherIconsPipe } from '../../feather-pipe';
 import {  DomSanitizer } from '@angular/platform-browser';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatPaginator,MatTableDataSource } from '@angular/material';
-
+import { ElementdataService } from '../../elementdata.service';
 
 export interface Food {
   value: string;
@@ -16,6 +16,9 @@ export interface Food {
 })
 
 export class DashboardComponent implements OnInit {
+  firstClick() {
+    this.data.firstClick();
+  }
   diskusage1 = 32;
   cpuusage= 22;
   diskusage2 = 3;
@@ -73,6 +76,7 @@ export class DashboardComponent implements OnInit {
   }
 htmlToAdd;
 constructor(
+  private data: ElementdataService,
 private _renderer2: Renderer2,
 private sanitizer: DomSanitizer) { }
 ngAfterViewInit() {}
