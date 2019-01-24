@@ -6,13 +6,18 @@
 
       <mat-tab-group class="billing_tabs margin_Tab" animationDuration="0ms">
         <mat-tab label="Company Summary">
-          <div class="company_summary_head full_width">
-            <div class="full_width company_summary_content">
-              <span class="value_adjust billing_state searching">
-                <input class="search billing_Search textdata_align_left " matInput (keyup)="applyFilter($event.target.value)"
-                  placeholder="Search">
-                <span class="search_svg " [innerHTML]="'search' | feather"></span>
-              </span></div>
+          <div class="full_width company_summary_head">
+              <div class="width18">
+              <select class="input_text title_format" id="alert_info" required>
+                  <option label="Total Calls"></option>
+                  <option *ngFor="let alert_info of calls" [value]="alert_info">{{alert_info}}</option>
+                </select></div>
+                <div class="width18">
+                    <mat-form-field class="statsSelect">
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date" >
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker></mat-form-field>
+                      </div>
              </div>
              <div id="cdggg">
                 <div id="active_title" class="white title_format">

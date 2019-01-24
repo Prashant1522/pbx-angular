@@ -8,9 +8,10 @@
                      welcome
                        </mat-tab>    
     <mat-tab label="New Trunk">
-    <div class="pading_textdata">
-       <form>
-       <div class="container"> 
+        <form>
+    <div class="pading_textdata1">
+      
+       <div class="container1"> 
            
            <div class="form_row">  
              <div class="col-25">
@@ -78,12 +79,14 @@
            </div>
           
          
-       </form>
+      
     </div>
-    <div class="pading_textdata">
-        <form>
-        <div class="container">
-            
+    <div class="trunk_setting">
+       
+        <div class="container2">
+            <div class="full_width">
+                <span class="font20 bold_element">Outgoing</span> 
+               </div>
             <div class="form_row">
               <div class="col-25">
                 <label class="label" for="fname"><span class="form_Data">Trunk Name</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
@@ -92,9 +95,57 @@
                 <input type="text" class="input_text" id="fname" name="firstname" >
               </div>
             </div>
+           
+            <div class="form_row">
+              <div class="col-25">
+                <label class="label" for="fname"><span class="form_Data">Peer Details</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                <textarea id="subject" name="subject" rows="6" cols="50"></textarea>
+              </div>
+            </div>
              </div>
-        </form>
+        
      </div>
+     <div class="trunk_setting2">
+    
+      <div class="container2">
+          <div class="full_width">
+             <span class="font20 bold_element">Incoming</span> 
+            </div>
+          <div class="form_row">
+            <div class="col-25">
+              <label class="label" for="fname"><span class="form_Data">User Context</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="input_text" id="fname" name="firstname" >
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="col-25">
+              <label class="label" for="fname"><span class="form_Data">User Details</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <textarea id="subject" name="subject" rows="6" cols="50"></textarea>
+            </div>
+          </div>
+          <div class="form_row">
+              
+            <div class="col-25">
+              <label class="label" for="fname"><span class="form_Data">Register Srting</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="input_text" id="fname" name="firstname" >
+            </div>
+          </div>
+           </div>
+      
+   </div>
+   <div class="form_row submit_row">
+      <span class="spacing_element" ><input class="bold_element rest_Value" type="reset" value="Reset"></span>
+      <span class="spacing_element" ><input class="bold_element input_submit" type="submit" value="Save"></span>
+    </div>
+  </form>
   </mat-tab>
  </mat-tab-group>
                

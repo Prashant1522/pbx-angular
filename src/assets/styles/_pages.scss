@@ -39,9 +39,15 @@ $searchHeight:36px;
 html .page-wrapper{
     height:calc(100vh - 3.5vw);
 }
+.trunk_setting2 {
+    padding: 0px 19px 24px 19px;
+}
 .pading_textdata{
-    padding: 24px 19px;
+ padding: 24px 19px;
     }
+.pading_textdata1{
+ padding:24px 19px 0px 19px;
+}
 
 .mat-card-title{
     font-size:14px !important;
@@ -526,6 +532,8 @@ padding:10px 10px; }
         padding:10px 24px;
     }
 }
+.trunk_setting{
+    padding:0px 19px;}
 .overdueMeetingsInsert{
     height: 60px;
     display:flex;
@@ -571,23 +579,38 @@ padding:10px 10px; }
     
     min-height: 0px;
     
-        padding: 5px 0 5px 5px;
-        color:$gray;
-       
-        float:left;
-        height:27px;
-        
-        width:6vw;
-        font-size:14px !important;
-       border-style:solid;
+    padding: 5px 0 5px 5px;
+    color:#343434;
     
-    border-radius: 15px !important;
-    border-width:1px !important;
+    float:left;
+    
+    
+    width:6vw;
+    font-size:14px !important;
+    border: 1px solid #cccccc;
     margin:0 10px;
-    width:auto;
+    width:-webkit-fill-available;
+    height:44px;
     .mat-select-value{
         color:$gray;
     }
+    .mat-form-field-flex{
+        height:20px;
+
+    }
+    .mat-form-field-infix{
+        height:inherit;
+        margin-left:10px;
+    }
+    .mat-form-field-suffix{
+        margin:auto 10px;
+        svg{
+            height:18px;
+            width: 18px !important;
+            margin-top: 6px;
+        }
+    }
+    
 }
 .xPanelIndicatorSpan{
     height:18px;
@@ -725,7 +748,6 @@ padding:0px 10px;
 }
 #cdggg{
     height: 345px;
-    margin: 15px;
     border: 1px solid #e1e1e1;
     }
 canvas{
@@ -921,6 +943,9 @@ padding-bottom: 12px;
     } 
 .margin_Tab{
     margin:15px;
+    .mat-tab-body-content{
+        margin: 20px;
+    }
 }
 .rest_Value{  
 background: #e1e5eb;
@@ -976,9 +1001,10 @@ svg {
     text-align:left !important;
 }
 .company_summary_head{
-    height:105px;
     display: flex;
-    // padding:10px 10px;
+    align-self: center;
+    margin: auto 0px;
+    padding: 25px 0px 15px 0px;
 }
 .company_summary_content{
     height:45px;
@@ -1029,9 +1055,15 @@ svg {
   }
   .spacing_element{
     margin: auto 8px;}
-  .container {
+  .container1{
     border: 1px solid #d7d7d7;
    padding: 20px;
+  }
+  .container2{
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+border-bottom:1px solid #d7d7d7;
+padding: 20px;
   }
   
   .col-25 {
@@ -1044,6 +1076,11 @@ svg {
     float: left;
     width: 75%;
     
+  }
+  .company_summary_head:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   
   .form_row:after {
@@ -1086,4 +1123,11 @@ padding:4px;
   }
   .data_right{
       float:right;
+  }
+  .width18{
+      width:18%;
+      margin-left:20px;
+  }
+  .font20{
+      font-size:20px;
   }
