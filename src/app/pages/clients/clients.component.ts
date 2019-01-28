@@ -9,10 +9,10 @@ import { MatPaginatorIntl } from '@angular/material';
 })
 
 export class ClientsComponent implements OnInit {
-  Columns1: string[] = ['name', 'noofextension', 'startofextension', 'createdon','pinning'];
-  dataelement1 = new MatTableDataSource<client_PeriodicElement1>(CLIENT_ELEMENT_DATA1);
+  clientColumns1: string[] = ['name', 'noofextension', 'startofextension', 'createdon','pinning'];
+  clientdataelement1 = new MatTableDataSource<client_PeriodicElement1>(CLIENT_ELEMENT_DATA1);
   applyFilter(filterValue: string) {
-    this.dataelement1.filter = filterValue.trim().toLowerCase();
+    this.clientdataelement1.filter = filterValue.trim().toLowerCase();
  }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -21,7 +21,7 @@ export class ClientsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.dataelement1.paginator = this.paginator;
+    this.clientdataelement1.paginator = this.paginator;
   }
 
 }

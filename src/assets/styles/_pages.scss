@@ -82,8 +82,20 @@ padding-top:3px;
 .fixFH2{
  height: 370px;
 }
+.canvas_Barchart{
+    height:300px !important;
+}
+    
 .billing_row {
  background: #fff;
+}
+.mat-paginator-range-label{
+    font-size: 14px !important;
+    font-weight:500 !important;
+}
+.mat-paginator-page-size-label{
+    font-size: 14px !important;
+    font-weight:500 !important;
 }
 .border_Data{
     border: 1px solid #e1e1e1;
@@ -96,12 +108,17 @@ padding-top:3px;
         background-color: #edf1f2 !important;
        
     }
+    
     th{
         font-size:14px;
         color:$gray;
     }
+    td.mat-cell{
+        border-bottom-color: #ebebeb;
+    }
     td{
-        font-size:16px;
+        font-size:14px;
+       font-weight:500;
     }
     svg{
         width:15px;
@@ -179,6 +196,9 @@ padding-top:3px;
 .billing_Search{
    align-self: center;
       border: none;
+    font-size: 12px !important;
+        font-weight: 600 !important;
+      
      }
 
 .project_name_list.mat-list-item, .project_name_list .mat-list-item{
@@ -499,7 +519,7 @@ text-align: right !important;
 .pro_name{
  color:#1582e8;
 }
-.bolding_element{ font-size: 16px !important;
+.bolding_element{ 
     color: black !important;
 font-weight: bold !important;}
 .client_color{
@@ -574,8 +594,10 @@ padding:10px 10px; }
 .noPadding{
     padding:0 !important;
 }
+.mat-header-cell{
+    border:0px !important;}
 .statsSelect{
-    background-color: white;
+  
     
     min-height: 0px;
     
@@ -583,12 +605,11 @@ padding:10px 10px; }
     color:#343434;
     
     float:left;
-    
+    background: #edf1f2 !important;
     
     width:6vw;
     font-size:14px !important;
     border: 1px solid #cccccc;
-    margin:0 10px;
     width:-webkit-fill-available;
     height:44px;
     .mat-select-value{
@@ -712,6 +733,9 @@ padding:10px 10px; }
     color:#fff;
     background-color:#6356ae;
  }
+ .dbu_class2 {
+    margin-right: 58px;
+}
 .value_adjust{
 display:inline-flex;
 .search{
@@ -721,8 +745,12 @@ display:inline-flex;
 .search_svg {
 svg{
 height: 100% !important;
+width: 85% !important;
 }
 }
+}
+.dbu_class {
+    min-height: 295px;
 }
 .searching{
 width:20%;
@@ -963,13 +991,14 @@ cursor: pointer; }
     color:#ffffff;
   }
 .billing_Tabs_format{
-background: #ffffff; 
-.mat-ink-bar{
-    background:#edf1f2 !important;
-}
-.mat-tab-header{
-    background: #ffffff;   
-}}
+    background: #ffffff; 
+    .mat-ink-bar{
+        background:#ffffff !important;
+    }
+    .mat-tab-header{
+        background: #edf1f2;   
+    }}
+
 #icons_style
 {
     .feather
@@ -992,7 +1021,7 @@ background: #ffffff;
 padding:30px 30px !important;
 font-weight: 400;
 svg {
-
+    width:20 !important;
     top:0px;
     margin-left:8px;
 }
@@ -1046,6 +1075,7 @@ svg {
       }
   }
   .form_Data{
+    font-size: 14px;
       margin:auto 0px;
       align-self:center;
   }
@@ -1077,12 +1107,17 @@ padding: 20px;
     width: 75%;
     
   }
+  .dbu_height{
+    line-height: 26px;
+  }
   .company_summary_head:after {
     content: "";
     display: table;
     clear: both;
   }
-  
+  .dbu_font{
+      font-size:14px;
+  }
   .form_row:after {
     content: "";
     display: table;
@@ -1126,8 +1161,16 @@ padding:4px;
   }
   .width18{
       width:18%;
-      margin-left:20px;
+      margin-right: 12px;
   }
   .font20{
       font-size:20px;
   }
+  .width22{
+      width:22%;
+  }
+  .width12{
+      width:12%;
+  }
+  .disabled_input{
+    color:#b9b9b9;}

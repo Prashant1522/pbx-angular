@@ -15,12 +15,12 @@
                             <div class="mat-elevation-z8">
             
             
-                                <table mat-table [dataSource]="dataelement1" class="client-table">
+                                <table mat-table [dataSource]="clientdataelement1" class="client-table">
             
                                     <!-- Position Column -->
                                     <ng-container matColumnDef="name">
                                         <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
-                                        <td mat-cell *matCellDef="let element"><span class="font-mobile pro_name"> {{element.name}}
+                                        <td mat-cell *matCellDef="let element"><span class="pro_name"> {{element.name}}
                                             </span> </td>
                                     </ng-container>
             
@@ -50,8 +50,8 @@
                                             <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'share-2' | feather"></span>
                                             <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
                                     </ng-container>
-                                    <tr mat-header-row *matHeaderRowDef="Columns1"></tr>
-                                    <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
+                                    <tr mat-header-row *matHeaderRowDef="clientColumns1"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: clientColumns1;"></tr>
                                 </table>
              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
                             </div>  </mat-tab>  <mat-tab label="New Client">

@@ -249,6 +249,27 @@
     </div>
 
   </div>
-
-    
+  <div>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+          <div id="active_title" class="white title_format">
+            <div id="title-inner" class="center">
+              <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone' | feather"></span>
+                <span id="header_text" class="align_data value_adjust">Call Statistics</span></span> </span>
+            </div>
+          </div>
+          <div id="cdggg">
+          <canvas  baseChart id="myChart"
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              [colors]="barChartColors"></canvas></div>
+        </mat-card>
+      </div>
+  
+    </div>
 </div>
