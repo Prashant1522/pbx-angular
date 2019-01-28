@@ -149,12 +149,845 @@
                         <tr mat-row *matRowDef="let row; columns: Columns1;"></tr>
                     </table>
 
-                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons="false"></mat-paginator>
+                    <mat-paginator #paginator1 [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons="false"></mat-paginator>
                 </div>
             </mat-card>
         </div>
     </div>
     
-   
+    <div class="pading_textdata">
+         
+        <div fxLayout="row" fxLayoutWrap="wrap">
+                <!-- Card column -->
+                <div fxFlex.gt-sm="100%" fxFlex="100">
+                    
+                       <mat-tab-group class="billing_tabs" animationDuration="0ms"> 
+                          <mat-tab label="All Clients">    
+                                <div class="client_search full_width"> 
+                                <div class="full_width table_right_adjust"><span class="value_adjust billing_state searching">
+                                <input class ="search billing_Search textdata_align_left " matInput (keyup)=" applyFilter3($event.target.value)" placeholder="Search"> 
+                             <span class="search_svg " [innerHTML]="'search' | feather"></span>
+                               </span></div></div>
+                        <div class="mat-elevation-z8">
+        
+        
+                            <table mat-table [dataSource]="clientdataelement1" class="client-table">
+        
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
+                                    <td mat-cell *matCellDef="let element"><span class="pro_name"> {{element.name}}
+                                        </span> </td>
+                                </ng-container>
+        
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="noofextension">
+                                    <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
+                                    <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.noofextension}}</span>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="startofextension">
+                                    <th mat-header-cell *matHeaderCellDef>START OF EXTENSION </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.startofextension}} </td>
+                                </ng-container>
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="createdon">
+                                    <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
+                                    <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}}
+                                    </td>
+                                </ng-container>
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="pinning">
+                                    <th mat-header-cell *matHeaderCellDef class="table_right_adjust"> </th>
+                                    <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                                        <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'eye' | feather"></span>
+                                        <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'users' | feather"></span>
+                                        <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'help-circle' | feather"></span>
+                                        <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'share-2' | feather"></span>
+                                        <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="clientColumns1"></tr>
+                                <tr mat-row *matRowDef="let row; columns: clientColumns1;"></tr>
+                            </table>
+         <mat-paginator #paginator2 [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                        </div>  </mat-tab>  <mat-tab label="New Client">
+                                <h1>Some more tab content</h1>
+                                <p>...</p>
+                              </mat-tab>
+                            </mat-tab-group>
+                   
+                </div>
+            </div>
+     
+  </div>
+  <div class="pading_textdata">
+    <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row">
+       <!-- Card column -->
+       <div fxFlex.gt-sm="100%" fxFlex="100">
+          
+             <mat-tab-group animationDuration="10ms" class="billing_tabs space_element"> 
+                <mat-tab label="Outbound Routes">    
+                    <div class="client_search full_width"> 
+                        <div class="full_width table_right_adjust"><span class="value_adjust  searching">
+                        <input class ="search billing_Search textdata_align_left " matInput (keyup)="applyFilter10($event.target.value)" placeholder="Search"> 
+                     <span class="search_svg " [innerHTML]="'search' | feather"></span>
+                       </span></div></div>
+                       <table mat-table [dataSource]="outbound_dataelement1" class="client-table">
+          
+                          <!-- DID Column -->
+                          <ng-container matColumnDef="did">
+                              <th mat-header-cell *matHeaderCellDef class="width_element12"> DID </th>
+                              <td mat-cell *matCellDef="let element" class="width_element12"><span class="font-mobile pro_name"> {{element.did}}
+                                  </span> </td>
+                          </ng-container>
+  
+                          <!-- Name Column -->
+                          <ng-container matColumnDef="cid">
+                              <th mat-header-cell *matHeaderCellDef class="width_element12">CID </th>
+                              <td mat-cell *matCellDef="let element" class="width_element12"> <span class="bolding_element">{{element.cid}}</span>
+                              </td>
+                          </ng-container>
+                          <ng-container matColumnDef="description" class="width_element12">
+                              <th mat-header-cell *matHeaderCellDef>DESCRIPTION</th>
+                              <td mat-cell *matCellDef="let element" class="width_element12"> {{element.description}}</td>
+                          </ng-container>
+                          <!-- Weight Column -->
+                          <ng-container matColumnDef="destination" >
+                              <th mat-header-cell *matHeaderCellDef class="width_element52">DESTINATION</th>
+                              <td mat-cell *matCellDef="let element" class="width_element52"> <span class="bolding_element">{{element.destination}} </span><span>{{element.content}}</span>
+                              </td>
+                          </ng-container>
+                          <!-- Symbol Column -->
+                          <ng-container matColumnDef="pinning">
+                              <th mat-header-cell *matHeaderCellDef class= "width_element12 table_right_adjust"> </th>
+                              <td mat-cell *matCellDef="let element" class="width_element12 table_right_adjust">
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'edit' | feather"></span>
+                                  <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
+                          </ng-container>
+                          <tr mat-header-row *matHeaderRowDef="outboundColumns1"></tr>
+                          <tr mat-row *matRowDef="let row; columns: outboundColumns1;"></tr>
+                      </table>
+                      </mat-tab> 
+  <mat-tab label="Add Outbound Route">
+  <div class="pading_textdata">
+      <form>
+      <div class="container">
+          
+          <div class="form_row">
+            <div class="col-25">
+              <label class="label" for="fname"><span class="form_Data">Description</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="input_text" id="fname" name="firstname" >
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="col-25">
+              <label for="lname" class="label"><span class="form_Data">DID Number </span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="input_text" id="lname" name="lastname" >
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="col-25">
+              <label class="label" for="Alert info"><span class="form_Data">Alert info</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+                <select class="input_text" id="alert_info" required>
+                    <option label="--alert info--"></option>
+                    <option *ngFor="let alert_info of alerts" [value]="alert_info">{{alert_info}}</option>
+                  </select>
+            </div>
+          </div>
+          <div class="form_row">
+              <div class="col-25">
+                <label for="lname" class="label"><span class="form_Data">CID Name Prefix</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                <input type="text" class="input_text" id="lname" name="lastname" >
+              </div>
+            </div>
+            <div class="form_row">
+                <div class="col-25">
+                  <label class="label" for="Alert info"><span class="form_Data">Music On Hold</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                </div>
+                <div class="col-75">
+                    <select class="input_text" id="music" required>
+                        <option label="--music--"></option>
+                        <option *ngFor="let music of musics" [value]="music">{{music}}</option>
+                      </select>
+                </div>
+              </div>
+              <div class="form_row">
+                  <div class="col-25">
+                    <label class="label" for="Alert info"><span class="form_Data">Set Destination</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                  </div>
+                  <div class="col-75">
+                      <select class="input_text" id="fromdestination" required>
+                          <option label="--From--"></option>
+                          <option *ngFor="let fromdestination of from_destination" [value]="fromdestination">{{fromdestination}}</option>
+                        </select>
+                </div>
+                </div>
+                <div class="form_row last_Value">
+                   
+                    <div class="col-75 last_Data_value">
+                        
+                        <select class="input_text" id="Todestination" required>
+                            <option label="--To --"></option>
+                            <option *ngFor="let Todestination of to_destination" [value]="Todestination">{{Todestination}}</option>
+                          </select>
+                         
+                    </div>
+                  </div>
+         
+          
+        </div>
+        <div class="form_row submit_row">
+            <span class="spacing_element" ><input class="bold_element rest_Value" type="submit" value="Delete"></span>
+            <span class="spacing_element" ><input class="bold_element rest_Value" type="reset" value="Reset"></span>
+            <span class="spacing_element" ><input class="bold_element input_submit" type="submit" value="Submit"></span>
+          </div>
+      </form>
+  </div>
+                        </mat-tab>
+                      </mat-tab-group>
+              
+      </div>
+    
+  </div>
+  </div>
+  <div class="pading_textdata">
+    <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+           
+              <mat-tab-group animationDuration="10ms" class="billing_tabs space_element"> 
+                 <mat-tab label="All Trunks">    
+                  <div class="client_search full_width"> 
+                    <div class="full_width table_right_adjust"><span class="value_adjust billing_state searching">
+                    <input class ="search billing_Search textdata_align_left " matInput (keyup)="applyFilter5($event.target.value)" placeholder="Search"> 
+                 <span class="search_svg " [innerHTML]="'search' | feather"></span>
+                   </span></div></div>
+            <div class="mat-elevation-z8">
 
+
+                <table mat-table [dataSource]="trunkdataelement1" class="client-table">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="trunkname">
+                        <th mat-header-cell *matHeaderCellDef class="width22"> NAME</th>
+                        <td mat-cell *matCellDef="let element"> {{element.trunkname}}
+                             </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="tech">
+                        <th mat-header-cell *matHeaderCellDef class="width22">TECH</th>
+                        <td mat-cell *matCellDef="let element"> <span *ngIf="element.tech; else elseBlock">{{element.tech_one}}</span><ng-template #elseBlock> <span>{{element.tech_two}}</span></ng-template>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="callerid">
+                        <th mat-header-cell *matHeaderCellDef class="width22">CALLER ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.callerid}} </td>
+                    </ng-container>
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef class="width22">STATUS</th>
+                        <td mat-cell *matCellDef="let element"> <span *ngIf="element.status; else elseblock">Enabled</span><ng-template #elseblock> <span class="disabled_input"> Disabled</span></ng-template>
+                        </td>
+                    </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="pinning">
+                        <th mat-header-cell *matHeaderCellDef class="table_right_adjust width12"> </th>
+                        <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'edit' | feather"></span>
+                            <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="trunkColumns1"></tr>
+                    <tr mat-row *matRowDef="let row; columns: trunkColumns1;"></tr>
+                </table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+                       </mat-tab>    
+    <mat-tab label="New Trunk">
+        <form>
+    <div class="pading_textdata1">
+      
+       <div class="container1"> 
+           
+           <div class="form_row">  
+             <div class="col-25">
+               <label class="label" for="fname"><span class="form_Data">Trunk Name</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+             </div>
+             <div class="col-75">
+               <input type="text" class="input_text" id="fname" name="firstname" >
+             </div>
+           </div>
+           <div class="form_row">
+              <div class="col-25">
+                <label for="lname" class="label"><span class="form_Data">Hide CallerID</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75"> 
+                  <mat-slide-toggle ngDefaultControl
+          name="hello"></mat-slide-toggle>
+                  
+               
+              </div>
+            </div>
+           <div class="form_row">
+             <div class="col-25">
+               <label for="lname" class="label"><span class="form_Data">Outbound CallerID</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+             </div>
+             <div class="col-75">
+               <input type="text" class="input_text" id="lname" name="lastname" >
+             </div>
+           </div>
+           
+           
+           <div class="form_row">
+              <div class="col-25">
+                <label for="lname" class="label"><span class="form_Data">Maximum Channels</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                <input type="text" class="input_text" id="lname" name="lastname" >
+              </div>
+            </div>
+            <div class="form_row">
+                <div class="col-25">
+                  <label for="lname" class="label"><span class="form_Data">Asterisk Trunk Dial Options</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                </div>
+                <div class="col-75">
+                  <input type="text" class="input_text" id="lname" name="lastname" >
+                </div>
+              </div>
+              <div class="form_row">
+                  <div class="col-25">
+                    <label for="lname" class="label"><span class="form_Data">Continue if Busy</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                  </div>
+                  <div class="col-75">
+                      <mat-slide-toggle ngDefaultControl
+              name="hello"></mat-slide-toggle>
+                  </div>
+                </div>
+                <div class="form_row">
+                    <div class="col-25">
+                      <label for="lname" class="label"><span class="form_Data">Disable Trunk</span><span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+                    </div>
+                    <div class="col-75">
+                        <mat-slide-toggle ngDefaultControl
+               ></mat-slide-toggle>
+                    </div>
+                  </div>
+           </div>
+          
+         
+      
+    </div>
+    <div class="trunk_setting">
+       
+        <div class="container2">
+            <div class="full_width">
+                <span class="font20 bold_element">Outgoing</span> 
+               </div>
+            <div class="form_row">
+              <div class="col-25">
+                <label class="label" for="fname"><span class="form_Data">Trunk Name</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                <input type="text" class="input_text" id="fname" name="firstname" >
+              </div>
+            </div>
+           
+            <div class="form_row">
+              <div class="col-25">
+                <label class="label" for="fname"><span class="form_Data">Peer Details</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+              </div>
+              <div class="col-75">
+                <textarea id="subject" name="subject" rows="6" cols="50"></textarea>
+              </div>
+            </div>
+             </div>
+        
+     </div>
+     <div class="trunk_setting2">
+    
+      <div class="container2">
+          <div class="full_width">
+             <span class="font20 bold_element">Incoming</span> 
+            </div>
+          <div class="form_row">
+            <div class="col-25">
+              <label class="label" for="fname"><span class="form_Data">User Context</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="input_text" id="fname" name="firstname" >
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="col-25">
+              <label class="label" for="fname"><span class="form_Data">User Details</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <textarea id="subject" name="subject" rows="6" cols="50"></textarea>
+            </div>
+          </div>
+          <div class="form_row">
+              
+            <div class="col-25">
+              <label class="label" for="fname"><span class="form_Data">Register Srting</span> <span class="form_svg" [innerHTML]="'help-circle' | feather"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="input_text" id="fname" name="firstname" >
+            </div>
+          </div>
+           </div>
+      
+   </div>
+   <div class="form_row submit_row">
+      <span class="spacing_element" ><input class="bold_element rest_Value" type="reset" value="Reset"></span>
+      <span class="spacing_element" ><input class="bold_element input_submit" type="submit" value="Save"></span>
+    </div>
+  </form>
+  </mat-tab>
+ </mat-tab-group>
+               
+       </div>
+     
+    </div>
+    
+  </div>
+
+  <div class="pading_textdata">
+         
+    <div fxLayout="row" fxLayoutWrap="wrap">
+            <!-- Card column -->
+            <div fxFlex.gt-sm="100%" fxFlex="100">
+                
+                   <mat-tab-group class="billing_tabs" animationDuration="0ms"> 
+                      <mat-tab label="All Company Settings">    
+                            <div class="client_search full_width"> 
+                            <div class="full_width table_right_adjust"><span class="value_adjust billing_state searching">
+                            <input class ="search billing_Search textdata_align_left " matInput (keyup)="applyFilter4($event.target.value)" placeholder="Search"> 
+                         <span class="search_svg " [innerHTML]="'search' | feather"></span>
+                           </span></div></div>
+                    <div class="mat-elevation-z8">
+    
+    
+                        <table mat-table [dataSource]="provisioner_dataelement1" class="client-table">
+    
+                            <!--SETTINGS NAME Column -->
+                            <ng-container matColumnDef="settingsname">
+                                <th mat-header-cell *matHeaderCellDef> SETTINGS NAME </th>
+                                <td mat-cell *matCellDef="let element"><span class="font-mobile pro_name"> {{element.settingsname}}
+                                    </span> </td>
+                            </ng-container>
+    
+                            <!--DEVICE MODEL Column -->
+                            <ng-container matColumnDef="devicemodel">
+                                <th mat-header-cell *matHeaderCellDef> DEVICE MODEL </th>
+                                <td mat-cell *matCellDef="let element">{{element.devicemodel}}
+                                </td>
+                            </ng-container>
+                           
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="pinning">
+                                <th mat-header-cell *matHeaderCellDef class="table_right_adjust"> </th>
+                                <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                                    <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'edit' | feather"></span>
+                                    <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'trash' | feather"></span>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="provisionerColumns1"></tr>
+                            <tr mat-row *matRowDef="let row; columns: provisionerColumns1;"></tr>
+                        </table>
+     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                    </div>  </mat-tab>  <mat-tab label="Add Company Setting">
+                            <h1>Some more tab content</h1>
+                            <p>...</p>
+                          </mat-tab>
+                        </mat-tab-group>
+               
+            </div>
+        </div>
+ 
+</div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayout.xs="column" fxLayout.sm="column">
+    <div class="billing_pading_textdata1 table_right_adjust full_width">
+ </div></div>
+  <div class="billing_pading_textdata2">
+      <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row" fxLayout.xs="column" fxLayout.sm="column">
+          <div class="pading_textdata full_width"> 
+          <div class="full_width table_right_adjust"><span class="value_adjust  billing_state searching">
+            <input class ="search textdata_align_left billing_Search" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search"> 
+            <span class="search_svg " [innerHTML]="'search' | feather"></span>
+             </span></div>  
+         </div>
+      </div>
+      <div fxLayout="row" fxLayoutWrap="wrap" class="billing_row" fxLayout.xs="column" fxLayout.sm="column">
+          <!-- Card column -->
+          <div fxFlex.gt-sm="50%" fxFlex="50%">
+  
+              <mat-card class="dbu_class border_Data">
+                  <div id="active_title" class="title_format">
+                      <div id="title-inner" class="center">
+                          <span class="value_adjust user_element">
+                          <span id="header_text" class="bolding_element">Current Payment Due</span></span>
+                      </div>
+                  </div>
+                  <div class="billing_information">
+                  <div class="full_width textdata-align title_Font2 color_purple bold_element">$0.00</div>
+                <div class="full_width textdata-align dbu_font dbu_height">Clicking the ‘Pay Now’ button will charge your credit card on file for the full amount of the Current Payment Due.</div></div>
+                <div class="full_width textdata-align "><span class=" states colr_lightpurple font-mobile">Play Now</span></div>    
+              </mat-card>
+                  
+          </div>
+          <div fxFlex.gt-sm="50%" fxFlex="50%">
+              <mat-card class="dbu_class border_Data">
+                  <div id="active_title" class="title_format">
+                      <div id="title-inner" class="center">
+                          <span class="value_adjust user_element">
+                              <span id="header_text" class="bolding_element">Billing Information</span></span>
+                      </div>
+                  </div>
+                  <mat-list role="list" class="billing_information">
+                      <mat-list-item role="listitem"><span class="equal_width dbu_class2 dbu_font">Billing Day</span><span class="equal_width dbu_font">{{ billingday }} </span></mat-list-item>
+                      <mat-list-item role="listitem"><span class="equal_width dbu_class2 dbu_font">Payment Method</span><span class="equal_width dbu_font">{{ paymentmethod}} <span [innerHTML]="'edit' | feather"></span></span></mat-list-item>
+                      <mat-list-item role="listitem"><span class="equal_width dbu_class2 dbu_font">Current Account Balance</span><span class="equal_width dbu_font">{{ accountbalance}}</span></mat-list-item>
+                    </mat-list> 
+                    
+              </mat-card>
+          </div>
+ 
+         
+      </div>
+      
+      <div fxLayout="row"  class="billing_row billing_pading_Data" fxLayoutWrap="wrap">
+           
+          <!-- Card column -->
+          <div fxFlex.gt-sm="100%" fxFlex="100">
+             
+                  <mat-tab-group class="billing_tabs billing_Tabs_format"> 
+                      <mat-tab label="Invoices">      
+              <table mat-table [dataSource]="dataSource" class=" client-table">
+
+                      <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
+                    
+                      <!--Photo Column -->
+                      <ng-container matColumnDef="photo">
+                        <th mat-header-cell *matHeaderCellDef class="width_value1"></th>
+                        <td mat-cell *matCellDef="let element"> <span class="count value_adjust client_color pinning_element lunch" [innerHTML]="'user' | feather"></span>  </td>
+                      </ng-container>
+                    
+                      <!--billdate Column -->
+                      <ng-container matColumnDef="billdate">
+                        <th mat-header-cell *matHeaderCellDef class="width_value1 ">BILL DATE </th>
+                        <td mat-cell *matCellDef="let element"> {{element.billdate}} </td>
+                      </ng-container>
+                    
+                      <!--amount Column -->
+                      <ng-container matColumnDef="amount">
+                        <th mat-header-cell *matHeaderCellDef class="width_value1"> AMOUNT</th>
+                        <td mat-cell *matCellDef="let element"><span class="bolding_element">{{element.amount}}</span> </td>
+                      </ng-container>
+                    
+                      <!--Payment Column -->
+                      <ng-container matColumnDef="payment">
+                        <th mat-header-cell *matHeaderCellDef class="width_value1"> PAYMENT </th>
+                        <td mat-cell *matCellDef="let element"><span *ngIf="element.tobebilled"> to be Billed: </span><span class="bolding_element">{{element.payment}}</span> </td>
+                      </ng-container>
+                    
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                  </mat-tab> 
+                  <mat-tab label="Orders">
+                      <h1>Some more tab content</h1>
+                      <p>...</p>
+                    </mat-tab>
+                  </mat-tab-group>
+             
+          </div>
+      </div>
+  <div>
+      
+  </div>
+     
+  </div>
+  <div class="pading_textdata">
+
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+  
+        <mat-tab-group class="billing_tabs margin_Tab" animationDuration="0ms">
+          <mat-tab label="Company Summary">
+            <div class="full_width company_summary_head">
+                <div class="width18">
+                <select class="input_text title_format" id="alert_info" required>
+                    <option label="Total Calls"></option>
+                    <option *ngFor="let alert_info of calls" [value]="alert_info">{{alert_info}}</option>
+                  </select></div>
+                  <div class="width18">
+                      <mat-form-field class="statsSelect">
+                          <input matInput [matDatepicker]="picker" placeholder="Choose a date" >
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker></mat-form-field>
+                        </div>
+               </div>
+               <div id="cdggg">
+                  <div id="active_title" class="white title_format">
+                      <div id="title-inner" class="center">
+                        <span id="header_text" class="equal_width align_data">Total Calls</span><span id ="overdue" class="equal_width table_right_adjust data_right" *ngIf="legendData">
+                            <ul class="my-legend data_list">
+                              <li class="legend-item" *ngFor="let legendItem of legendData">{{legendItem.text}}</li>
+                            </ul>
+                           </span> 
+                      </div>
+                    </div>
+                    
+               <canvas baseChart #myChart width="400px" height="300px" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions"
+               [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType"></canvas>
+     
+          </div>
+          </mat-tab>
+        </mat-tab-group>
+  
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+          <div id="active_title" class="white title_format">
+            <div id="title-inner" class="center">
+              <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone' | feather"></span>
+                <span id="header_text" class="align_data value_adjust">All Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+            </div>
+          </div>
+          <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Total Calls</span><br>
+                <span class="title_Font2 color_purple report_middle_element">{{ totalcalls }}</span><br>
+                <span class="report_text2">100% of total calls</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Average Talk Time</span><br>
+                <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime }}</span><br>
+                <span class="report_text2">Total 00.00.00</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Missed Calls</span><br>
+                <span class="title_Font2 color_sky report_middle_element">{{ missedcalls}}</span><br>
+                <span class="report_text2">Percentage 0%</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Most Active</span><br>
+                <span class="title_Font2 color_green report_middle_element">{{ mostactive }}</span><br>
+                <span class="report_text2">N/A</span></div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </div>
+  
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        
+      </div>
+  
+    </div>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+          <div id="active_title" class="white title_format">
+            <div id="title-inner" class="center">
+              <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone-incoming' | feather"></span>
+                <span id="header_text" class="align_data value_adjust">Inbound Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+            </div>
+          </div>
+          <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Total Calls</span><br>
+                <span class="title_Font2 color_purple report_middle_element">{{ totalcalls2 }}</span><br>
+                <span class="report_text2">72% of total calls</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Average Talk Time</span><br>
+                <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime2 }}</span><br>
+                <span class="report_text2">Total 02.19.09</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Missed Calls</span><br>
+                <span class="title_Font2 color_sky report_middle_element">{{ missedcalls2}}</span><br>
+                <span class="report_text2">Percentage  4%</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Most Active</span><br>
+                <span class="title_Font2 color_green report_middle_element">{{ mostactive2 }}</span><br>
+                <span class="report_text2">Carissa Knezha</span></div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </div>
+  
+    </div>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+          <div id="active_title" class="white title_format">
+            <div id="title-inner" class="center">
+              <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone-outgoing' | feather"></span>
+                <span id="header_text" class="align_data value_adjust">Outbound Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+            </div>
+          </div>
+          <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Total Calls</span><br>
+                <span class="title_Font2 color_purple report_middle_element">{{ totalcalls3 }}</span><br>
+                <span class="report_text2">27% of total calls</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Average Talk Time</span><br>
+                <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime3 }}</span><br>
+                <span class="report_text2">Total 00.00.00</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Most Active</span><br>
+                <span class="title_Font2 color_green report_middle_element">{{ mostactive3 }}</span><br>
+                <span class="report_text2">N/A</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </div>
+  
+    </div>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+          <div id="active_title" class="white title_format">
+            <div id="title-inner" class="center">
+              <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aig_center" [innerHTML]="'globe' | feather"></span>
+                <span id="header_text" class="align_data value_adjust">International Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+            </div>
+          </div>
+          <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Total Calls</span><br>
+                <span class="title_Font2 color_purple report_middle_element">{{ totalcalls4 }}</span><br>
+                <span class="report_text2">0% of total calls</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Average Talk Time</span><br>
+                <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime4 }}</span><br>
+                <span class="report_text2">Total 00.00.00</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Missed Calls</span><br>
+                <span class="title_Font2 color_sky report_middle_element">{{ missedcalls4}}</span><br>
+                <span class="report_text2">Percentage  0%</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Most Active</span><br>
+                <span class="title_Font2 color_green report_middle_element">{{ mostactive4 }}</span><br>
+                <span class="report_text2">N/A</span></div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </div>
+  
+    </div>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+          <div id="active_title" class="white title_format">
+            <div id="title-inner" class="center">
+              <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone-call' | feather"></span>
+              <span id="header_text" class="align_data value_adjust">Intra-PBX Calls</span></span><span class="equal_width align_data table_right_adjust"><span class="states2 title_value full_report">View Full Report</span></span> </span>
+            </div>
+          </div>
+          <mat-grid-list class="reporting" cols="4" rowHeight="2:1">
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Total Calls</span><br>
+                <span class="title_Font2 color_purple report_middle_element">{{ totalcalls5 }}</span><br>
+                <span class="report_text2">0% of total calls</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Average Talk Time</span><br>
+                <span class="title_Font2 color_orange report_middle_element">{{ averagetallktime5 }}</span><br>
+                <span class="report_text2">Total 00.00.00</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Missed Calls</span><br>
+                <span class="title_Font2 color_sky report_middle_element">{{ missedcalls5}}</span><br>
+                <span class="report_text2">Percentage  0%</span></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="textdata-align">
+                <span class="report_text">Most Active</span><br>
+                <span class="title_Font2 color_green report_middle_element">{{ mostactive5 }}</span><br>
+                <span class="report_text2">N/A</span></div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </div>
+  
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        
+      </div>
+  
+    </div>
+    <div>
+      <div fxLayout="row" fxLayoutWrap="wrap">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+          <mat-card>
+            <div id="active_title" class="white title_format">
+              <div id="title-inner" class="center">
+                <span class="value_adjust full_width"><span class="equal_width align_data value_adjust"><span id="icon_style" class="aign_center" [innerHTML]="'phone' | feather"></span>
+                  <span id="header_text" class="align_data value_adjust">Call Statistics</span></span> </span>
+              </div>
+            </div>
+            <div id="cdggg">
+            <canvas  baseChart id="myChart"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                [colors]="barChartColors"></canvas></div>
+          </mat-card>
+        </div>
+    
+      </div>
+  </div>
 </div>

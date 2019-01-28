@@ -4,7 +4,7 @@ import {  DomSanitizer } from '@angular/platform-browser';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatPaginator,MatTableDataSource } from '@angular/material';
 import { ElementdataService } from '../../elementdata.service';
-
+import { BaseChartDirective } from 'ng2-charts';
 export interface Food {
   value: string;
   viewValue: string;
@@ -16,6 +16,106 @@ export interface Food {
 })
 
 export class DashboardComponent implements OnInit {
+  public barChartOptions:any = {
+    responsive:true,
+    maintainAspectRatio: false,
+  tooltips: {
+      mode: 'index',
+       backgroundColor:"#ffffff",
+      borderColor:"red",
+      bodyFontColor:"black",
+      titleFontColor:"black",
+     
+      
+  },
+     scales: {
+      xAxes: [{
+        categoryPercentage:0.5,
+      
+        barPercentage:1,
+          gridLines: {
+            drawBorder: false,
+            display: false,
+            lineWidth: 2,
+           },
+         ticks: {
+          fontColor: "#343434", 
+          fontSize: 16,
+         },
+      }],
+      yAxes: [{
+        scaleLabel :{
+          display: false,
+        },
+       gridLines: {
+        drawBorder: false,
+        display: false,
+        lineWidth: 2,
+        },
+        ticks: {
+        display: false,
+        },
+     }],
+},
+    scaleShowVerticalLines: false,
+   
+  };
+  public barChartLabels:string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  public barChartType:string = 'bar';
+  public barChartLegend:boolean = true;
+  public barChartData:any[] = [
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Inbound Calls'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Outbound Calls'}
+  ];
+ 
+  public barChartColors: Array<any> = [
+    { 
+      backgroundColor: '#6458ae'
+    },
+    { // dark grey
+      backgroundColor: '#e67d4a',
+    },]
+ 
+  
+  calls: string[] = [
+    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
+    'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+    'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+    'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
+    'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
+    'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+  ];
+  billingday= "28th of every month ";
+  paymentmethod ="Credit card";
+  accountbalance ="$0.00";
+  displayedColumns: string[] = ['photo', 'billdate', 'amount', 'payment']
+  dataSource  = new MatTableDataSource<PeriodicElement20>(ELEMENT_DATA20);
+  provisionerColumns1: string[] = ['settingsname', 'devicemodel','pinning'];
+  provisioner_dataelement1 = new MatTableDataSource<provisioner_PeriodicElement1>(PROVISIONER_ELEMENT_DATA1);
+  applyFilter4(filterValue: string) {
+    this.provisioner_dataelement1.filter = filterValue.trim().toLowerCase();
+  }
+  applyFilter10(filterValue: string) {
+    this.outbound_dataelement1.filter = filterValue.trim().toLowerCase();
+  }
+ 
+  trunkColumns1: string[] = ['trunkname', 'tech', 'callerid', 'status','pinning'];
+  trunkdataelement1 = new MatTableDataSource<trunk_PeriodicElement1>(TRUNK_ELEMENT_DATA1);
+  applyFilter5(filterValue: string) {
+    this.trunkdataelement1.filter = filterValue.trim().toLowerCase();
+ }
+  outboundColumns1: string[] = ['did', 'cid', 'description', 'destination','pinning'];
+  outbound_dataelement1 = new MatTableDataSource<outboundPeriodicElement1>(OUTBOUND_ELEMENT_DATA1);
+  to_destination = ['value0', 'value1','value2', 'value3'];
+  from_destination = ['value0', 'value1','value2', 'value3'];
+  musics=['value0', 'value1','value2', 'value3'];
+  alerts=['value0', 'value1','value2', 'value3'];
+  clientColumns1: string[] = ['name', 'noofextension', 'startofextension', 'createdon','pinning'];
+  clientdataelement1 = new MatTableDataSource<client_PeriodicElement1>(CLIENT_ELEMENT_DATA1);
+  applyFilter3(filterValue: string) {
+    this.clientdataelement1.filter = filterValue.trim().toLowerCase();
+ }
   firstClick() {
     this.data.firstClick();
   }
@@ -42,8 +142,8 @@ export class DashboardComponent implements OnInit {
   DataArray =  new MatTableDataSource<PrElement>(MYTASKS_DATA);
   displaycolumns:string[] = ['taskname', 'client'];
   
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  displayedColumns: string[] = ['name', 'weight', 'symbol','position'];
+  dataSource1 = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumnsS: string[] = ['name', 'weight', 'symbol','position'];
   Dataarray1 = new MatTableDataSource<PeriodicElement1>(AGREEMENTS_DATA);
   discolumns1: string[] = ['clientname', 'type', 'status'];
   Dataarray2 = new MatTableDataSource<PeriodicElement2>(RECENTLY_DATA);
@@ -64,10 +164,189 @@ export class DashboardComponent implements OnInit {
   dataSource10 = new MatTableDataSource(ELEMENTSS_DATA);
  
   ngOnInit() {
+    
     this.dataelement1.paginator = this.paginator;
+    this.clientdataelement1.paginator = this.paginator;
+    this.trunkdataelement1.paginator = this.paginator;
+    this.provisioner_dataelement1.paginator = this.paginator;
+    this.dataSource.paginator = this.paginator;
+    var myvar = setInterval(() => {
+
+      this.legendData = this.chartComponent.chart.generateLegend();
+
+      // console.log("still running");
+      if (this.legendData) {
+        // console.log(this.legendData);
+        clearInterval(myvar);
+      }
+    }, 0);
   }
- 
+  @ViewChild(BaseChartDirective) chartComponent: BaseChartDirective;
+  legendData: any;
+  totalcalls = 179;
+  missedcalls = 0;
+  mostactive = 0;
+  averagetallktime = '00.00.00';
+  totalcalls2 =129;
+  averagetallktime2= '00.01.12';
+  missedcalls2=6;
+  mostactive2=29;
+  totalcalls3=0;
+  averagetallktime3= '00.01.59';
+  mostactive3=6;
+  totalcalls4=0;
+  averagetallktime4='00.00.00';
+  missedcalls4=0;
+  mostactive4=0;
+  totalcalls5=0;
+  averagetallktime5='00.00.00';
+  missedcalls5=0;
+  mostactive5=0;
+  public lineChartData1: Array<any> = [
+   
+    { data: [0, 50, 69, 35, 22, 0], label: 'Series A', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 3},
+    { data: [0, 43, 50, 21, 12, 0], label: 'Series B', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 3},
+    { data: [0, 9, 18, 14, 10, 0], label: 'Series C', lineTension: 0, borderWidth: 1, pointBorderWidth: 1, pointRadius: 3},
+   
+   
+  ];
+
+  private getLegendCallback = (function (self) {
+   
+  
+  function handle(chart) {
+     return chart.legend.legendItems;
+   }
+    return function (chart) {
+      return handle(chart);
+    }
+  })(this);
+  public lineChartLabels: Array<any> = ['6/24', '6/25', '6/26', '6/27', '6/28', '6/29', '6/30'];
+
+  public lineChartOptions: any = {
+    
+  
+    responsive: true,
+    maintainAspectRatio: false,
+    legendCallback: this.getLegendCallback,
+    tooltips: {
+      mode: 'index',
+      axis: 'x'
+  },
+   
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'probability'
+        },
+        pointLabels: {
+          fontSize: 18,
+          fontColor: "green"
+        },
+      ticks: {
+        
+        padding:10,
+        fontColor: "#343434", 
+        fontSize: 14,
+      
+  
+      
+      },
+      angleLines: {
+        display: false,
+        lineWidth: 2,
+        color :'#998fd2',
+        
+        
+        },
+      gridLines: {
+        
+      display: false,
+      lineWidth: 2,
+      color :'#998fd2',
+      
+      
+      }
+     
+      }],
+      yAxes: [{
+      scaleLabel: {
+          display: true,
+          labelString: 'probability'
+        },
+      ticks: {
+      padding:20,
+      beginAtZero: true,
+      fontColor: "#343434",
+      fontSize: 14,
+     },
+      gridLines: {
+      drawTicks:false,
+      display: true,
+      color: '#efefef',
+      lineWidth: 1.5,
+      }
+      }]
+      },
+    
+    legend: {
+      textalign: "right",
+      
+      labels: {
+        usePointStyle: true,
+        horizontalAlign: "left" ,
+        fontSize: 18,
+      }
+    }
+  };
+  
+    
+  public lineChartColors: Array<any> = [
+    { // grey
+      backgroundColor: 'transparent',
+      borderColor: '#998fd2',
+      pointBackgroundColor: '#998fd2',
+      pointBorderColor: '#998fd2',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+      
+    },
+    { // dark grey
+      backgroundColor: 'transparent',
+      borderColor: '#e69d72',
+      pointBackgroundColor: '#e69d72',
+      pointBorderColor: '#e69d72',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(77,83,96,1)'
+    },
+    { // grey
+      backgroundColor: 'transparent',
+      borderColor: '#a3cb85',
+      pointBackgroundColor: '#a3cb85',
+      pointBorderColor: '#a3cb85',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: '#a3cb85'
+    },
+    { // grey
+      backgroundColor: 'transparent',
+      borderColor: '#998fd2',
+      pointBackgroundColor: '#998fd2',
+      pointBorderColor: '#998fd2',
+      pointHoverBackgroundColor: '#998fd2',
+      pointHoverBorderColor: '#998fd2'
+    }
+  ];
+
+
+  public lineChartLegend: any = {
+    boolean: true,
+    fillStyle: 'red',
+  }
+  public lineChartType: string = 'line';
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  
   applyFilter(filterValue: string) {
     this.dataelement1.filter = filterValue.trim().toLowerCase();
   }
@@ -79,7 +358,41 @@ constructor(
   private data: ElementdataService,
 private _renderer2: Renderer2,
 private sanitizer: DomSanitizer) { }
-ngAfterViewInit() {}
+ngAfterViewInit() {
+  var myvar2 = setInterval(() => {
+    const myLegend = document.getElementById('overdue');
+    // console.log(myLegend);
+     if (myLegend) {
+         //console.log(this.legendData);
+         var legendItems = myLegend.getElementsByTagName('li');
+        // console.log(legendItems);
+        for (var i = 0; i < legendItems.length; i += 1) {
+         legendItems[i].addEventListener("click", (legendClickCallback) => {
+           console.log(event);
+           var index;
+           switch(event.srcElement.innerHTML){
+             case "Series A":
+               index=0;
+               break;
+             case "Series B":
+               index=1;
+               break;
+             case "Series C":
+               index=2;
+               break;
+           }
+           
+           this.chartComponent.chart.data.datasets[index].hidden = !this.chartComponent.chart.data.datasets[index].hidden;
+           this.chartComponent.chart.update();
+ 
+ 
+         });
+         }
+         clearInterval(myvar2);
+       }
+     }, 1000);
+ 
+}
   
     ngAfterContentInit(){
       
@@ -111,88 +424,7 @@ ngAfterViewInit() {}
 
   //barchart
 
-  public barChartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true,
-    // bezierCurve:true
-  };
-  public barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType: string = 'bar';
-  public barChartLegend: boolean = true;
-
-  public barChartData: any[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: '# of Payments', type: 'line', backgroundColor: "rgba(51,51,51,0.5)", fill: false, lineTension: 0.3 },
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Payment Amount ($)' },
-  ];
-  public barChartColors:Array<any> = [
-    { // grey
-      backgroundColor: '#eb942d',
-      borderColor: '#eb942d',
-      pointBackgroundColor: '#eb942d',
-      pointBorderColor: '#eb942d',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-    { // dark grey
-      backgroundColor: '#1e90ff',
-      borderColor: '#1e90ff',
-      pointBackgroundColor: '#1e90ff',
-      pointBorderColor: '#1e90ff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    }
-  ];
-  // events
-
-
-  public randomize(): void {
-    // Only Change 3 values
-    let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
-    clone[0].data = data;
-    this.barChartData = clone;
-    /**
-     * (My guess), for Angular to recognize the change in the dataset
-     * it has to change the dataset variable directly,
-     * so one way around it, is to clone the data, change it and then
-     * assign it;
-     */
-  }
-
-
-  //incomeExpense
-
-  public incomeExpenseOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true,
-    // bezierCurve:true
-  };
-  public incomeExpenseLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public incomeExpenseType: string = 'bar';
-  public incomeExpenseLegend: boolean = true;
-
-  public incomeExpenseData: any[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series B' }
-  ];
-  public incomeExpenseColors:Array<any> = [
-    { // grey
-      backgroundColor: '#27c24c',
-      borderColor: '#27c24c',
-      pointBackgroundColor: '#eb942d',
-      pointBorderColor: '#eb942d',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-   
-  ];
-
+ 
   //prevIncome
 
   public prevIncomeOptions: any = {
@@ -224,44 +456,8 @@ ngAfterViewInit() {}
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A',lineTension: 0 },
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B',lineTension: 0 },
   ];
-  public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public lineChartOptions: any = {
-    responsive: true
   
-  };
-  public lineChartColors: Array<any> = [
-    { // grey
-      backgroundColor: 'rgba(98,86,172,0.2)',
-      borderColor: '#6256ac',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: '#6256ac',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    }
-    
-  ];
-  public lineChartLegend: boolean = true;
-  public lineChartType: string = 'line';
-
-  public randomizeLine(): void {
-    let _lineChartData: Array<any> = new Array(this.lineChartData.length);
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      _lineChartData[i] = { data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label };
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
-      }
-    }
-    this.lineChartData = _lineChartData;
-  }
-}
+ }
 
 export interface PeriodicElement {
   name: string;
@@ -625,3 +821,114 @@ export interface  PeriodicElement6 {
     {name: 'Abbey Eatery & Ales', startofextension: 2000, createdon: '2018-10-18',time:'16:38:25',noofextension: 9},
     {name: '1807 Levee LLC', startofextension: 1900, createdon: '2018-10-08',time:'16:38:25',noofextension: 2},
   ];
+  export interface client_PeriodicElement1 {
+    name: string;
+    startofextension: number;
+    createdon: string;
+    time: string;
+    noofextension: number;
+  }
+  
+  const CLIENT_ELEMENT_DATA1: client_PeriodicElement1[] = [
+    {name: 'Zanne Holmes Design', startofextension: 2010, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1400, createdon: '2018-03-02',time:'16:38:25',noofextension: 2},
+    {name: 'Abbey Eatery & Ales', startofextension: 1200, createdon: '2018-10-31',time:'16:38:25',noofextension: 4},
+    { name: 'Ability Connections', startofextension: 2200, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1500, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 2005, createdon: '2018-10-09',time:'16:38:25',noofextension: 2},
+    {name: 'Ability Connections', startofextension: 1995, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1993, createdon: '2018-10-31',time:'16:38:25',noofextension: 9},
+    {name: 'Abbey Eatery & Ales', startofextension: 2000, createdon: '2018-10-18',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1900, createdon: '2018-10-08',time:'16:38:25',noofextension: 2},
+  {name: 'Zanne Holmes Design', startofextension: 2010, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1400, createdon: '2018-03-02',time:'16:38:25',noofextension: 2},
+    {name: 'Abbey Eatery & Ales', startofextension: 1200, createdon: '2018-10-31',time:'16:38:25',noofextension: 4},
+    { name: 'Ability Connections', startofextension: 2200, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1500, createdon: '2018-10-09',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 2005, createdon: '2018-10-09',time:'16:38:25',noofextension: 2},
+    {name: 'Ability Connections', startofextension: 1995, createdon: '2018-01-25',time:'16:38:25',noofextension: 43},
+    {name: 'Zanne Holmes Design', startofextension: 1993, createdon: '2018-10-31',time:'16:38:25',noofextension: 9},
+    {name: 'Abbey Eatery & Ales', startofextension: 2000, createdon: '2018-10-18',time:'16:38:25',noofextension: 9},
+    {name: '1807 Levee LLC', startofextension: 1900, createdon: '2018-10-08',time:'16:38:25',noofextension: 2},
+  ];
+  export interface outboundPeriodicElement1 {
+    did: number;
+   cid: string;
+   description: string;
+    noofextension: number;
+    content: string;
+    destination:string;
+  }
+  
+  const OUTBOUND_ELEMENT_DATA1: outboundPeriodicElement1[] = [
+    {did: 2143907281,cid: 'Any',description:'Hunter Kelly',destination:'Extension :',content:'This is demo Inbound Routes description here',noofextension: 9},
+    {did: 2146130380,cid: 'Any',description:'Dallas Fax',destination:'Misc Destinations : ',content:'Dallas Fax Temporary Forwarding Number ',noofextension: 2},
+    {did: 2146130500,cid: 'Any',description:'Dallas',destination:'Time Conditions : ',content:'This is demo Inbound Routes description here',noofextension: 4},
+    { did: 2146183420,cid: 'Any',description:'Frisco Wade',destination:'Time Conditions : ',content:'This is demo Inbound Routes description here',noofextension: 43},
+    {did: 2146124555,cid: 'Any',description:'Piano-Pkwy',destination:'Time Conditions : ',content:'This is demo Inbound Routes description here',noofextension: 9},
+    ];
+    export interface trunk_PeriodicElement1 {
+      trunkname: string;
+      tech: boolean;
+      tech_one: string;
+      tech_two: string;
+      createdon: string;
+      status: boolean;
+      callerid: number;
+    }
+    const TRUNK_ELEMENT_DATA1: trunk_PeriodicElement1[] = [
+      {trunkname: 'VI-Primary', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-10-09',status:true,callerid: 61462621665,tech:true},
+      {trunkname: 'VI-Secondary', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-03-02',status:false,callerid: 61462621666,tech:true},
+      {trunkname: 'VI-Tertiary', tech_one:'SIP',tech_two: 'Custom', createdon: '2018-10-31',status:true,callerid: 61462621667,tech:false},
+      {trunkname: 'VI-Quanternary', tech_one: 'SIP', tech_two: 'Custom', createdon: '2018-01-25',status:true,callerid: 61462621668,tech:true},
+      {trunkname: 'VI-Quinary', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-10-09',status:false,callerid: 61462621669,tech:true},
+      {trunkname: 'Twillo Out', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-10-09',status:true,callerid: 61462621670,tech:false},
+      {trunkname: 'Loopback', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-01-25',status:false,callerid: 61462621671,tech:false},
+      {trunkname: 'VI-Primary', tech_one: 'SIP', tech_two: 'Custom',createdon: '2018-10-09',status:true,callerid: 61462621672,tech:true},
+      {trunkname: 'VI-Secondary', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-03-02',status:true,callerid: 61462621673,tech:true},
+      {trunkname: 'VI-Tertiary', tech_one:'SIP', tech_two: 'Custom',createdon: '2018-10-31',status:false,callerid: 61462621674,tech:true},
+      {trunkname: 'VI-Quanternary', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-01-25',status:true,callerid: 61462621675,tech:true},
+      {trunkname: 'VI-Quinary', tech_one: 'SIP', tech_two: 'Custom',createdon: '2018-10-09',status:false,callerid: 61462621676,tech:true},
+      {trunkname: 'Twillo Out', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-10-09',status:true,callerid: 61462621677,tech:true},
+      {trunkname: 'Loopback', tech_one: 'SIP',tech_two: 'Custom', createdon: '2018-01-25',status:true,callerid: 61462621678,tech:true},
+    ];
+    export interface provisioner_PeriodicElement1 {
+      settingsname: string;
+      devicemodel: string;
+      }
+      
+      const PROVISIONER_ELEMENT_DATA1: provisioner_PeriodicElement1[] = [
+        {settingsname: 'DP750',devicemodel: 'Grandstream DP750'},
+        {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'},
+        {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
+        { settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
+        {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
+        {settingsname: 'DP750',devicemodel: 'Grandstream DP750'},
+        {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'},
+        {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
+        {settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
+        {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
+        {settingsname: 'DP750',devicemodel: 'Grandstream DP750'},
+        {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'},
+        {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
+        { settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
+        {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
+        {settingsname: 'DP750',devicemodel: 'Grandstream DP750'},
+        {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'},
+        {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
+        {settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
+        {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
+      ];
+      export interface PeriodicElement20 {
+        billdate: string;
+        amount: string;
+        payment: string;
+        tobebilled: boolean;
+      }
+      
+      const ELEMENT_DATA20: PeriodicElement20[] = [
+        {billdate:'Current Usage',amount:'$1.05',payment: '06 /30 /2018',tobebilled:true},
+        {billdate:'June 28, 2018', amount:'$177.54', payment: '($177.54)',tobebilled:false},
+        {billdate:'May 28, 2018', amount:'$150.99', payment: '($150.99)',tobebilled:false},
+        {billdate:'May 01, 2018', amount:'$64.95', payment: '($64.95)',tobebilled:false},
+      ];
