@@ -24,7 +24,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { MatPaginatorIntl } from '@angular/material';
-// import { MatPaginatorIntlCro } from './customClass';
+
 // import { OutboundComponent } from './app/pages/connectivity/outbound/outbound.component';
 // import { Cards3Component } from './src/app/pages/dashboard/dashboardComps/cards3/cards3.component';
 
