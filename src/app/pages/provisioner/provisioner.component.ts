@@ -35,21 +35,21 @@ export interface provisioner_PeriodicElement1 {
     {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
     { settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
     {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
-    {settingsname: 'DP750',devicemodel: 'Grandstream DP750'},
     {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'},
     {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
     {settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
     {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
     {settingsname: 'DP750',devicemodel: 'Grandstream DP750'},
-    {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'},
     {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
     { settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
     {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
     {settingsname: 'DP750',devicemodel: 'Grandstream DP750'},
     {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'},
-    {settingsname: 'HT702',devicemodel: 'Grandstream HT702'},
     {settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
     {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'},
+    {settingsname: 'Fanvil X4',devicemodel: 'Fanvil X4'}, 
+    {settingsname: 'HT802',devicemodel: 'Grandstream HT802'},
+    {settingsname: 'Vivant-2130',devicemodel: 'Grandstream GXP2130'}
   ];
 export interface PeriodicElement {
   name: string;
