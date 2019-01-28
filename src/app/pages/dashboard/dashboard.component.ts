@@ -165,11 +165,11 @@ export class DashboardComponent implements OnInit {
  
   ngOnInit() {
     
-    this.dataelement1.paginator = this.paginator;
-    this.clientdataelement1.paginator = this.paginator;
-    this.trunkdataelement1.paginator = this.paginator;
-    this.provisioner_dataelement1.paginator = this.paginator;
-    this.dataSource.paginator = this.paginator;
+    this.dataelement1.paginator = this.paginator1;
+    this.clientdataelement1.paginator = this.paginator2;
+    this.trunkdataelement1.paginator = this.paginator3;
+    this.provisioner_dataelement1.paginator = this.paginator4;
+    this.dataSource.paginator = this.paginator5;
     var myvar = setInterval(() => {
 
       this.legendData = this.chartComponent.chart.generateLegend();
@@ -345,8 +345,11 @@ export class DashboardComponent implements OnInit {
   }
   public lineChartType: string = 'line';
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  
+  @ViewChild('paginator1') paginator1: MatPaginator;
+  @ViewChild('paginator2') paginator2: MatPaginator;
+  @ViewChild('paginator3') paginator3: MatPaginator;
+  @ViewChild('paginator4') paginator4: MatPaginator;
+  @ViewChild('paginator5') paginator5: MatPaginator;
   applyFilter(filterValue: string) {
     this.dataelement1.filter = filterValue.trim().toLowerCase();
   }
@@ -398,11 +401,7 @@ ngAfterViewInit() {
       
    
     }
-   
-  
-
-    // Doughnut
-  public doughnutChartLabels:string[] = ['Cost of goods sold', 'sales'];
+    public doughnutChartLabels:string[] = ['Cost of goods sold', 'sales'];
   public doughnutChartData:number[] = [350, 450];
   public doughnutChartType:string = 'doughnut';
   public donutColors=[

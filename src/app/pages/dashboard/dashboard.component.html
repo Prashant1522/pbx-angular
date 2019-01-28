@@ -408,7 +408,7 @@
                     <tr mat-header-row *matHeaderRowDef="trunkColumns1"></tr>
                     <tr mat-row *matRowDef="let row; columns: trunkColumns1;"></tr>
                 </table>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<mat-paginator #paginator3 [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
             </div>
                        </mat-tab>    
     <mat-tab label="New Trunk">
@@ -601,7 +601,7 @@
                             <tr mat-header-row *matHeaderRowDef="provisionerColumns1"></tr>
                             <tr mat-row *matRowDef="let row; columns: provisionerColumns1;"></tr>
                         </table>
-     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+     <mat-paginator #paginator4 [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
                     </div>  </mat-tab>  <mat-tab label="Add Company Setting">
                             <h1>Some more tab content</h1>
                             <p>...</p>
