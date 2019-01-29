@@ -30,19 +30,14 @@ import { TrunkComponent } from './connectivity/trunk/trunk.component';
 import { MatPaginatorIntl, MatButtonModule } from '@angular/material';
 import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
 // import { MatPaginatorIntlCro } from './../customClass';
-const customLayouts: IKeyboardLayouts = {
-  ...keyboardLayouts,
-  'Tölles Läyout': {
-    'name': 'Awesome layout',
-    'keys': [
-      [
-        ['1', '!'],
-        ['2', '@'],
-        ['3', '#']
-      ]
-    ],
-    'lang': ['de-CH']
-  }
+const customLayouts: IKeyboardLayouts = keyboardLayouts;
+customLayouts.numpad = {
+  'name': 'Numpad', 'keys': [
+    [['1', '1'], ['2', '2'], ['3', '3']],
+    [['4', '4'], ['5', '5'], ['6', '6']],
+    [['7', '7'], ['8', '8'], ['9', '9']],
+    [['Bksp', 'Bksp'], ['0', '0'], ['Enter', 'Enter']]
+  ]
 };
 @NgModule({
   imports: [
