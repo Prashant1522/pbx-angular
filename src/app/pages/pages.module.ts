@@ -27,8 +27,23 @@ import { OutboundComponent } from './connectivity/outbound/outbound.component';
 import { TrunkComponent } from './connectivity/trunk/trunk.component';
 // import { DashboardDirective } from './dashboard.directive';
 // import { HighlightDirective } from './dashboard/highlight.directive';
-import { MatPaginatorIntl } from '@angular/material';
+import { MatPaginatorIntl, MatButtonModule } from '@angular/material';
+import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
 // import { MatPaginatorIntlCro } from './../customClass';
+const customLayouts: IKeyboardLayouts = {
+  ...keyboardLayouts,
+  'Tölles Läyout': {
+    'name': 'Awesome layout',
+    'keys': [
+      [
+        ['1', '!'],
+        ['2', '@'],
+        ['3', '#']
+      ]
+    ],
+    'lang': ['de-CH']
+  }
+};
 @NgModule({
   imports: [
     CommonModule,
@@ -56,7 +71,9 @@ import { MatPaginatorIntl } from '@angular/material';
       startFromZero: false
     }),
     ChartsModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    MatButtonModule,
+    MatKeyboardModule,
   
   ],
    exports:[
@@ -80,7 +97,7 @@ import { MatPaginatorIntl } from '@angular/material';
          TrunkComponent, 
         
     ],
-    providers: [],
+    providers: [{ provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts }],
  
 })
 export class PagesModule {}

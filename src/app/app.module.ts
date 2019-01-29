@@ -30,6 +30,9 @@ import { MatPaginatorIntl } from '@angular/material';
 
 // import { HighlightDirective } from './highlight.directive';
 
+import { MatButtonModule } from '@angular/material/button';
+
+import { MatKeyboardModule } from '@ngx-material-keyboard/core';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,11 @@ import { MatPaginatorIntl } from '@angular/material';
       animationDuration: 300,
      
     }),
-    
+    // Angular modules
+   
+
+    // Material modules
+   
   ],
   
   

@@ -5,6 +5,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatPaginator,MatTableDataSource } from '@angular/material';
 import { ElementdataService } from '../../elementdata.service';
 import { BaseChartDirective } from 'ng2-charts';
+import { MatKeyboardModule } from '@ngx-material-keyboard/core';
 export interface Food {
   value: string;
   viewValue: string;
