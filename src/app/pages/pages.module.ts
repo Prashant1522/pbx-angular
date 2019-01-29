@@ -39,6 +39,7 @@ customLayouts.numpad = {
     [['Bksp', 'Bksp'], ['0', '0'], ['Enter', 'Enter']]
   ]
 };
+
 @NgModule({
   imports: [
     CommonModule,
