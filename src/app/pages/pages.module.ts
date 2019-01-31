@@ -29,6 +29,7 @@ import { TrunkComponent } from './connectivity/trunk/trunk.component';
 // import { HighlightDirective } from './dashboard/highlight.directive';
 import { MatPaginatorIntl, MatButtonModule } from '@angular/material';
 import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
+import { NguCarouselModule } from '@ngu/carousel';
 // import { MatPaginatorIntlCro } from './../customClass';
 const customLayouts: IKeyboardLayouts = keyboardLayouts;
 customLayouts.numpad = {
@@ -70,7 +71,7 @@ customLayouts.numpad = {
     NgScrollbarModule,
     MatButtonModule,
     MatKeyboardModule,
-  
+    NguCarouselModule
   ],
    exports:[
     DashboardComponent

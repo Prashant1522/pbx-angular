@@ -6,6 +6,8 @@ import { MatPaginator,MatTableDataSource } from '@angular/material';
 import { ElementdataService } from '../../elementdata.service';
 import { BaseChartDirective } from 'ng2-charts';
 import { MatKeyboardModule } from '@ngx-material-keyboard/core';
+import { NguCarouselConfig } from '@ngu/carousel';
+
 export interface Food {
   value: string;
   viewValue: string;
@@ -361,7 +363,9 @@ htmlToAdd;
 constructor(
   private data: ElementdataService,
 private _renderer2: Renderer2,
-private sanitizer: DomSanitizer) { }
+private sanitizer: DomSanitizer) { 
+ 
+}
 ngAfterViewInit() {
   var myvar2 = setInterval(() => {
     const myLegend = document.getElementById('overdue');
@@ -457,6 +461,29 @@ ngAfterViewInit() {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B',lineTension: 0 },
   ];
   
+  //carousel
+  
+  public carouselTileItems: Array<any> = ["Angular 7", "Angular Material Design",
+   "Angular Flex-Layout", "Chart.js/Canvas manipulation",
+    "REST API", "Angular dynamic menu",
+    "Custom scrollbars","Angular Material Forms"];
+  
+  public carouselTile: NguCarouselConfig = {
+    grid: { xs: 1, sm: 1, md: 3, lg: 3, all: 0 },
+    slide: 3,
+    speed: 250,
+    point: {
+      visible: true
+    },
+    load: 2,
+    velocity: 0,
+    touch: true,
+    loop:true,
+    interval: { timing: 3000 },
+    animation: 'lazy',
+    easing: 'cubic-bezier(0, 0, 0.2, 1)'
+  };
+
  }
 
 export interface PeriodicElement {

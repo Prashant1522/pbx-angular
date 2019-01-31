@@ -1174,3 +1174,42 @@ padding:4px;
   }
   .disabled_input{
     color:#b9b9b9;}
+
+
+.myPoint{
+    text-align:center;
+    li{
+        display:inline-block;
+        border:2px solid rgba(0,0,0,0.55);
+        border-radius:50%;
+        margin:0 3px;
+        padding:4px;
+        transition-timing-function:cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        transition:0.5s;
+        &.active{
+            background:#cccccc;
+            transform:scale(1.2);
+        }
+    }
+}
+.myCarousel{
+    ngu-tile{
+        div{
+            height:200px;
+            background-image:url("../../assets/images/logo/angular.png");
+            background-repeat: no-repeat;
+            display:flex;
+            .feature{
+                display:flex;
+                height:fit-content;
+                margin:auto;
+                font-size: larger;
+                color:#5b4fa7;
+                font-weight: 800;
+                font-family:serif;
+            }
+        }
+        
+    }
+    
+}
