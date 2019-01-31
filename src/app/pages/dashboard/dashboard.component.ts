@@ -95,6 +95,7 @@ export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['photo', 'billdate', 'amount', 'payment']
   dataSource  = new MatTableDataSource<PeriodicElement20>(ELEMENT_DATA20);
   provisionerColumns1: string[] = ['settingsname', 'devicemodel','pinning'];
+  
   provisioner_dataelement1 = new MatTableDataSource<provisioner_PeriodicElement1>(PROVISIONER_ELEMENT_DATA1);
   applyFilter4(filterValue: string) {
     this.provisioner_dataelement1.filter = filterValue.trim().toLowerCase();
@@ -130,6 +131,7 @@ export class DashboardComponent implements OnInit {
   DIDs=22;
   activecalls=2;
   Columns1: string[] = ['name', 'noofextension', 'startofextension', 'createdon','pinning'];
+  
   dataelement1 = new MatTableDataSource<PeriodicElement15>(ELEMENT_DATA15);
   Columns2:string[] = ['item', 'value'];
   dataelement2 =  new MatTableDataSource<Prelement>(ELEMENT_DATA16);

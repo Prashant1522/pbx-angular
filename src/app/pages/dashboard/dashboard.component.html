@@ -163,33 +163,35 @@ High resolution
 
                     <table mat-table [dataSource]="dataelement1" class="client-table">
 
-                        <!-- Position Column -->
+                        <!-- client name Column -->
                         <ng-container matColumnDef="name">
                             <th mat-header-cell *matHeaderCellDef> CLIENT NAME </th>
                             <td mat-cell *matCellDef="let element"><span class=" pro_name"> {{element.name}}
                                 </span> </td>
                         </ng-container>
 
-                        <!-- Name Column -->
+                        <!--No. of extension -->
                         <ng-container matColumnDef="noofextension">
-                            <th mat-header-cell *matHeaderCellDef> NO. OF EXTENSION </th>
-                            <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.noofextension}}</span>
+                            <th mat-header-cell *matHeaderCellDef class="hidemobile"> NO. OF EXTENSION </th>
+                            <td mat-cell *matCellDef="let element" class="hidemobile"> <span class="bolding_element">{{element.noofextension}}</span>
                             </td>
                         </ng-container>
+
+                         <!--Start of extension -->
                         <ng-container matColumnDef="startofextension">
-                            <th mat-header-cell *matHeaderCellDef>START OF EXTENSION </th>
-                            <td mat-cell *matCellDef="let element"> {{element.startofextension}} </td>
+                            <th mat-header-cell *matHeaderCellDef class="hidemobile">START OF EXTENSION </th>
+                            <td mat-cell *matCellDef="let element" class="hidemobile"> {{element.startofextension}} </td>
                         </ng-container>
-                        <!-- Weight Column -->
+                        <!-- Created on -->
                         <ng-container matColumnDef="createdon">
-                            <th mat-header-cell *matHeaderCellDef>CREATED ON</th>
-                            <td mat-cell *matCellDef="let element"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}}
+                            <th mat-header-cell *matHeaderCellDef class="hidemobile">CREATED ON</th>
+                            <td mat-cell *matCellDef="let element" class="hidemobile"> <span class="bolding_element">{{element.createdon}}</span>{{element.time}}
                             </td>
                         </ng-container>
-                        <!-- Symbol Column -->
+                        <!-- Blank Column -->
                         <ng-container matColumnDef="pinning">
-                            <th mat-header-cell *matHeaderCellDef> </th>
-                            <td mat-cell *matCellDef="let element" class="table_right_adjust">
+                            <th mat-header-cell *matHeaderCellDef class="width60"> </th>
+                            <td mat-cell *matCellDef="let element" class="table_right_adjust width60">
                                 <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'eye' | feather"></span>
                                 <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'users' | feather"></span>
                                 <span class="count value_adjust bg-custom-gray pinning_element lunch" [innerHTML]="'help-circle' | feather"></span>
