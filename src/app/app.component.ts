@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(){
     return this.dataService.getUsers().subscribe(data=> this.usersS = data);
-    console.log(this.usersS);
   }
   
 }

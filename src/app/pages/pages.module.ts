@@ -30,6 +30,7 @@ import { TrunkComponent } from './connectivity/trunk/trunk.component';
 import { MatPaginatorIntl, MatButtonModule } from '@angular/material';
 import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
 import { NguCarouselModule } from '@ngu/carousel';
+import { CallButtonComponent } from './call-button.component';
 // import { MatPaginatorIntlCro } from './../customClass';
 const customLayouts: IKeyboardLayouts = keyboardLayouts;
 customLayouts.numpad = {
@@ -91,7 +92,9 @@ customLayouts.numpad = {
       
          OutboundComponent,
       
-         TrunkComponent, 
+         TrunkComponent,
+      
+         CallButtonComponent, 
         
     ],
     providers: [{ provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts }],

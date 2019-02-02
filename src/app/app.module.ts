@@ -33,6 +33,7 @@ import { MatPaginatorIntl } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatKeyboardModule } from '@ngx-material-keyboard/core';
+// import { CallButtonComponent } from './pages/call-button.component'
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MatKeyboardModule } from '@ngx-material-keyboard/core';
     AppHeaderComponent,
     SpinnerComponent,
     AppSidebarComponent,
+    // CallButtonComponent,
     // OutboundComponent,
     
   ],

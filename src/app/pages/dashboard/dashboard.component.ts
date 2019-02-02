@@ -7,7 +7,7 @@ import { ElementdataService } from '../../elementdata.service';
 import { BaseChartDirective } from 'ng2-charts';
 import { MatKeyboardModule } from '@ngx-material-keyboard/core';
 import { NguCarouselConfig } from '@ngu/carousel';
-
+import{ CallButtonComponent } from '../call-button.component';
 export interface Food {
   value: string;
   viewValue: string;
