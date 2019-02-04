@@ -1228,12 +1228,30 @@ padding:4px;
 }
 
 .callbtn{
-    position:sticky !important;
-    left:93%;
-    top:88%;
-    z-index: 10;
+    position: absolute !important;
+    right:15px;
+    bottom:15px;
+   
     background-color: #3ecb5c !important;
     border-radius:50% !important;
     width:45px;
     height:45px;
+}
+.dialpad{
+   
+    background-color: #3ecb5c !important;
+   
+    height:67vh;
+}
+#top{
+    height:24px;
+    background-color:#e9e9e9;
+}
+app-call-button{
+    position:fixed;
+    bottom:5px;
+    right:5px;
+    width:23%;
+    height:67vh;
+    z-index:10;
 }
