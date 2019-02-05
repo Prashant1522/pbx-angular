@@ -1238,9 +1238,7 @@ padding:4px;
     height:45px;
 }
 .dialpad{
-   
     background-color: #3ecb5c !important;
-   
     height:67vh;
     width:-webkit-fill-available;
     position: absolute;
@@ -1258,7 +1256,8 @@ app-call-button{
     width:23%;
     height:0;
     z-index:10;
-    
+    -webkit-box-shadow: 0 0 20px #747474;
+        box-shadow: 0 0 20px #747474;
     .closebtn{
         display:flex;
         
