@@ -3,7 +3,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import{ CallButtonComponent } from '../../pages/call-button.component';
 
 // import { Router } from '@angular/router';
-import{ CallButtonComponent } from '../../pages/call-button.component'
+
 import {
   ChangeDetectorRef,
   Component,
@@ -19,7 +19,6 @@ import { trigger, transition, state, animate, style } from '@angular/animations'
 import { MenuItems } from '../../shared/menu-items/menu-items';
 // import { AppHeaderComponent } from './header/header.component';
 import { AppSidebarComponent } from './sidebar/sidebar.component';
-import { calcBindingFlags } from '@angular/core/src/view/util';
 
 /** @title Responsive sidenav */
 @Component({

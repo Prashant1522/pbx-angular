@@ -27,10 +27,10 @@ import { OutboundComponent } from './connectivity/outbound/outbound.component';
 import { TrunkComponent } from './connectivity/trunk/trunk.component';
 // import { DashboardDirective } from './dashboard.directive';
 // import { HighlightDirective } from './dashboard/highlight.directive';
-import { MatPaginatorIntl, MatButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
 import { NguCarouselModule } from '@ngu/carousel';
-import { CallButtonComponent } from './call-button.component';
+
 // import { MatPaginatorIntlCro } from './../customClass';
 const customLayouts: IKeyboardLayouts = keyboardLayouts;
 customLayouts.numpad = {
