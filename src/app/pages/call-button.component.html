@@ -1,6 +1,9 @@
-<button #button class="callbtn" mat-button ><img src="../../assets/images/dial-pad.png"></button>
+
 <div class="dialpad">
-    <div id="top"></div>
+    <div id="top">
+        <button #button class="closebtn" mat-button (click)="dial = false"><mat-icon>close</mat-icon></button>
+    </div>
 </div>
+<button #button class="callbtn" mat-button (click)="dial = true"><img src="../../assets/images/dial-pad.png"></button>
 
 

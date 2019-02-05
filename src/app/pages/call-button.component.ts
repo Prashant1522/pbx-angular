@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./call-button.component.css']
 })
 export class CallButtonComponent implements OnInit {
+  static dial:boolean = false;
 
   constructor() { }
 

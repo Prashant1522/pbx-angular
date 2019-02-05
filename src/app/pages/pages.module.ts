@@ -94,7 +94,7 @@ customLayouts.numpad = {
       
          TrunkComponent,
       
-         CallButtonComponent, 
+       
         
     ],
     providers: [{ provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts }],

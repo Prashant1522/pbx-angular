@@ -1,6 +1,6 @@
 
 <div class="main-container"> 
-    
+    <app-call-button [@dialpad]="cbc.dial ? 'open' : 'closed'"></app-call-button>
 
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
         <!-- ============================================================== -->

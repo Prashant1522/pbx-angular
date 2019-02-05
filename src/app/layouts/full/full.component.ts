@@ -1,6 +1,7 @@
 // import * as $ from 'jquery';
 import { MediaMatcher } from '@angular/cdk/layout';
 // import { Router } from '@angular/router';
+import{ CallButtonComponent } from '../../pages/call-button.component'
 import {
   ChangeDetectorRef,
   Component,
@@ -16,6 +17,7 @@ import { trigger, transition, state, animate, style } from '@angular/animations'
 import { MenuItems } from '../../shared/menu-items/menu-items';
 // import { AppHeaderComponent } from './header/header.component';
 import { AppSidebarComponent } from './sidebar/sidebar.component';
+import { calcBindingFlags } from '@angular/core/src/view/util';
 
 /** @title Responsive sidenav */
 @Component({
@@ -74,9 +76,27 @@ import { AppSidebarComponent } from './sidebar/sidebar.component';
       transition('* => *', [
         animate('0.5s')
       ]),
-    ])
+    ]),
+    trigger('dialpad', [
+      // ...
+      state('open', style({
+        height : '67vh',
+        // opacity: 1,
+        // backgroundColor: 'yellow'
+      })),
+      state('closed', style({
+        height: '0',
+        // opacity: 0.5,
+        // backgroundColor: 'green'
+      })),
+      
+      transition('* => *', [
+        animate('0.5s')
+      ]),
+    ]),
     
   ],
+
 })
 export class FullComponent implements OnDestroy, AfterViewInit,OnInit {
   mobileQuery: MediaQueryList;
@@ -88,8 +108,10 @@ export class FullComponent implements OnDestroy, AfterViewInit,OnInit {
   isWide = false;
   // public iconsDisplay: string = AppSidebarComponent.iconsDisplayValue();
   @ViewChild(AppSidebarComponent) child;
+  @ViewChild(CallButtonComponent) cbc;
+  dial:boolean;
   innerWidth: number;
-
+  
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
@@ -102,12 +124,15 @@ export class FullComponent implements OnDestroy, AfterViewInit,OnInit {
     // console.log("debugging");
     // console.log(sidebar.getIconsDisplay());
     // this.iconsDisplay = sidebar.getIconsDisplay();
+    
   }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+   
+  }
 
   ngOnInit(){
     this.isWide = window.innerWidth>767;
@@ -123,12 +148,14 @@ export class FullComponent implements OnDestroy, AfterViewInit,OnInit {
       // console.log("hi"+this.iconsDisplay);
       this.child.collapse();
       this.isOpen = false;
+     
     }
     else{
       this.widthSidebar = this.widthSidebarExpanded;
       // AppSidebarComponent.setlogoDisplayNone;
       this.child.expand();
       this.isOpen = true;
+     
     }
   }
 }
