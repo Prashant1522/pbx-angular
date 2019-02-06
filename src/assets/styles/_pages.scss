@@ -1238,7 +1238,7 @@ padding:4px;
     height:45px;
 }
 .dialpad{
-    background-color: #3ecb5c !important;
+    background-color: white;
     height:67vh;
     width:-webkit-fill-available;
     position: absolute;
@@ -1269,6 +1269,20 @@ app-call-button{
         }
         .mat-icon{
             vertical-align: inherit;
+        }
+    }
+    #screen{
+        height:13%;
+        .dialmenu{
+            height:-webkit-fill-available;
+            min-width:11% !important;
+            width:11% !important;
+            padding:0 !important;
+            margin:0 1% !important;
+        }
+        #dialinput{
+            width:74%;
+            height:-webkit-fill-available;
         }
     }
 }

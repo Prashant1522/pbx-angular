@@ -3,8 +3,12 @@
     <div id="top">
         <button #button class="closebtn" mat-button (click)="dial = false"><mat-icon>close</mat-icon></button>
     </div>
-    
+    <div id="screen">
+        <button mat-button class="dialmenu"><mat-icon>more_vert</mat-icon></button>
+        <input id="dialinput" matInput placeholder="Dial a number" value="">
+        <button mat-button class="dialmenu"><mat-icon>backspace</mat-icon></button>
+    </div>
 </div>
-<button #button class="callbtn" mat-button (click)="dial = true"><img src="../../assets/images/dial-pad.png"></button>
+<button #button class="callbtn" mat-button (click)="dial = true"><img src="assets/images/dial-pad.png"></button>
 
 
