@@ -19,7 +19,19 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CallButtonComponent } from './pages/call-button.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatKeyboardModule, MAT_KEYBOARD_LAYOUTS, IKeyboardLayouts, keyboardLayouts } from '@ngx-material-keyboard/core';
 
+// import { MatPaginatorIntlCro } from './../customClass';
+const customLayouts: IKeyboardLayouts = keyboardLayouts;
+customLayouts.numpad = {
+  'name': 'Numpad', 'keys': [
+    [['1', '1'], ['2', '2'], ['3', '3']],
+    [['4', '4'], ['5', '5'], ['6', '6']],
+    [['7', '7'], ['8', '8'], ['9', '9']],
+    [['Bksp', 'Bksp'], ['0', '0'], ['Enter', 'Enter']]
+  ]
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,10 +64,14 @@ import { CallButtonComponent } from './pages/call-button.component';
       animationDuration: 300,
      
     }),
-    // Angular modules
-   
-
-    // Material modules
+     // Angular modules
+     BrowserModule,
+     BrowserAnimationsModule,
+     FormsModule,
+ 
+     // Material modules
+     MatButtonModule,
+     MatKeyboardModule,
    
   ],
   
@@ -66,6 +82,7 @@ import { CallButtonComponent } from './pages/call-button.component';
       useClass: PathLocationStrategy,
        
     },
+    { provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts }
     
   ],
   bootstrap: [AppComponent]
