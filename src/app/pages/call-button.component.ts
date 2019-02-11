@@ -12,5 +12,11 @@ export class CallButtonComponent implements OnInit {
 
   ngOnInit() {
   }
+  /**
+   * type
+   */
+  public type($evt) {
+    console.log($evt);
+  }
 
 }

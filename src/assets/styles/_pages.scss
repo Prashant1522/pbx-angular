@@ -1239,7 +1239,8 @@ padding:4px;
 }
 .dialpad{
     background-color: white;
-    height:-webkit-fill-available;
+    height:67vh;
+    min-height:400px;
     width:-webkit-fill-available;
     position: absolute;
     z-index: 1;
@@ -1272,7 +1273,7 @@ app-call-button{
         }
     }
     #screen{
-        height:52px;//13%;
+        height:13%;//52px;
         .dialmenu{
             height:-webkit-fill-available;
             min-width:11% !important;
@@ -1282,8 +1283,8 @@ app-call-button{
         }
         #dialinput{
             width:74%;
-            height:-webkit-fill-available !important;
-            display:-webkit-inline-box;
+            height:-webkit-fill-available ;
+            
             border:none;
         }
     }
@@ -1291,9 +1292,14 @@ app-call-button{
         height:57%;
         // background-color: gray;
         #numpad{
+            height:72%;
             .mat-grid-tile{
                 color:black;
             }
+        }
+        #callfinal{
+            height:28%;
+            display: flex;
         }
     }
     #suggestions{
