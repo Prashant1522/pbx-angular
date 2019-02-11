@@ -70,14 +70,14 @@ html .page-wrapper{
 }
 .mat-grid-tile{
     padding:5px;
-    border-style:solid;
+    border-style:none;
     // border-width: 1px;
     border-color:$border-tiles;
-span{
-align-self:flex-start;
-font-size:0.8em;
-padding-top:3px;
-}    
+    span{
+        align-self:flex-start;
+        font-size:0.8em;
+        padding-top:3px;
+    }    
 }
 .fixFH2{
  height: 370px;
@@ -881,14 +881,14 @@ color:#494949;
  background-color:$dashboard-title !important;
  }
 .cdea{
-height: 44px;
-margin-right: 0px !important;
-color:rgba(0, 0, 0, 0.87);
-font-weight: 400;
-font-size: 15px;
+    height: 44px;
+    margin-right: 0px !important;
+    color:rgba(0, 0, 0, 0.87);
+    font-weight: 400;
+    font-size: 15px;
 }
 .pad_element1{
-padding: 10px 15px;
+    padding: 10px 15px;
 }
 .pad_element2{
     padding: 10px 24px;}
@@ -1239,7 +1239,7 @@ padding:4px;
 }
 .dialpad{
     background-color: white;
-    height:67vh;
+    height:-webkit-fill-available;
     width:-webkit-fill-available;
     position: absolute;
     z-index: 1;
@@ -1272,7 +1272,7 @@ app-call-button{
         }
     }
     #screen{
-        height:13%;
+        height:52px;//13%;
         .dialmenu{
             height:-webkit-fill-available;
             min-width:11% !important;
@@ -1282,7 +1282,26 @@ app-call-button{
         }
         #dialinput{
             width:74%;
-            height:-webkit-fill-available;
+            height:-webkit-fill-available !important;
+            display:-webkit-inline-box;
+            border:none;
         }
+    }
+    #phone{
+        height:57%;
+        // background-color: gray;
+        #numpad{
+            .mat-grid-tile{
+                color:black;
+            }
+        }
+    }
+    #suggestions{
+        height:21%;
+    }
+    #ringbtn{
+        border-radius:50%;
+        background-color: #3ecb5c !important;
+        margin:0 auto;
     }
 }

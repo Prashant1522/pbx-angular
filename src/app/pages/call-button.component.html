@@ -8,6 +8,24 @@
         <input id="dialinput" matInput placeholder="Dial a number" value="">
         <button mat-button class="dialmenu"><mat-icon>backspace</mat-icon></button>
     </div>
+    <div id="suggestions"></div>
+    <div id="phone">
+        <div id="numpad">
+                <mat-grid-list cols="3" rowHeight="2:1">
+                        <mat-grid-tile><button mat-button>1</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>2</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>3</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>4</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>5</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>6</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>7</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>8</button></mat-grid-tile>
+                        <mat-grid-tile><button mat-button>9</button></mat-grid-tile>
+                      </mat-grid-list>
+        </div>
+        <div style="display: flex;"><button mat-button id="ringbtn"><mat-icon>phone</mat-icon></button></div>
+
+    </div>
 </div>
 <button #button class="callbtn" mat-button (click)="dial = true"><img src="assets/images/dial-pad.png"></button>
 

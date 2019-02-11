@@ -82,11 +82,13 @@ import { AppSidebarComponent } from './sidebar/sidebar.component';
       // ...
       state('open', style({
         height : '67vh',
+        minHeight: '400px'
         // opacity: 1,
         // backgroundColor: 'yellow'
       })),
       state('closed', style({
         height: '0',
+        minHeight: '0'
         // opacity: 0.5,
         // backgroundColor: 'green'
       })),
