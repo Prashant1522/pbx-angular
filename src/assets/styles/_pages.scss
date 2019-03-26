@@ -1292,13 +1292,16 @@ app-call-button{
         height:57%;
         // background-color: gray;
         #numpad{
-            height:72%;
+            height:80%;
+            .mat-grid-list{
+                height:-webkit-fill-available;
+            }
             .mat-grid-tile{
                 color:black;
             }
         }
         #callfinal{
-            height:28%;
+            height:20%;
             display: flex;
         }
     }
