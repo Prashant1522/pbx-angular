@@ -187,11 +187,47 @@ export class DashboardComponent implements OnInit {
 
     this.innerWidth = window.innerWidth;
   }
+  @ViewChild(BaseChartDirective) chartComponent: BaseChartDirective;
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
+
+ /*  var myvar2 = setInterval(() => {
+    const myLegend = document.getElementById('overdue');
+    // console.log(myLegend);
+     if (myLegend) {
+         //console.log(this.legendData);
+         var legendItems = myLegend.getElementsByTagName('li');
+        // console.log(legendItems);
+        for (var i = 0; i < legendItems.length; i += 1) {
+         legendItems[i].addEventListener("click", (legendClickCallback) => {
+           console.log(event);
+           var index;
+           switch(event.srcElement.innerHTML){
+             case "Series A":
+               index=0;
+               break;
+             case "Series B":
+               index=1;
+               break;
+             case "Series C":
+               index=2;
+               break;
+           }
+           
+           this.chartComponent.chart.data.datasets[index].hidden = !this.chartComponent.chart.data.datasets[index].hidden;
+           this.chartComponent.chart.update();
+ 
+ 
+         });
+         }
+         clearInterval(myvar2);
+       }
+     }, 1000);
+  */
+
   }
-  @ViewChild(BaseChartDirective) chartComponent: BaseChartDirective;
   legendData: any;
   totalcalls = 179;
   missedcalls = 0;
