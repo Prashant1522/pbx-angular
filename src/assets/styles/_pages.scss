@@ -1259,6 +1259,9 @@ app-call-button{
     z-index:10;
     -webkit-box-shadow: 0 0 20px #747474;
         box-shadow: 0 0 20px #747474;
+    @include four80{
+        width:100%;
+    }
     .closebtn{
         display:flex;
         
