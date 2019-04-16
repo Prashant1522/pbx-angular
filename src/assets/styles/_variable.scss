@@ -37,6 +37,11 @@ $four80 : 480px;
         @content;
     }
 }
+@mixin four80-768{
+    @media(max-width:#{$mobile}) and (min-width:#{$four80}){
+        @content;
+    }
+}
 /*Material Theme Colors*/
 // define a real custom palette (using http://mcg.mbitson.com)
 $bv-brand: (

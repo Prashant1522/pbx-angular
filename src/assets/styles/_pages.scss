@@ -1262,6 +1262,9 @@ app-call-button{
     @include four80{
         width:100%;
     }
+    @include four80-768{
+        width:50%;
+    }
     .closebtn{
         display:flex;
         
