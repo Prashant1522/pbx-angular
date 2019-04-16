@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild ,AfterContentInit, Directive, Renderer2, SecurityContext} from '@angular/core';
+import {Component, OnInit, ViewChild ,AfterContentInit, Directive, Renderer2, SecurityContext, HostListener} from '@angular/core';
 
 import {  DomSanitizer } from '@angular/platform-browser';
 import { MatPaginator,MatTableDataSource } from '@angular/material';
@@ -17,6 +17,7 @@ export interface Food {
 })
 
 export class DashboardComponent implements OnInit {
+  public innerWidth: any;
   public barChartOptions:any = {
     responsive:true,
     maintainAspectRatio: false,
@@ -183,6 +184,12 @@ export class DashboardComponent implements OnInit {
         clearInterval(myvar);
       }
     }, 0);
+
+    this.innerWidth = window.innerWidth;
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
   @ViewChild(BaseChartDirective) chartComponent: BaseChartDirective;
   legendData: any;

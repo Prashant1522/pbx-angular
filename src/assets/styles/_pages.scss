@@ -186,6 +186,7 @@ html .page-wrapper{
     background-color:#edf1f2;
     padding:15px 24px;
     width:fit-content;
+    max-width:100%;
     .mat-tab-label-container{
         height: 3.5vw !important;
     }
@@ -1260,7 +1261,7 @@ app-call-button{
     -webkit-box-shadow: 0 0 20px #747474;
         box-shadow: 0 0 20px #747474;
     @include four80{
-        width:100%;
+        width:90%;
     }
     @include four80-768{
         width:50%;
