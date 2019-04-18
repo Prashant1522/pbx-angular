@@ -18,6 +18,7 @@ export interface Food {
 
 export class DashboardComponent implements OnInit {
   public innerWidth: any;
+  public nocolsvariable: number;
   public barChartOptions:any = {
     responsive:true,
     maintainAspectRatio: false,
@@ -186,13 +187,15 @@ export class DashboardComponent implements OnInit {
     }, 0);
 
     this.innerWidth = window.innerWidth;
+    this.nocolsvariable = (this.innerWidth>920) ? 4 : ((this.innerWidth>480) ? 2 : 1);
+
   }
   @ViewChild(BaseChartDirective) chartComponent: BaseChartDirective;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
-
+    this.nocolsvariable = (this.innerWidth>920) ? 4 : ((this.innerWidth>480) ? 2 : 1);
  /*  var myvar2 = setInterval(() => {
     const myLegend = document.getElementById('overdue');
     // console.log(myLegend);

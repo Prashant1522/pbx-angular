@@ -1032,13 +1032,16 @@ cursor: pointer; }
     width:50%;
 }
 .billing_information{
-padding:30px 30px !important;
-font-weight: 400;
-svg {
-    width:20 !important;
-    top:0px;
-    margin-left:8px;
-}
+    padding:30px 30px !important;
+    font-weight: 400;
+    svg {
+        width:20 !important;
+        top:0px;
+        margin-left:8px;
+    }
+    @include four80{
+        padding:0 !important;
+    }
 }
 .textdata_align_left{
     text-align:left !important;
